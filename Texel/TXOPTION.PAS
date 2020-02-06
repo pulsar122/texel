@@ -251,7 +251,6 @@ procedure TSaveWork.Work;
 	    s  : string;
 
 	begin
-		{$IFNDEF LITE}
 		BusyMouse;
 		p:=Application^.MainWindow;
 		anz:=0;
@@ -280,7 +279,6 @@ procedure TSaveWork.Work;
 				fclose(hdl)
 			end;
 		ArrowMouse
-		{$ENDIF}
 	end;
 
 
@@ -348,9 +346,6 @@ procedure TOptions.Work;
 						new(PRadioButton,Init(ADialog,RTSNOTHING,true,BUBBLE_SETUP_NOTHING));
 						new(PCheckBox,Init(ADialog,RTSSAVEOPT,true,BUBBLE_SETUP_SAVEOPT));
 						new(pc,Init(ADialog,RTSSAVEWORK,true,BUBBLE_SETUP_SAVEWORK));
-						{$IFDEF LITE}
-						if pc<>nil then pc^.Disable;
-						{$ENDIF}
 						new(PCheckBox,Init(ADialog,RTSFULLSIZE,true,BUBBLE_SETUP_FULLSIZE));
 						new(pc,Init(ADialog,RTSBLOCK,true,BUBBLE_SETUP_BLOCK));
 						{$IFDEF NVDI5}

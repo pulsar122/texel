@@ -193,17 +193,6 @@ procedure TSort.Work;
 						new(PSortDialog(ADialog)^.pcb3,InitCollection(ADialog,RTSR3POPUP,RTSR3CYC,id_No,15,psc,false,false,false,BUBBLE_SORT_SORT3));
 						new(rb31,Init(ADialog,RTSR3UP,true,BUBBLE_SORT_3UP));
 						new(rb32,Init(ADialog,RTSR3DOWN,true,BUBBLE_SORT_3DOWN));
-						{$IFDEF LITE}
-						if rb21<>nil then rb21^.Disable;
-						if rb22<>nil then rb22^.Disable;
-						if rb31<>nil then rb31^.Disable;
-						if rb32<>nil then rb32^.Disable;
-						with PSortDialog(ADialog)^ do
-							begin
-								if pcb2<>nil then pcb2^.Disable;
-								if pcb3<>nil then pcb3^.Disable
-							end;
-						{$ENDIF}
 						new(PSortDialog(ADialog)^.rb1,Init(ADialog,RTSRCOLUMNS,true,BUBBLE_SORT_COLUMNS));
 						new(PSortButton,Init(ADialog,RTSRROWS,true,BUBBLE_SORT_ROWS));
 						new(PRadioButton,Init(ADialog,RTSRINSERT,true,BUBBLE_SORT_NUMINS));

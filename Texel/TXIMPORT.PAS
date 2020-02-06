@@ -12,7 +12,6 @@ type
 
 	PImport = ^ TImport;
 	TImport = object(TSubMenu)
-		{$IFNDEF LITE}
 		st      : PStatic;
 		ascii,
 		gdbc    : PDialog;
@@ -30,15 +29,12 @@ type
 		procedure LoadCSV(fname: string);
 		procedure LoadDIF(fname: string);
 		procedure ImportFromClipboard;
-		{$ENDIF}
 	end;
 
 
 
 
 implementation
-
-{$IFNDEF LITE}
 
 uses
 
@@ -4379,6 +4375,5 @@ procedure TImport.ImportFromClipboard;
 			end
 	end;
 
-{$ENDIF}
 
 end.

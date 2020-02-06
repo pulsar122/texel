@@ -495,13 +495,6 @@ function TSave.Save(fname: string; txlver: integer): boolean;
 				DemoAlert(p);
 				exit
 			end;
-		{$IFDEF LITE}
-		if (p^.Parms.Rows>=MAXLINES) or (p^.Parms.Columns>=MAXCOLUMNS) then
-			begin
-				Application^.Alert(p,1,NOTE,MESSAGE_HOME_SAVE1+ltoa(MAXLINES)+MESSAGE_HOME_SAVE2+ltoa(MAXCOLUMNS)+MESSAGE_HOME_SAVE3,BUTTON_OK);
-				exit
-			end;
-		{$ENDIF}
 		buf:=nil;
 		embdirty:=false;
 		pe:=p^.Embedded;
@@ -544,9 +537,6 @@ function TSave.Save(fname: string; txlver: integer): boolean;
 				DemoAlert(p);
 				goto _unreg
 			end;
-		{$IFDEF LITE}
-		if (p^.Parms.Rows>=MAXLINES) or (p^.Parms.Columns>=MAXCOLUMNS) then goto _unreg;
-		{$ENDIF}
 		{$IFNDEF DEMO}
 		test:=true;
 		pack_hor;

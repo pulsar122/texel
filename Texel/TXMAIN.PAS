@@ -313,9 +313,7 @@ type
 		inpstat     : boolean;
 		parser,
 		attrdialog  : PEvent;
-		{$IFNDEF LITE}
 		konstanten,
-		{$ENDIF}
 		pagesetup,
 		insrow,
 		inscol,
@@ -448,9 +446,7 @@ type
 		                     const zBuf: TZielBuf; const ExBuf: TExportBuf; const SrtBuf: TSortBuf; const InfBuf: TInfoBuf; const DiaBuf: TDiagrammBuf;
 		                     ASheet: PCell; ARow,ACol: PWordArray; CNam: PItemList; Parm: PParameterCollection; UFrm: PFormatCollection; ProtoEmb: PProtoEmbedded;
 		                     apwd: TPassWord; bhist: PStringCollection; CFlags,RFlags: PByteArray; prntset: PPRN_SETTINGS; prnrange: integer; drt,checkover: boolean);
-		{$IFNDEF LITE}
 		constructor InitImport(pg: PProgressWindow; rw,cl: integer; const FNam: string; ASheet: PCell; ARow,ACol: PWordArray; CNam: PItemList; breiten: boolean);
-		{$ENDIF}
 		procedure CommonInit1;
 		function CommonInit2(breiten: boolean): boolean;
 		procedure CommonParmInit(setsize: boolean);
@@ -721,9 +717,7 @@ type
 		Formats       : PFormatCollection;
 		OLETypes      : POLECollection;
 		FormCategories: PStringCollection;
-		{$IFNDEF LITE}
 		importscrap   : PHyperDialog;
-		{$ENDIF}
 		ddfiles       : PChar;
 		saveglobal,
 		extglobal     : global_ARRAY;
@@ -763,9 +757,7 @@ type
 		function DDGetPreferredTypes(WindID: integer): string; virtual;
 		function IsInteger(s: string): boolean;
 		function IsNumber(s: string; var num: TNumber; var nums: string; komma2punkt: boolean): boolean;
-		{$IFNDEF LITE}
 		procedure SCChanged(OrgID: integer; Bits: word; Ext: string); virtual;
-		{$ENDIF}
 		procedure PRNChanged(OrgID,Device,Action: integer); virtual;
 {		procedure FNTChanged(OrgID: integer); virtual; ... }
 		function SystemHasPrintDialog: boolean;
@@ -917,7 +909,6 @@ type
 		function ExitDlg(AnIndx: integer): boolean; virtual;
 	end;
 
-{$IFNDEF LITE}
 	PScrapDialog = ^TScrapDialog;
 	TScrapDialog = object(THyperDialog)
 		ext: string;
@@ -925,7 +916,6 @@ type
 		function ExitDlg(AnIndx: integer): boolean; virtual;
 		function OK: boolean; virtual;
 	end;
-{$ENDIF}
 
 
 var
@@ -1319,15 +1309,11 @@ procedure THyperDialog.DDFinished(OrgID,mX,mY,KStat: integer);
 									e:=StrPUpper(GetExtension(s));
 									if e='.IMG' then
 										begin
-											{$IFNDEF LITE}
 											if PCalcWindow(@self)^.grafik<>nil then PGrafik(PCalcWindow(@self)^.grafik)^.Load(s)
-											{$ENDIF}
 										end
 									else if (e='.TXT') or (e='.ASC') then
 										begin
-											{$IFNDEF LITE}
 											if PCalcWindow(@self)^.textobj<>nil then PTextObj(PCalcWindow(@self)^.textobj)^.Load(s)
-											{$ENDIF}
 										end
 									else
 										TexelApp.LoadFile(PCalcWindow(@self),s)
@@ -1407,8 +1393,6 @@ constructor TCalcWindow.Init(psi: PSmallInfo);
 		if abandon<>nil then abandon^.Disable
 	end;
 
-
-{$IFNDEF LITE}
 
 constructor TCalcWindow.InitImport(pg: PProgressWindow; rw,cl: integer; const FNam: string; ASheet: PCell; ARow,ACol: PWordArray; CNam: PItemList; breiten: boolean);
 	var cell   : PCell;
@@ -1492,8 +1476,6 @@ constructor TCalcWindow.InitImport(pg: PProgressWindow; rw,cl: integer; const FN
 		SheetCheckOverflow;
 		Calculate(true)
 	end;
-
-{$ENDIF}
 
 
 constructor TCalcWindow.InitFile(const FNam: string; pg: PProgressWindow; const AParm: TTexelParms; const ADBuf: TDialogBuffer; const ASBuf: TSheetBuffer; const FBuf: TFindBuf; const RBuf: TReplaceBuf; const FlBuf: TFillBuffer;
@@ -1777,9 +1759,6 @@ function TCalcWindow.CommonInit2(breiten: boolean): boolean;
 			if paper<>nil then paper^.Disable;
 		if currvalid then Scroller^.ScrollTo(Parms.ScrlXPos,Parms.ScrlYPos);
 		ArrowMouse;
-		{$IFDEF LITE}
-		if (Parms.Rows>=MAXLINES) or (Parms.Columns>=MAXCOLUMNS) then Application^.Alert(nil,1,NOTE,MESSAGE_HOME_2BIG1+ltoa(MAXLINES)+MESSAGE_HOME_2BIG2+ltoa(MAXCOLUMNS)+MESSAGE_HOME_2BIG3,BUTTON_OK);
-		{$ENDIF}
 		if AppFlag then
 			begin
 				MakeWindow;
@@ -2037,10 +2016,8 @@ procedure TCalcWindow.SetupWindow;
 		textobj:=new(PTextObj,Init(@self,K_ALT+K_SHIFT,Alt_T,RTWMTEXT,RTWM4));
 		new(pide,Init(@self,RTWMDIALOG,RTPOPUPS,RTPDIALOG));
 		oleobject:=new(POLEObject,Init(@self,K_CTRL+K_SHIFT,Ctrl_O,RTWMOBJECT,RTWM4));
-		{$IFNDEF LITE}
 		if oleobject<>nil then
 			if TexelApp.OLETypes<>nil then oleobject^.Enable;
-		{$ENDIF}
 		fill:=new(PFill,Init(@self,RTWMFILL,RTPOPUPS,RTPFILL));
 		if fill<>nil then PFill(fill)^.reihe:=nil;
 		if fill<>nil then fill^.Disable; { !!! }
@@ -2050,9 +2027,7 @@ procedure TCalcWindow.SetupWindow;
 		new(PFormSheet,Init(@self,K_CTRL+K_SHIFT,Ctrl_B,RTWMFORMSHEET,RTWM5));
 		new(pzw,Init(@self,K_ALT+K_SHIFT,Alt_S,RTWMFINDVALUE,RTWM6));
 		new(PSort,Init(@self,K_ALT,Alt_S,RTWMSORT,RTWM6));
-		{$IFNDEF LITE}
 		konstanten:=new(PKonst,Init(@self,K_CTRL,Ctrl_K,RTWMCONST,RTWM6));
-		{$ENDIF}
 		new(PCalculate,Init(@self,K_CTRL,Ctrl_Return,RTWMUPDATE,RTWM6));
 		new(PGoto,Init(@self,RTWMGOTO,nil,false));
 		new(pt,Init(@self,RTWTSAVE,RTWTCSAVE,false,BUBBLE_TOOLBAR_SAVE));
@@ -2087,16 +2062,6 @@ procedure TCalcWindow.SetupWindow;
 		dezminus:=new(PTDezMinus,Init(@self,RTWTDEZMINUS,RTWTCDEZMINUS,false,BUBBLE_TOOLBAR_FMINUS));
 		new(ptd,Init(@self,RTWTDIAGRAM,RTWTCDIAGRAM,false,BUBBLE_TOOLBAR_DIAGRAM));
 		new(PTHome,Init(@self,RTWTHOME,RTWTCHOME,false,BUBBLE_TOOLBAR_HOME));
-		{$IFDEF LITE}
-		if oleobject<>nil then oleobject^.Disable;
-		if export<>nil then export^.Disable;
-		if pzw<>nil then pzw^.Disable;
-		if pide<>nil then pide^.Disable;
-		if textobj<>nil then textobj^.Disable;
-		if grafik<>nil then grafik^.Disable;
-		if diagramm<>nil then diagramm^.Disable;
-		if ptd<>nil then ptd^.Disable;
-		{$ENDIF}
 		Fonts:=nil;
 		PColNames:=nil;
 		PRowFlags:=nil;
@@ -6476,9 +6441,7 @@ procedure TCalcWindow.CopyFromInternalDragDrop(from: PCalcWindow; rs,cs,re,ce,r,
 										end
 								end
 						end;
-					{$IFNDEF LITE}
 					if konstanten<>nil then PKonst(konstanten)^.UpdateList(true);
-					{$ENDIF}
 				end;
 		if from=@self then
 			begin
@@ -12254,7 +12217,6 @@ procedure TCalcWindow.InsertFromClipboard(what,op: integer; empty,transpose,repo
 										if cell^.Typ=CTYPE_EMPTY then checkfont;
 										constcell(rval,ttxt)
 									end
-								{$IFNDEF LITE}
 								else
 									case cell^.Typ of
 									CTYPE_EMPTY:
@@ -12311,7 +12273,6 @@ procedure TCalcWindow.InsertFromClipboard(what,op: integer; empty,transpose,repo
 											end
 										end
 									end
-								{$ENDIF}
 							end
 				end;
 			CTYPE_FORMULA:
@@ -12333,7 +12294,6 @@ procedure TCalcWindow.InsertFromClipboard(what,op: integer; empty,transpose,repo
 											if cell^.Typ=CTYPE_EMPTY then checkfont;
 											if formcellnop(nfunc,ttxt) then exit;
 										end
-									{$IFNDEF LITE}
 									else
 										case cell^.Typ of
 										CTYPE_EMPTY:
@@ -12397,7 +12357,6 @@ procedure TCalcWindow.InsertFromClipboard(what,op: integer; empty,transpose,repo
 												end
 											end
 										end
-									{$ENDIF}
 								end
 							else
 								if bTst(what,INS_VALUE) then
@@ -12407,7 +12366,6 @@ procedure TCalcWindow.InsertFromClipboard(what,op: integer; empty,transpose,repo
 												if cell^.Typ=CTYPE_EMPTY then checkfont;
 												constcell(rval,'')
 											end
-										{$IFNDEF LITE}
 										else
 											case cell^.Typ of
 											CTYPE_EMPTY:
@@ -12468,7 +12426,6 @@ procedure TCalcWindow.InsertFromClipboard(what,op: integer; empty,transpose,repo
 													end
 												end
 											end
-										{$ENDIF}
 									end
 						end
 				end
@@ -12502,10 +12459,6 @@ procedure TCalcWindow.InsertFromClipboard(what,op: integer; empty,transpose,repo
 		if Clipboard=nil then exit;
 		vrnd:=false;
 		ocleared:=false;
-		{$IFDEF LITE}
-		op:=INS_OP_NONE;
-		transpose:=false;
-		{$ENDIF}
 		with Clipboard^ do
 			begin
 				if not(OpenClipboard(false)) then exit;
@@ -12539,7 +12492,6 @@ procedure TCalcWindow.InsertFromClipboard(what,op: integer; empty,transpose,repo
 									re:=Row;
 									cs:=Col;
 									ce:=Col;
-									{$IFNDEF LITE}
 									if transpose then
 										begin
 											if bheader.Width>0 then
@@ -12554,7 +12506,6 @@ procedure TCalcWindow.InsertFromClipboard(what,op: integer; empty,transpose,repo
 												end
 										end
 									else
-									{$ENDIF}
 										begin
 											if bheader.Width>0 then
 												begin
@@ -12576,7 +12527,6 @@ procedure TCalcWindow.InsertFromClipboard(what,op: integer; empty,transpose,repo
 						cmax:=ce;
 						RowsClearOverflow(rs,re,cmin,cmax);
 						ocleared:=true;
-						{$IFNDEF LITE}
 						if transpose then
 							for x:=cs to cs+bheader.Height do
 								begin
@@ -12612,7 +12562,6 @@ procedure TCalcWindow.InsertFromClipboard(what,op: integer; empty,transpose,repo
 										end
 								end
 						else
-						{$ENDIF}
 							for y:=rs to rs+bheader.Height do
 								begin
 									if y>re then
@@ -12701,9 +12650,7 @@ procedure TCalcWindow.InsertFromClipboard(what,op: integer; empty,transpose,repo
 													end
 											end
 									end;
-								{$IFNDEF LITE}
 								if konstanten<>nil then PKonst(konstanten)^.UpdateList(true);
-								{$ENDIF}
 							end;
 						if bread(coffs,2) then goto _fehler;
 						if coffs>0 then
@@ -13319,20 +13266,14 @@ procedure TCalcWindow.Sort(n1,n2,n3,nrs: integer; n1up,n2up,n3up,rows,cse,ebeg,l
 		end;
 
 	function compare: boolean;
-		{$IFNDEF LITE}
 		label _equal1,_equal2;
-		{$ENDIF}
 
 		begin
 			compare:=false;
 			if cell^.Data.Value=0 then
 				begin
 					if qcell^.Data.Value=0 then
-					{$IFDEF LITE}
-						exit;
-					{$ELSE}
 						goto _equal1;
-					{$ENDIF}
 					if not(ebeg) then compare:=true
 				end
 			else
@@ -13366,11 +13307,7 @@ procedure TCalcWindow.Sort(n1,n2,n3,nrs: integer; n1up,n2up,n3up,rows,cse,ebeg,l
 										else
 											if vval>qval then exit
 									end;
-								{$IFDEF LITE}
-								exit
-								{$ELSE}
 								goto _equal1
-								{$ENDIF}
 							end;
 						if (nrs>0) then
 							begin
@@ -13408,7 +13345,6 @@ procedure TCalcWindow.Sort(n1,n2,n3,nrs: integer; n1up,n2up,n3up,rows,cse,ebeg,l
 								else
 									if vtxt>qtxt then exit
 							end;
-						{$IFNDEF LITE}
 						{ erste strings gleich }
 						_equal1:
 						if n2<0 then exit;
@@ -13539,15 +13475,10 @@ procedure TCalcWindow.Sort(n1,n2,n3,nrs: integer; n1up,n2up,n3up,rows,cse,ebeg,l
 							end
 						else
 							if vtxt<qtxt then compare:=true;
-						{$ENDIF}
 					end
 		end;
 
 	begin
-		{$IFDEF LITE}
-		n2:=-1;
-		n3:=-1;
-		{$ELSE}
 		if n2<0 then
 			begin
 				n2:=n3;
@@ -13562,7 +13493,6 @@ procedure TCalcWindow.Sort(n1,n2,n3,nrs: integer; n1up,n2up,n3up,rows,cse,ebeg,l
 				n2up:=n3up;
 				n3:=-1
 			end;
-		{$ENDIF}
 		GetBlock(dblock^.GetText,false,rs,cs,re,ce,dummy,dummy);
 		if (rows and (cs=ce)) or (not(rows) and (rs=re)) or (n1<0) then
 			begin
@@ -14906,10 +14836,8 @@ function TTexelApplication.DemoNervAlert(ende: boolean): boolean;
 destructor TTexelApplication.Done;
 
 	begin
-		{$IFNDEF LITE}
 		if savework<>nil then
 			if setupbuffer.savework=bf_Checked then savework^.Work;
-		{$ENDIF}
 		inherited Done;
 	end;
 
@@ -14995,13 +14923,6 @@ procedure TTexelApplication.InitInstance;
 			end;
 		fnerror:=FE_OK;
 		inherited InitInstance;
-		{$IFDEF LITE}
-		if pci_serno<1 then
-			begin
-				Quit;
-				exit
-			end;
-		{$ENDIF}
 		dispose(psh,Done)
 	end;
 
@@ -15011,9 +14932,6 @@ procedure TTexelApplication.LoadFile(p: PCalcWindow; s: string);
 	    q  : integer;
 
 	begin
-		{$IFDEF LITE}
-		if opennewdoc<>nil then POpen(opennewdoc)^.Load(s)
-		{$ELSE}
 		ext:=StrPUpper(s);
 		if (StrPLeft(ext,7)='HTTP://') or (StrPLeft(ext,6)='FTP://') then
 			begin
@@ -15065,7 +14983,6 @@ procedure TTexelApplication.LoadFile(p: PCalcWindow; s: string);
 						if opennewdoc<>nil then POpen(opennewdoc)^.Load(s)
 					end
 			end
-		{$ENDIF}
 	end;
 
 
@@ -15093,7 +15010,6 @@ procedure TTexelApplication.InitMainWindow;
 
 	begin
 		anz:=0;
-		{$IFNDEF LITE}
 		ret:=fopen(GetHomeDir(false)+'defaults\'+TEXELWORK,0);
 		if ret<0 then ret:=fopen(GetHomeDir(false)+TEXELWORK,0);
 		if ret>=0 then
@@ -15105,7 +15021,6 @@ procedure TTexelApplication.InitMainWindow;
 						if fread(hdl,256,@s[0])=256 then LoadFile(nil,s);
 				fclose(hdl)
 			end;
-		{$ENDIF}
 		if paramcount>0 then
 			begin
 				q:=1;
@@ -15297,7 +15212,6 @@ procedure TTexelApplication.FileSelected(Window: PWindow; OrgID: integer; Group:
 			if Window<>nil then
 				with PCalcWindow(Window)^ do
 					if saveas<>nil then PSaveAs(saveas)^.SaveAs(getxfname(0,TEXELEXTENSION),1);
-		{$IFNDEF LITE}
 		FSEL_EMBED:
 			if Window<>nil then
 				with PCalcWindow(Window)^ do
@@ -15349,7 +15263,6 @@ procedure TTexelApplication.FileSelected(Window: PWindow; OrgID: integer; Group:
 		FSEL_LOADDIF:
 			if import<>nil then
 				while Files<>nil do PImport(import)^.LoadDIF(getxfname(2,'dif'))
-		{$ENDIF}
 		end
 	end;
 
@@ -15528,7 +15441,6 @@ procedure TTexelApplication.HandleKeybd(Stat,Key: integer);
 											PDialog(p)^.Help;
 											exit
 										end
-									{$IFNDEF LITE}
 									else
 										if p^.GetClassName='SpecialCharactersWindow' then
 											begin
@@ -15537,7 +15449,6 @@ procedure TTexelApplication.HandleKeybd(Stat,Key: integer);
 													StrPCopy(helpbuf,GUIDES+TEXELHELP+' '+STG_SPECIALCHARS);
 												goto _aufruf
 											end;
-									{$ENDIF}
 								end;
 							if Exist(DataPath+TEXELHELP) then StrPCopy(helpbuf,DataPath+TEXELHELP)
 							else
@@ -16213,8 +16124,6 @@ function TTexelApplication.IsNumber(s: string; var num: TNumber; var nums: strin
 	end;
 
 
-{$IFNDEF LITE}
-
 procedure TScrapDialog.GetWindowClass(var AWndClass: TWndClass);
 
 	begin
@@ -16275,7 +16184,6 @@ procedure TTexelApplication.SCChanged(OrgID: integer; Bits: word; Ext: string);
 			end
 	end;
 
-{$ENDIF}
 
 
 procedure TTexelApplication.PRNChanged(OrgID,Device,Action: integer);
@@ -16594,7 +16502,6 @@ procedure TTexelApplication.OLEExit(OrgID: integer);
 		inherited OLEExit(OrgID);
 		if OLETypes<>nil then
 			begin
-				{$IFNDEF LITE}
 				p:=MainWindow;
 				while p<>nil do
 					begin
@@ -16611,7 +16518,6 @@ procedure TTexelApplication.OLEExit(OrgID: integer);
 									end;
 						p:=p^.Next
 					end;
-				{$ENDIF}
 				dispose(OLETypes,Done);
 				OLETypes:=nil;
 			end
@@ -16629,7 +16535,6 @@ procedure TTexelApplication.OLGAObjects(OrgID,Rest: integer; Ext,Descr: string);
 				new(OLETypes,Init(Rest+10,10));
 				if OLETypes=nil then exit
 			end;
-		{$IFNDEF LITE}
 		if OLETypes^.Count=0 then
 			begin
 				p:=MainWindow;
@@ -16640,7 +16545,6 @@ procedure TTexelApplication.OLGAObjects(OrgID,Rest: integer; Ext,Descr: string);
 						p:=p^.Next
 					end
 			end;
-		{$ENDIF}
 		new(pole);
 		if pole<>nil then
 			begin
@@ -16991,11 +16895,7 @@ procedure TTexelApplication.InitSheetStructs(var parms: TTexelParms; var shbuf: 
 				Rem2:='';
 				Rem3:='';
 				DocTitle:='';
-				{$IFDEF LITE}
-				Encrypt:=bf_Unchecked;
-				{$ELSE}
 				Encrypt:=bf_Checked;
-				{$ENDIF}
 				Resvd:=0;
 				Created:=gettime;
 				Last:=gettime;
@@ -17202,11 +17102,7 @@ function TTexelApplication.GetAuthorName: string;
 		{$IFDEF DEMO}
 		s:='';
 		{$ELSE}
-		{$IFDEF LITE}
-		s:='';
-		{$ELSE}
 		s:=decode_name(ash_name);
-		{$ENDIF}
 		{$ENDIF}
 		{$ENDIF}
 		if length(s)=0 then s:=GetEnv('USERNAME');

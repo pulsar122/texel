@@ -21,9 +21,6 @@ function KeyCorrect(name,key: string): boolean;
 procedure DemoAlert(p: PWindow);
 procedure ScanFonts(handle,anz: integer; var fcoll: PFontCollection);
 procedure ScanConst(const datapath: string; var pcoll: PParameterCollection);
-{$IFDEF LITE}
-function pci_serno: longint;
-{$ENDIF}
 {$IFNDEF BETA}
 function decode_name(c: PChar): string;
 {$ENDIF}
@@ -146,32 +143,8 @@ function lrc_intersect(r1: LGRECT; var r2: GRECT): boolean;
 	end;
 
 
-{$IFDEF LITE}
-function pci_serno: longint;
-	var pci  : PPCI;
-	    serno: longint;
-
-	begin
-		pci_serno:=0;
-		if GetCookie('_PCI',longint(pci)) then
-			if pci<>nil then
-				if ((pci^.version and $ffff0000)=$00010000) then
-					if assigned(pci^.get_machine_id) then
-						begin
-							serno:=pci^.get_machine_id;
-							if ((serno and $ff000000)=$01000000) then pci_serno:=(serno and $00ffffff)
-						end
-	end;
-{$ENDIF}
-
-
 {$IFNDEF BETA}
 function decode_name(c: PChar): string;
-{$IFDEF LITE}
-	begin
-		decode_name:='Milan-Benutzer'
-	end;
-{$ELSE}
 	var s: string;
 	    q: integer;
 
@@ -181,7 +154,6 @@ function decode_name(c: PChar): string;
 			for q:=1 to length(s) do s[q]:=chr(ord(s[q]) xor 255);
 		decode_name:=StrPTrimF(s)
 	end;
-{$ENDIF}
 {$ENDIF}
 
 
@@ -240,13 +212,6 @@ function KeyCorrect(name,key: string): boolean;
 		{$ENDIF}
 	end;
 {$ELSE}
-{$IFDEF LITE}
-	var dummy: longint;
-
-	begin
-		KeyCorrect:=(GetCookie('_MIL',dummy) and (pci_serno<>0))
-	end;
-{$ELSE}
 	label _raus;
 
 	var s: string;
@@ -269,8 +234,6 @@ function KeyCorrect(name,key: string): boolean;
 		KeyCorrect:=false
 	end;
 {$ENDIF}
-{$ENDIF}
-
 
 procedure DemoAlert(p: PWindow);
 
@@ -279,11 +242,7 @@ procedure DemoAlert(p: PWindow);
 		{$IFDEF DEMO}
 		Application^.Alert(p,1,NOTE,MESSAGE_DEMO_DEMO,BUTTON_OK)
 		{$ELSE}
-		{$IFDEF LITE}
-		Application^.Alert(p,1,NOTE,MESSAGE_DEMO_MILAN,BUTTON_OK)
-		{$ELSE}
 		Application^.Alert(p,1,NOTE,MESSAGE_DEMO_UNREG,BUTTON_OK)
-		{$ENDIF}
 		{$ENDIF}
 	end;
 

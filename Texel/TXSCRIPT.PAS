@@ -74,7 +74,6 @@ const
 var
 
 	cmds,prms: array [0..CMDS_MAX] of PChar;
-	milan    : array [0..CMDS_MAX] of boolean;
 
 
 
@@ -179,9 +178,6 @@ function TScriptHandler.InterpreteScript(pcmd: PChar; var answ: Pipearray): inte
 			tst:=tst+#0;
 			for i:=0 to CMDS_MAX do
 				begin
-					{$IFDEF LITE}
-					if not(milan[i]) then continue;
-					{$ENDIF}
 					if stricomp(@tst[1],cmds[i])=0 then
 						begin
 							CheckCommand:='1';
@@ -190,7 +186,6 @@ function TScriptHandler.InterpreteScript(pcmd: PChar; var answ: Pipearray): inte
 				end;
 		end;
 
-{$IFNDEF LITE}
 	function findtopsheet: PCalcWindow;
 		var pfw  : PWindow;
 		    o1,g1,
@@ -268,7 +263,7 @@ function TScriptHandler.InterpreteScript(pcmd: PChar; var answ: Pipearray): inte
 						end
 				end
 		end;
-{$ENDIF}
+
 	
 	procedure answer(s: string);
 	
@@ -286,7 +281,6 @@ function TScriptHandler.InterpreteScript(pcmd: PChar; var answ: Pipearray): inte
 
 		begin
 			exportfile:=false;
-			{$IFNDEF LITE}
 			if pw^.export=nil then exit;
 			with texbuf do
 				begin
@@ -372,10 +366,9 @@ function TScriptHandler.InterpreteScript(pcmd: PChar; var answ: Pipearray): inte
 						end;
 				end;
 			exportfile:=PExport(pw^.export)^.Export(texbuf,txt2)
-			{$ENDIF}
 		end;
 
-{$IFNDEF LITE}
+
 	procedure getvariable;
 		var ret: real;
 		    w  : longint;
@@ -397,46 +390,38 @@ function TScriptHandler.InterpreteScript(pcmd: PChar; var answ: Pipearray): inte
 				end;
 			answer(ftoa(ret))
 		end;
-{$ENDIF}
+
 
 	procedure GetAllCommands;
 		var len,l: longint;
 		    i    : integer;
-		    full : boolean;
 		    cbuf : pointer;
 		    cp   : PChar;
 	
 		begin
-			{$IFNDEF LITE}
-			full:=true;
-			{$ELSE}
-			full:=false;
-			{$ENDIF}
 			len:=1;
 			for i:=0 to CMDS_MAX do
-				if (full or milan[i]) then
-					begin
-						inc(len,StrLen(cmds[i])+1);
-						l:=StrLen(prms[i]);
-						if (l>0) then inc(len,l+1);
-					end;
+				begin
+					inc(len,StrLen(cmds[i])+1);
+					l:=StrLen(prms[i]);
+					if (l>0) then inc(len,l+1);
+				end;
 			GlobalAlloc(cbuf,len);
 			if cbuf=nil then exit;
 			cp:=cbuf;
 			for i:=0 to CMDS_MAX do
-				if (full or milan[i]) then
-					begin
-						StrCopy(cp,cmds[i]);
-						l:=StrLen(prms[i]);
-						if (l>0) then
-							begin
-								StrCat(cp,' ');
-								StrCat(cp,prms[i]);
-								inc(longint(cp),StrLen(cmds[i])+l+2);
-							end
-						else
-							inc(longint(cp),StrLen(cmds[i])+1);
-					end;
+				begin
+					StrCopy(cp,cmds[i]);
+					l:=StrLen(prms[i]);
+					if (l>0) then
+						begin
+							StrCat(cp,' ');
+							StrCat(cp,prms[i]);
+							inc(longint(cp),StrLen(cmds[i])+l+2);
+						end
+					else
+						inc(longint(cp),StrLen(cmds[i])+1);
+				end;
 			cp^:=#0;
 			answ[5]:=integer(HiWord(cbuf));
 			answ[6]:=integer(LoWord(cbuf));
@@ -447,7 +432,6 @@ function TScriptHandler.InterpreteScript(pcmd: PChar; var answ: Pipearray): inte
 		if pcmd=nil then exit;
 		if pcmd^=#0 then exit;
 		InterpreteScript:=GSACK_OK;
-		{$IFNDEF LITE}
 		if IsCmdNr(CMD_RETURNCELLVALUE) then
 			begin
 				if not(NextToken) then goto _error;
@@ -973,7 +957,6 @@ function TScriptHandler.InterpreteScript(pcmd: PChar; var answ: Pipearray): inte
 				new(PCalcWindow,Init(nil));
 				exit
 			end;
-		{$ENDIF}
 		if IsCmdNr(CMD_APPGETLONGNAME) then
 			begin
 				answer(TEXELNAME);
@@ -1009,44 +992,44 @@ function TScriptHandler.InterpreteScript(pcmd: PChar; var answ: Pipearray): inte
 
 
 begin
-	cmds[CMD_APPGETLONGNAME]:='AppGetLongName';		milan[CMD_APPGETLONGNAME]:=true;		prms[CMD_APPGETLONGNAME]:='';
-	cmds[CMD_CELL]:='Cell';												milan[CMD_CELL]:=false;							prms[CMD_CELL]:=CMD_DOC_CELL;
-	cmds[CMD_CHECKAPP]:='CheckApp';								milan[CMD_CHECKAPP]:=true;					prms[CMD_CHECKAPP]:=CMD_DOC_CHECKAPP;
-	cmds[CMD_CHECKCOMMAND]:='CheckCommand';				milan[CMD_CHECKCOMMAND]:=true;			prms[CMD_CHECKCOMMAND]:=CMD_DOC_CHECKCOMMAND;
-	cmds[CMD_CLOSE]:='Close';											milan[CMD_CLOSE]:=false;						prms[CMD_CLOSE]:=CMD_DOC_CLOSE;
-	cmds[CMD_COPY]:='Copy';												milan[CMD_COPY]:=false;							prms[CMD_COPY]:=CMD_DOC_COPY;
-	cmds[CMD_CUT]:='Cut';													milan[CMD_CUT]:=false;							prms[CMD_CUT]:=CMD_DOC_CUT;
-	cmds[CMD_DELETE]:='Delete';										milan[CMD_DELETE]:=false;						prms[CMD_DELETE]:=CMD_DOC_DELETE;
-	cmds[CMD_EXPORT]:='Export';										milan[CMD_EXPORT]:=false;						prms[CMD_EXPORT]:=CMD_DOC_EXPORT;
-	cmds[CMD_GETALLCOMMANDS]:='GetAllCommands';		milan[CMD_GETALLCOMMANDS]:=true;		prms[CMD_GETALLCOMMANDS]:='';
-	cmds[CMD_GETCELL]:='GetCell';									milan[CMD_GETCELL]:=false;					prms[CMD_GETCELL]:=CMD_DOC_GETCELL;
-	cmds[CMD_GETCELLFORMULA]:='GetCellFormula';		milan[CMD_GETCELLFORMULA]:=false;		prms[CMD_GETCELLFORMULA]:=CMD_DOC_GETCELLFORMULA;
-	cmds[CMD_GETCELLVALUE]:='GetCellValue';				milan[CMD_GETCELLVALUE]:=false;			prms[CMD_GETCELLVALUE]:=CMD_DOC_GETCELLVALUE;
-	cmds[CMD_GETCOLUMNS]:='GetColumns';						milan[CMD_GETCOLUMNS]:=false;				prms[CMD_GETCOLUMNS]:=CMD_DOC_GETCOLUMNS;
-	cmds[CMD_GETFRONT]:='GetFront';								milan[CMD_GETFRONT]:=false;					prms[CMD_GETFRONT]:='';
-	cmds[CMD_GETRANGE]:='GetRange';								milan[CMD_GETRANGE]:=false;					prms[CMD_GETRANGE]:=CMD_DOC_GETRANGE;
-	cmds[CMD_GETROWS]:='GetRows';									milan[CMD_GETROWS]:=false;					prms[CMD_GETROWS]:=CMD_DOC_GETROWS;
-	cmds[CMD_GETSELECTION]:='GetSelection';				milan[CMD_GETSELECTION]:=false;			prms[CMD_GETSELECTION]:=CMD_DOC_GETSELECTION;
-	cmds[CMD_GETVARIABLE]:='GetVariable';					milan[CMD_GETVARIABLE]:=false;			prms[CMD_GETVARIABLE]:=CMD_DOC_GETVARIABLE;
-	cmds[CMD_GOTO]:='Goto';												milan[CMD_GOTO]:=false;							prms[CMD_GOTO]:=CMD_DOC_GOTO;
-	cmds[CMD_ISBLOCKUSED]:='IsBlockUsed';					milan[CMD_ISBLOCKUSED]:=false;			prms[CMD_ISBLOCKUSED]:=CMD_DOC_ISBLOCKUSED;
-	cmds[CMD_ISCELLCONST]:='IsCellConst';					milan[CMD_ISCELLCONST]:=false;			prms[CMD_ISCELLCONST]:=CMD_DOC_ISCELLCONST;
-	cmds[CMD_ISCELLEMPTY]:='IsCellEmpty';					milan[CMD_ISCELLEMPTY]:=false;			prms[CMD_ISCELLEMPTY]:=CMD_DOC_ISCELLEMPTY;
-	cmds[CMD_ISCELLFORMULA]:='IsCellFormula';			milan[CMD_ISCELLFORMULA]:=false;		prms[CMD_ISCELLFORMULA]:=CMD_DOC_ISCELLFORMULA;
-	cmds[CMD_ISCELLTEXT]:='IsCellText';						milan[CMD_ISCELLTEXT]:=false;				prms[CMD_ISCELLTEXT]:=CMD_DOC_ISCELLTEXT;
-	cmds[CMD_NEW]:='New';													milan[CMD_NEW]:=false;							prms[CMD_NEW]:='';
-	cmds[CMD_OPEN]:='Open';												milan[CMD_OPEN]:=false;							prms[CMD_OPEN]:=CMD_DOC_OPEN;
-	cmds[CMD_PASTE]:='Paste';											milan[CMD_PASTE]:=false;						prms[CMD_PASTE]:=CMD_DOC_PASTE;
-	cmds[CMD_PRINT]:='Print';											milan[CMD_PRINT]:=false;						prms[CMD_PRINT]:=CMD_DOC_PRINT;
-	cmds[CMD_QUIT]:='Quit';												milan[CMD_QUIT]:=true;							prms[CMD_QUIT]:='';
-	cmds[CMD_RECALC]:='Recalc';										milan[CMD_RECALC]:=false;						prms[CMD_RECALC]:=CMD_DOC_RECALC;
-	cmds[CMD_RETURNCELLVALUE]:='ReturnCellValue';	milan[CMD_RETURNCELLVALUE]:=false;	prms[CMD_RETURNCELLVALUE]:=CMD_DOC_RETURNCELLVALUE;
-	cmds[CMD_SAVE]:='Save';												milan[CMD_SAVE]:=false;							prms[CMD_SAVE]:=CMD_DOC_SAVE;
-	cmds[CMD_SAVEAS]:='SaveAs';										milan[CMD_SAVEAS]:=false;						prms[CMD_SAVEAS]:=CMD_DOC_SAVEAS;
-	cmds[CMD_SELECT]:='Select';										milan[CMD_SELECT]:=false;						prms[CMD_SELECT]:=CMD_DOC_SELECT;
-	cmds[CMD_SELECTALL]:='SelectAll';							milan[CMD_SELECTALL]:=false;				prms[CMD_SELECTALL]:=CMD_DOC_SELECTALL;
-	cmds[CMD_SETCELL]:='SetCell';									milan[CMD_SETCELL]:=false;					prms[CMD_SETCELL]:=CMD_DOC_SETCELL;
-	cmds[CMD_SETCOLOR]:='SetColor';								milan[CMD_SETCOLOR]:=false;					prms[CMD_SETCOLOR]:=CMD_DOC_SETCOLOR;
-	cmds[CMD_SETTEXTCOLOR]:='SetTextColor';				milan[CMD_SETTEXTCOLOR]:=false;			prms[CMD_SETTEXTCOLOR]:=CMD_DOC_SETTEXTCOLOR;
-	cmds[CMD_TOFRONT]:='ToFront';									milan[CMD_TOFRONT]:=false;					prms[CMD_TOFRONT]:=CMD_DOC_TOFRONT;
+	cmds[CMD_APPGETLONGNAME]:='AppGetLongName';		prms[CMD_APPGETLONGNAME]:='';
+	cmds[CMD_CELL]:='Cell';												prms[CMD_CELL]:=CMD_DOC_CELL;
+	cmds[CMD_CHECKAPP]:='CheckApp';								prms[CMD_CHECKAPP]:=CMD_DOC_CHECKAPP;
+	cmds[CMD_CHECKCOMMAND]:='CheckCommand';				prms[CMD_CHECKCOMMAND]:=CMD_DOC_CHECKCOMMAND;
+	cmds[CMD_CLOSE]:='Close';											prms[CMD_CLOSE]:=CMD_DOC_CLOSE;
+	cmds[CMD_COPY]:='Copy';												prms[CMD_COPY]:=CMD_DOC_COPY;
+	cmds[CMD_CUT]:='Cut';													prms[CMD_CUT]:=CMD_DOC_CUT;
+	cmds[CMD_DELETE]:='Delete';										prms[CMD_DELETE]:=CMD_DOC_DELETE;
+	cmds[CMD_EXPORT]:='Export';										prms[CMD_EXPORT]:=CMD_DOC_EXPORT;
+	cmds[CMD_GETALLCOMMANDS]:='GetAllCommands';		prms[CMD_GETALLCOMMANDS]:='';
+	cmds[CMD_GETCELL]:='GetCell';									prms[CMD_GETCELL]:=CMD_DOC_GETCELL;
+	cmds[CMD_GETCELLFORMULA]:='GetCellFormula';		prms[CMD_GETCELLFORMULA]:=CMD_DOC_GETCELLFORMULA;
+	cmds[CMD_GETCELLVALUE]:='GetCellValue';				prms[CMD_GETCELLVALUE]:=CMD_DOC_GETCELLVALUE;
+	cmds[CMD_GETCOLUMNS]:='GetColumns';						prms[CMD_GETCOLUMNS]:=CMD_DOC_GETCOLUMNS;
+	cmds[CMD_GETFRONT]:='GetFront';								prms[CMD_GETFRONT]:='';
+	cmds[CMD_GETRANGE]:='GetRange';								prms[CMD_GETRANGE]:=CMD_DOC_GETRANGE;
+	cmds[CMD_GETROWS]:='GetRows';									prms[CMD_GETROWS]:=CMD_DOC_GETROWS;
+	cmds[CMD_GETSELECTION]:='GetSelection';				prms[CMD_GETSELECTION]:=CMD_DOC_GETSELECTION;
+	cmds[CMD_GETVARIABLE]:='GetVariable';					prms[CMD_GETVARIABLE]:=CMD_DOC_GETVARIABLE;
+	cmds[CMD_GOTO]:='Goto';												prms[CMD_GOTO]:=CMD_DOC_GOTO;
+	cmds[CMD_ISBLOCKUSED]:='IsBlockUsed';					prms[CMD_ISBLOCKUSED]:=CMD_DOC_ISBLOCKUSED;
+	cmds[CMD_ISCELLCONST]:='IsCellConst';					prms[CMD_ISCELLCONST]:=CMD_DOC_ISCELLCONST;
+	cmds[CMD_ISCELLEMPTY]:='IsCellEmpty';					prms[CMD_ISCELLEMPTY]:=CMD_DOC_ISCELLEMPTY;
+	cmds[CMD_ISCELLFORMULA]:='IsCellFormula';			prms[CMD_ISCELLFORMULA]:=CMD_DOC_ISCELLFORMULA;
+	cmds[CMD_ISCELLTEXT]:='IsCellText';						prms[CMD_ISCELLTEXT]:=CMD_DOC_ISCELLTEXT;
+	cmds[CMD_NEW]:='New';													prms[CMD_NEW]:='';
+	cmds[CMD_OPEN]:='Open';												prms[CMD_OPEN]:=CMD_DOC_OPEN;
+	cmds[CMD_PASTE]:='Paste';											prms[CMD_PASTE]:=CMD_DOC_PASTE;
+	cmds[CMD_PRINT]:='Print';											prms[CMD_PRINT]:=CMD_DOC_PRINT;
+	cmds[CMD_QUIT]:='Quit';												prms[CMD_QUIT]:='';
+	cmds[CMD_RECALC]:='Recalc';										prms[CMD_RECALC]:=CMD_DOC_RECALC;
+	cmds[CMD_RETURNCELLVALUE]:='ReturnCellValue';	prms[CMD_RETURNCELLVALUE]:=CMD_DOC_RETURNCELLVALUE;
+	cmds[CMD_SAVE]:='Save';												prms[CMD_SAVE]:=CMD_DOC_SAVE;
+	cmds[CMD_SAVEAS]:='SaveAs';										prms[CMD_SAVEAS]:=CMD_DOC_SAVEAS;
+	cmds[CMD_SELECT]:='Select';										prms[CMD_SELECT]:=CMD_DOC_SELECT;
+	cmds[CMD_SELECTALL]:='SelectAll';							prms[CMD_SELECTALL]:=CMD_DOC_SELECTALL;
+	cmds[CMD_SETCELL]:='SetCell';									prms[CMD_SETCELL]:=CMD_DOC_SETCELL;
+	cmds[CMD_SETCOLOR]:='SetColor';								prms[CMD_SETCOLOR]:=CMD_DOC_SETCOLOR;
+	cmds[CMD_SETTEXTCOLOR]:='SetTextColor';				prms[CMD_SETTEXTCOLOR]:=CMD_DOC_SETTEXTCOLOR;
+	cmds[CMD_TOFRONT]:='ToFront';									prms[CMD_TOFRONT]:=CMD_DOC_TOFRONT;
 end.

@@ -108,9 +108,7 @@ type
 
 	PTDiagram = ^TTDiagram;
 	TTDiagram = object(TColorToolbar)
-		{$IFNDEF LITE}
 		procedure Work; virtual;
-		{$ENDIF}
 	end;
 
 	PTHome = ^TTHome;
@@ -802,15 +800,11 @@ procedure TTPercent.Work;
 	end;
 
 
-{$IFNDEF LITE}
-
 procedure TTDiagram.Work;
 
 	begin
 		PDiagram(PCalcWindow(Parent)^.diagramm)^.CreateDiagramFromBlock
 	end;
-
-{$ENDIF}
 
 
 procedure TTHome.Work;

@@ -55,7 +55,6 @@ function TInfoDialog.OK: boolean;
 
 
 function TInfoDialog.ExitDlg(AnIndx: integer): boolean;
-{$IFNDEF LITE}
 	label _pagain;
 
 	var p    : PDialog;
@@ -67,11 +66,9 @@ function TInfoDialog.ExitDlg(AnIndx: integer): boolean;
 	    	newpw,
 	    	checkpw: string[21]
 	    end;
-{$ENDIF}
 
 	begin
 		ExitDlg:=false;
-		{$IFNDEF LITE}
 		if AnIndx=RTIPASSWORD then
 			begin
 				pcw:=PCalcWindow(Parent);
@@ -128,7 +125,6 @@ function TInfoDialog.ExitDlg(AnIndx: integer): boolean;
 					end;
 				TexelApp.DeactivateExtResource
 			end
-		{$ENDIF}
 	end;
 
 
@@ -167,10 +163,6 @@ procedure TInfo.Work;
 							if not(TexelApp.HelpAvailable(false)) then pb^.Disable;
 						new(PButton,Init(ADialog,RTIOK,id_OK,true,BUBBLE_GENERAL_OK));
 						new(pb,Init(ADialog,RTIPASSWORD,id_No,true,BUBBLE_INFO_PASSWORD));
-						{$IFDEF LITE}
-						if pb<>nil then pb^.Disable;
-						if pc<>nil then pc^.Disable;
-						{$ENDIF}
 						new(PButton,Init(ADialog,RTIABBRUCH,id_Cancel,true,BUBBLE_GENERAL_CANCEL));
 						ADialog^.TransferBuffer:=@p^.infobuf
 					end

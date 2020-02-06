@@ -77,13 +77,8 @@ const
 	{$ENDIF}
 	TEXELTEMPPATH     = 'Temp\';
 	TEXELTIMER        =    2000;
-	{$IFDEF LITE}
-	MAXLINES          =      64;
-	MAXCOLUMNS        =      32;
-	{$ELSE}
 	MAXLINES          =   16384;
 	MAXCOLUMNS        =     702;
-	{$ENDIF}
 	ARGTRENNSEMIKOLON = ';';
 	ARGTRENNKOMMA     = ',';
 	DEZTRENNPUNKT     = '.';
@@ -636,16 +631,6 @@ type
 		reserved0,
 		reserved1: longint
 	end;
-
-{$IFDEF LITE}
-	PPCI = ^TPCI;
-	TPCI = record
-		subjar,
-		version                  : longint;
-		find_pci_device          : procedure;
-		find_pci_classcode       : procedure;		read_config_byte         : procedure;		read_config_word         : procedure;		read_config_longword     : procedure;		fast_read_config_byte    : procedure;		fast_read_config_word    : procedure;		fast_read_config_longword: procedure;		write_config_byte        : procedure;		write_config_word        : procedure;		write_config_longword    : procedure;		hook_interrupt           : procedure;		unhook_interrupt         : procedure;		special_cycle            : procedure;		get_routing              : procedure;		set_interrupt            : procedure;		get_resource             : procedure;		get_card_used            : procedure;		set_card_used            : procedure;		read_mem_byte            : procedure;		read_mem_word            : procedure;		read_mem_longword        : procedure;		fast_read_mem_byte       : procedure;		fast_read_mem_word       : procedure;		fast_read_mem_longword   : procedure;		write_mem_byte           : procedure;		write_mem_word           : procedure;		write_mem_longword       : procedure;		read_io_byte             : procedure;		read_io_word             : procedure;		read_io_longword         : procedure;		fast_read_io_byte        : procedure;		fast_read_io_word        : procedure;		fast_read_io_longword    : procedure;		write_io_byte            : procedure;		write_io_word            : procedure;		write_io_longword        : procedure;		get_machine_id           : function: longint;		get_pagesize             : procedure;		virt_to_bus              : procedure;		bus_to_virt              : procedure;		virt_to_phys             : procedure;		phys_to_virt             : procedure;
-	end;
-{$ENDIF}
 
 	UFSLPtr = ^UFSL;
 	UFSL    = record

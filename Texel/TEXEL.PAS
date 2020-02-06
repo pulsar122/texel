@@ -15,8 +15,7 @@
 	------|-----------|-------------------|------------------
   Beta  | BETA      | BETA ENGLISH      | BETA FRENCH      
   Final |           | ENGLISH           | FRENCH           
-  Demo  | BETA DEMO | BETA DEMO ENGLISH | BETA DEMO FRENCH 
-  Home  | LITE      | ENGLISH LITE      | FRENCH LITE       }
+  Demo  | BETA DEMO | BETA DEMO ENGLISH | BETA DEMO FRENCH }
 
 {$B+,D-,G-,I-,L-,N-,P-,Q-,R-,S-,T-,V-,X+,Z-}
 

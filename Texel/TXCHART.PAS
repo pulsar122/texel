@@ -12,11 +12,9 @@ type
 	
 	PDiagram = ^TDiagram;
 	TDiagram = object(TKeyMenu)
-		{$IFNDEF LITE}
 		procedure Work; virtual;
 		procedure SetFile(fname: string);
 		procedure CreateDiagramFromBlock;
-		{$ENDIF}
 	end;
 
 
@@ -30,8 +28,6 @@ uses
 	Objects,OTypes,OProcs,ODialogs,
 	txrsc,txlang,txtypes,txvalida,txattr,txfont,txmain;
 
-
-{$IFNDEF LITE}
 
 type
 
@@ -1414,7 +1410,5 @@ procedure TDiagram.CreateDiagramFromBlock;
 						end;
 		Application^.Bing
 	end;
-
-{$ENDIF}
 
 end.

@@ -13,7 +13,6 @@ type
 
 	PExport = ^TExport;
 	TExport = object(TKeyMenu)
-		{$IFNDEF LITE}
 		exflt,
 		cmax,
 		rmax,
@@ -46,7 +45,6 @@ type
 		procedure SaveHTML(fname: string; const texbuf: TExportBuf);
 		procedure SaveUDO(fname: string; const texbuf: TExportBuf);
 		procedure SaveTXL(fname: string; const texbuf: TExportBuf);
-		{$ENDIF}
 	end;
 
 
@@ -54,7 +52,6 @@ type
 
 implementation
 
-{$IFNDEF LITE}
 
 uses
 
@@ -3281,7 +3278,5 @@ procedure TExport.SaveTXL(fname: string; const texbuf: TExportBuf);
 		_raus:
 		ArrowMouse
 	end;
-
-{$ENDIF}
 
 end.

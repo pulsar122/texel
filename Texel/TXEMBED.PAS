@@ -12,25 +12,19 @@ type
 
 	POLEObject = ^TOLEObject;
 	TOLEObject = object(TKeyMenu)
-		{$IFNDEF LITE}
 		procedure Work; virtual;
-		{$ENDIF}
 	end;
 
 	PGrafik = ^TGrafik;
 	TGrafik = object(TKeyMenu)
-		{$IFNDEF LITE}
 		procedure Work; virtual;
 		procedure Load(fname: string);
-		{$ENDIF}
 	end;
 
 	PTextObj = ^TTextObj;
 	TTextObj = object(TKeyMenu)
-		{$IFNDEF LITE}
 		procedure Work; virtual;
 		procedure Load(fname: string);
-		{$ENDIF}
 	end;
 	
 	PObjects = ^TObjects;
@@ -40,9 +34,7 @@ type
 
 	PInsertDialogElement = ^ TInsertDialogElement;
 	TInsertDialogElement = object(TSubMenu)
-		{$IFNDEF LITE}
 		procedure HandleMenu(Indx: integer); virtual;
-		{$ENDIF}
 	end;
 
 
@@ -69,7 +61,6 @@ type
 		procedure Work; virtual;
 	end;
 
-{$IFNDEF LITE}
 
 	POLEDialog = ^TOLEDialog;
 	TOLEDialog = object(THyperDialog)
@@ -314,8 +305,6 @@ procedure TInsertDialogElement.HandleMenu(Indx: integer);
 			{ ... };
 		end
 	end;
-
-{$ENDIF}
 
 
 procedure TObjects.HandleMenu(Indx: integer);

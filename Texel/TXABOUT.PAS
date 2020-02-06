@@ -38,9 +38,6 @@ type
 	PAboutDialog = ^TAboutDialog;
 	TAboutDialog = object(THyperDialog)
 		procedure EndDlg(Indx: integer; DblClick: boolean); virtual;
-		{$IFDEF LITE}
-		function ExitDlg(AnIndx: integer): boolean; virtual;
-		{$ENDIF}
 	end;
 
 
@@ -64,21 +61,6 @@ procedure TAboutDialog.EndDlg(Indx: integer; DblClick: boolean);
 		inherited EndDlg(Indx,DblClick)
 	end;
 
-
-{$IFDEF LITE}
-
-function TAboutDialog.ExitDlg(AnIndx: integer): boolean;
-
-	begin
-		ExitDlg:=false;
-		if AnIndx=RTAUPDATE then
-			begin
-				Application^.Alert(nil,1,NO_ICON,MESSAGE_ABOUT_UPGRADE,BUTTON_OK);
-				SetDefaultButton(RTAOK)
-			end
-	end;
-
-{$ENDIF}
 
 
 procedure TAbout.Work;
@@ -127,12 +109,7 @@ procedure TAbout.Work;
 								else
 									p^.SetText('Name:     '+regname)
 								{$ELSE}
-								{$IFDEF LITE}
-								sertxt:=ltoa(pci_serno);
-								p^.SetText('Home/Milan-Version (SerNo #'+StrPFill(8-length(sertxt),'0')+sertxt+')')
-								{$ELSE}
 								p^.SetText('Name:     '+decode_name(ash_name))
-								{$ENDIF}
 								{$ENDIF}
 								{$ENDIF}
 							end;
@@ -149,11 +126,7 @@ procedure TAbout.Work;
 								{$IFDEF BETA}
 								if length(regkey)>0 then sertxt:='   Betaversion! GÅltig bis '+EXPIRESTR+'.';
 								{$ELSE}
-								{$IFDEF LITE}
-								sertxt:='Legal nur auf einem Milan zu benutzen.';
-								{$ELSE}
 								sertxt:='Reg.-Nr.: '+decode_name(ash_serno);
-								{$ENDIF}
 								{$ENDIF}
 								{$ENDIF}
 								serst^.SetText(sertxt)
@@ -167,19 +140,12 @@ procedure TAbout.Work;
 							end;
 						new(pc,Init(ADialog,RTAASH,''));
 						if pc<>nil then pc^.ID:=id_NoExit;
-						{$IFDEF LITE}
-						new(pb,Init(ADialog,RTAUPDATE,id_No,true,BUBBLE_ABOUT_UPDATE));
-						if pb<>nil then pb^.Unhide;
-						{$ENDIF}
 						new(PButton,Init(ADialog,RTAOK,id_OK,true,BUBBLE_ABOUT_OK))
 					end;
 				TexelApp.DeactivateExtResource
 			end;
 		if ADialog<>nil then
 			begin
-				{$IFDEF LITE}
-				ADialog^.SetDefaultButton(RTAUPDATE);
-				{$ENDIF}
 				ADialog^.MakeWindow
 			end
 	end;

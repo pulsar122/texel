@@ -188,7 +188,6 @@ procedure THelp.Work;
 								PDialog(p)^.Help;
 								exit
 							end
-						{$IFNDEF LITE}
 						else
 							if p^.GetClassName='SpecialCharactersWindow' then
 								begin
@@ -197,7 +196,6 @@ procedure THelp.Work;
 										StrPCopy(helpbuf,GUIDES+TEXELHELP+' '+STG_SPECIALCHARS);
 									goto _aufruf
 								end;
-						{$ENDIF}
 					end;
 				if Exist(TexelApp.DataPath+TEXELHELP) then StrPCopy(helpbuf,TexelApp.DataPath+TEXELHELP)
 				else

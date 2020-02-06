@@ -60,7 +60,6 @@ type
 		procedure SetText(ATextString: string); virtual;
 	end;
 
-{$IFNDEF LITE}
 	PImportBox = ^TImportBox;
 	TImportBox = object(TComboBox)
 		function CreatePopup: boolean; virtual;
@@ -97,7 +96,6 @@ type
 		css: PComboBox;
 		procedure Work; virtual;
 	end;
-{$ENDIF}
 
 {$IFNDEF WDIALOG}
 	PPrintPercBox = ^TPrintPercBox;
@@ -204,7 +202,6 @@ procedure TProgressWindow.SetMax(AMax: longint);
 	end;
 
 
-{$IFNDEF LITE}
 
 function TImportBox.CreatePopup: boolean;
 
@@ -309,7 +306,6 @@ procedure TExportFilterBox.SetValue(Sel: integer);
 		inherited SetValue(Sel)
 	end;
 
-{$ENDIF}
 
 
 {$IFNDEF WDIALOG}

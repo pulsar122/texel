@@ -26,7 +26,6 @@ uses
 	txrsc,txlang,txtypes,txmain;
 
 
-{$IFNDEF LITE}
 type
 
 	PZielwertDialog = ^TZielwertDialog;
@@ -213,14 +212,11 @@ function TZielwertDialog.ExitDlg(AnIndx: integer): boolean;
 		end
 	end;
 
-{$ENDIF}
-
 
 procedure TZielwert.Work;
 	var pb: PButton;
 
 	begin
-		{$IFNDEF LITE}
 		if ADialog=nil then
 			begin
 				TexelApp.ActivateExtResource;
@@ -247,7 +243,6 @@ procedure TZielwert.Work;
 				if PZielwertDialog(ADialog)^.st<>nil then PZielwertDialog(ADialog)^.st^.SetText(STRING_FINDVAL_STATUS+':');
 				ADialog^.MakeWindow
 			end
-		{$ENDIF}
 	end;
 
 end.

@@ -134,12 +134,10 @@ procedure TInsertDialog.CheckButtons;
 		else
 			begin
 				rb1^.Enable;
-				{$IFNDEF LITE}
 				rb2^.Enable;
 				rb3^.Enable;
 				rb4^.Enable;
 				rb5^.Enable;
-				{$ENDIF}
 				cb^.Enable
 			end
 	end;
@@ -216,16 +214,6 @@ procedure TInsert.Work;
 						new(PInsertDialog(ADialog)^.rb5,Init(ADialog,RTINDIV,true,BUBBLE_INSVAL_OPDIV));
 						new(PInsertDialog(ADialog)^.cb,Init(ADialog,RTINEMPTY,true,BUBBLE_INSVAL_EMPTY));
 						new(pc,Init(ADialog,RTINTRANSPOSE,true,BUBBLE_INSVAL_TRANSPOSE));
-						{$IFDEF LITE}
-						if pc<>nil then pc^.Disable;
-						with PInsertDialog(ADialog)^ do
-							begin
-								if rb2<>nil then rb2^.Disable;
-								if rb3<>nil then rb3^.Disable;
-								if rb4<>nil then rb4^.Disable;
-								if rb5<>nil then rb5^.Disable;
-							end;
-						{$ENDIF}
 						new(pb,Init(ADialog,RTINHELP,id_Help,false,BUBBLE_GENERAL_HELP));
 						if pb<>nil then
 							if not(TexelApp.HelpAvailable(false)) then pb^.Disable;

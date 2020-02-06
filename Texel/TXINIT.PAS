@@ -74,11 +74,7 @@ constructor TStartupHandler.Init(AParent: PEventObject);
 		{$IFNDEF BETA}
 		if not(KeyCorrect('','')) then
 			begin
-				{$IFDEF LITE}
-				Application^.Alert(nil,1,STOP,MESSAGE_STARTUP_MILAN,BUTTON_OK);
-				{$ELSE}
 				Application^.Alert(nil,1,STOP,MESSAGE_STARTUP_UNREG,BUTTON_OK);
-				{$ENDIF}
 				Application^.Quit;
 				inherited Done;
 				fail
@@ -139,9 +135,7 @@ constructor TStartupHandler.Init(AParent: PEventObject);
 				ExtResource:=false;
 				GSActive:=false;
 				ddfiles:=nil;
-				{$IFNDEF LITE}
 				importscrap:=nil;
-				{$ENDIF}
 			end;
 		BusyMouse;
 		opp:=OpenPrivateProfile(TEXELINF);
@@ -196,28 +190,12 @@ constructor TStartupHandler.Init(AParent: PEventObject);
 				fail
 			end;
 		{$ENDIF}
-		{$IFDEF LITE}
-		if TexelApp.DemoNervAlert(false) then
-			begin
-				Application^.Quit;
-				exit
-			end;
-		if not(KeyCorrect('','')) then
-			begin
-				Application^.Quit;
-				exit
-			end;
-		{$ENDIF}
 		sta:=nil;
 		new(startup,Init(nil,'',RTSTART));
 		if startup<>nil then
 			begin
 				new(st,Init(startup,RTSTVERSION,13,false,''));
-				{$IFDEF LITE}
-				if st<>nil then st^.SetText('Home (Milan)');
-				{$ELSE}
 				if st<>nil then st^.SetText('Version '+VtoS(TEXELVER));
-				{$ENDIF}
 				new(sta,Init(startup,RTSTACTION,30,false,''));
 				SetAction('');
 				with startup^ do
@@ -351,23 +329,15 @@ constructor TStartupHandler.Init(AParent: PEventObject);
 				import:=new(PImport,Init(nil,RTMIMPORT,RTPOPUPS,RTPIMPORT));
 				if import<>nil then
 					begin
-						{$IFDEF LITE}
-						import^.Disable
-						{$ELSE}
 						PImport(import)^.ascii:=nil;
 						PImport(import)^.gdbc:=nil;
 						PImport(import)^.quelle:=''
-						{$ENDIF}
 					end
 			end;
 		new(pspc,Init(nil,K_SHIFT,Shift_Ins,RTMSPECIALCHARS,RTM4));
 		TexelApp.options:=new(POptions,Init(nil,K_CTRL+K_SHIFT,Ctrl_E,RTMOPTIONS,RTM4));
 		TexelApp.saveopt:=new(PSaveOpt,Init(nil,K_CTRL+K_SHIFT,Ctrl_S,RTMSAVEOPTIONS,RTM4));
 		TexelApp.savework:=new(PSaveWork,Init(nil,RTMSAVEWORK,nil,false));
-		{$IFDEF LITE}
-		if pspc<>nil then pspc^.Disable;
-		if TexelApp.savework<>nil then TexelApp.savework^.Disable;
-		{$ENDIF}
 		TexelApp.webhelp:=new(PWeb,Init(nil,RTMHELPASH,nil,false));
 		if TexelApp.webhelp<>nil then TexelApp.webhelp^.Disable;
 		TexelApp.websupport:=new(PWeb,Init(nil,RTMHELPSUPPORT,nil,false));

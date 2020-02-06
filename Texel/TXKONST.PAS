@@ -28,7 +28,6 @@ type
 
 implementation
 
-{$IFNDEF LITE}
 
 uses
 
@@ -363,14 +362,11 @@ function TKonstDialog.ExitDlg(AnIndx: integer): boolean;
 		end
 	end;
 
-{$ENDIF}
-
 
 procedure TKonst.Work;
 	var pb: PButton;
 
 	begin
-		{$IFNDEF LITE}
 		if ADialog=nil then
 			begin
 				ADialog:=new(PKonstDialog,Init(PCalcWindow(Parent),TEXELWINDPREFIX+TITLE_CONST,STG_CONST,ICNTITLE_CONST,RTCONST));
@@ -398,16 +394,13 @@ procedure TKonst.Work;
 				ADialog^.MakeWindow;
 				UpdateList(false)
 			end
-		{$ENDIF}
 	end;
 
 
 procedure TKonst.UpdateList(wrk: boolean);
 
 	begin
-		{$IFNDEF LITE}
 		if ADialog<>nil then PKonstDialog(ADialog)^.UpdateList(wrk)
-		{$ENDIF}
 	end;
 
 end.

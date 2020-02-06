@@ -100,13 +100,8 @@
 	BUBBLE_SETUP_STARTEND   = 'Bestimmt das Programmverhalten beim Start bzw. Beenden von Texel';
 	BUBBLE_SETUP_START      = 'Bestimmt das Programmverhalten beim Start von Texel';
 	BUBBLE_SETUP_END        = 'Bestimmt das Programmverhalten beim Beenden von Texel';
-	{$IFDEF LITE}
-	BUBBLE_SETUP_ROWS       = 'Gibt an, wieviele Zeilen ein neues Blatt standardmÑûig hat (max. 64)';
-	BUBBLE_SETUP_COLUMNS    = 'Gibt an, wieviele Spalten ein neues Blatt standardmÑûig hat (max. 32)';
-	{$ELSE}
 	BUBBLE_SETUP_ROWS       = 'Gibt an, wieviele Zeilen ein neues Blatt standardmÑûig hat (max. 16384)';
 	BUBBLE_SETUP_COLUMNS    = 'Gibt an, wieviele Spalten ein neues Blatt standardmÑûig hat (max. 702)';
-	{$ENDIF}
 	BUBBLE_SETUP_COLWIDTH   = 'Die Standardspaltenbreite wird in Zeichen angegeben; sie wird abhÑngig vom verwendeten Zeichensatz entsprechend in Pixel umgerechnet';
 	BUBBLE_SETUP_AUTOCALC   = 'Legt fest, ob bei neuen BlÑttern die automatische Neuberechnung standardmÑûig eingeschaltet ist (das sollte eigentlich immer der Fall sein)';
 	BUBBLE_SETUP_FONTID     = 'Legt den Standardzeichensatz fest';
@@ -439,13 +434,8 @@
 	BUBBLE_PRINT_INFO       = 'Zeigt Informationen Åber den GerÑtetreiber an';
 
 	BUBBLE_SHFORM_SIZE      = 'Ermîglicht es, die Blattgrîûe nachtrÑglich zu Ñndern';
-	{$IFDEF LITE}
-	BUBBLE_SHFORM_ROWS      = 'Legt die Zeilenanzahl fest (max. 64)';
-	BUBBLE_SHFORM_COLUMNS   = 'Bestimmt die Anzahl der Spalten (max. 32)';
-	{$ELSE}
 	BUBBLE_SHFORM_ROWS      = 'Legt die Zeilenanzahl fest (max. 16384)';
 	BUBBLE_SHFORM_COLUMNS   = 'Bestimmt die Anzahl der Spalten (max. 702)';
-	{$ENDIF}
 	BUBBLE_SHFORM_FONTID    = 'Stellt den Zeichensatz fÅr die Zeilen- und Spaltenbeschriftungen ein';
 	BUBBLE_SHFORM_FONTSIZE  = 'Bestimmt die Zeichenhîhe der Zeilen- und Spaltenbeschriftungen';
 	BUBBLE_SHFORM_GRID      = 'Wenn dieses KÑstchen markiert ist, werden auch die einfachen Gitterlinien gezeichnet, sonst nicht';
@@ -766,15 +756,6 @@
 	MESSAGE_WINDOW_SIZEERR  = 'Blattgrîûe kann nicht verÑndert werden (Speichermangel).';
 	MESSAGE_WINDOW_ABANDON1 = 'énderungen in Datei "';
 	MESSAGE_WINDOW_ABANDON2 = '" verwerfen?';
-
-	{$IFDEF LITE}
-	MESSAGE_HOME_2BIG1      = 'Das neue Dokument ist zu groû. Texel/Home speichert davon maximal ';
-	MESSAGE_HOME_2BIG2      = ' Zeilen und ';
-	MESSAGE_HOME_2BIG3      = ' Spalten.';
-	MESSAGE_HOME_SAVE1      = 'Speichern nicht mîglich.||Dokumente dÅrfen in Texel/Home maximal ';
-	MESSAGE_HOME_SAVE2      = ' Zeilen und ';
-	MESSAGE_HOME_SAVE3      = ' Spalten groû sein. Bitte passen Sie Ihr Dokument unter "Format - Blatt" entsprechend an.';
-	{$ENDIF}
 
 	MESSAGE_NUMFORM_EMPTY   = 'Bitte geben Sie ein Format ein.';
 	MESSAGE_NUMFORM_PARTS   = 'Ein Zahlenformat besteht aus max. 3 Teilen, darf also max. 2 Semikolons enthalten.';

@@ -853,13 +853,9 @@ procedure TOpen.Load(fname: string);
 		infbuf.Version:=header.Version;
 		infbuf.Release:=header.Release;
 		inc(infbuf.Used);
-		{$IFDEF LITE}
-		infbuf.Encrypt:=bf_Unchecked;
-		{$ELSE}
 		if head2.CryptFlag=0 then infbuf.Encrypt:=bf_Unchecked
 		else
 			infbuf.Encrypt:=bf_Checked;
-		{$ENDIF}
 		if header.Compatible<18 then
 			begin
 				if bread(findold,sizeof(findold)) then goto _error;
