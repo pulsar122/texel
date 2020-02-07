@@ -71,7 +71,6 @@ constructor TStartupHandler.Init(AParent: PEventObject);
 		Application^.Attr.Country:=FRG;
 		{$ENDIF}
 		{$ENDIF}
-		{$IFNDEF BETA}
 		if not(KeyCorrect('','')) then
 			begin
 				Application^.Alert(nil,1,STOP,MESSAGE_STARTUP_UNREG,BUTTON_OK);
@@ -79,7 +78,6 @@ constructor TStartupHandler.Init(AParent: PEventObject);
 				inherited Done;
 				fail
 			end;
-		{$ENDIF}
 		if ((Application^.Attr.MaxPX+1) div Application^.Attr.charSWidth<80) or ((Application^.Attr.MaxPY+1) div Application^.Attr.charSHeight<25) then
 			begin
 				Application^.Alert(nil,1,STOP,MESSAGE_STARTUP_SCREEN,BUTTON_OK);
@@ -89,15 +87,6 @@ constructor TStartupHandler.Init(AParent: PEventObject);
 			end;
 		randomize;
 		{$IFNDEF DEMO}
-		{$IFDEF BETA}
-		if (gettime>EXPIRE) or (gettime<BUILT) then
-			begin
-				Application^.Alert(nil,1,STOP,MESSAGE_STARTUP_BETA,BUTTON_OK);
-				Application^.Quit;
-				inherited Done;
-				fail
-			end;
-		{$ENDIF}
 		{$ENDIF}
 		{$IFDEF NVDI5}
 		if NVDIVersion<$0500 then
@@ -251,10 +240,8 @@ constructor TStartupHandler.Init(AParent: PEventObject);
 				regname:='';
 				regkey:=''
 			end;
-		{$IFNDEF BETA}
 		regname:='';
 		regkey:='';
-		{$ENDIF}
 		{$IFDEF DEMO}
 		regname:='';
 		regkey:='';

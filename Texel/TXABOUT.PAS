@@ -29,8 +29,7 @@ uses
 
 	Dos,Gem,
 	OTypes,OProcs,
-	txrsc,txlang,txtypes,txmain
-	{$IFNDEF BETA},txprocs{$ENDIF};
+	txrsc,txlang,txtypes,txmain,txprocs;
 
 
 type
@@ -80,16 +79,10 @@ procedure TAbout.Work;
 						if p<>nil then
 							begin
 								s:=StrPSpace(2-length(ltoa(RELEASE)));
-								{$IFDEF BETA}
 								{$IFDEF DEMO}
 								if RELEASE=0 then p^.SetText('   ASH-TEXEL Version '+VtoS(TEXELVER))
 								else
 									p^.SetText(s+'ASH-TEXEL Version '+VtoS(TEXELVER)+'r'+ltoa(RELEASE))
-								{$ELSE}
-								if RELEASE=0 then p^.SetText('   ASH-TEXEL  v '+VtoS(TEXELVER)+'-beta')
-								else
-									p^.SetText(s+'ASH-TEXEL  v '+VtoS(TEXELVER)+'r'+ltoa(RELEASE)+'-beta')
-								{$ENDIF}
 								{$ELSE}
 								if RELEASE=0 then p^.SetText('   ASH-TEXEL Version '+VtoS(TEXELVER))
 								else
@@ -104,13 +97,7 @@ procedure TAbout.Work;
 								{$IFDEF DEMO}
 								p^.Clear
 								{$ELSE}
-								{$IFDEF BETA}
-								if length(regname)=0 then p^.SetText('Name:     - unregistrierte Version -')
-								else
-									p^.SetText('Name:     '+regname)
-								{$ELSE}
 								p^.SetText('Name:     '+decode_name(ash_name))
-								{$ENDIF}
 								{$ENDIF}
 							end;
 						new(serst,Init(ADialog,RTASERNO,41,false,''));
@@ -123,11 +110,7 @@ procedure TAbout.Work;
 								{$IFDEF DEMO}
 								sertxt:='      -- D E M O V E R S I O N --';
 								{$ELSE}
-								{$IFDEF BETA}
-								if length(regkey)>0 then sertxt:='   Betaversion! GÅltig bis '+EXPIRESTR+'.';
-								{$ELSE}
 								sertxt:='Reg.-Nr.: '+decode_name(ash_serno);
-								{$ENDIF}
 								{$ENDIF}
 								serst^.SetText(sertxt)
 							end;

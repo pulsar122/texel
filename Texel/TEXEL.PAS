@@ -13,9 +13,8 @@
 
 {       | deutsch   | englisch          | franz”sisch      
 	------|-----------|-------------------|------------------
-  Beta  | BETA      | BETA ENGLISH      | BETA FRENCH      
   Final |           | ENGLISH           | FRENCH           
-  Demo  | BETA DEMO | BETA DEMO ENGLISH | BETA DEMO FRENCH }
+  Demo  |      DEMO |      DEMO ENGLISH | DEMO FRENCH     }
 
 {$B+,D-,G-,I-,L-,N-,P-,Q-,R-,S-,T-,V-,X+,Z-}
 

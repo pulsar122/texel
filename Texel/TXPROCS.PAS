@@ -21,9 +21,7 @@ function KeyCorrect(name,key: string): boolean;
 procedure DemoAlert(p: PWindow);
 procedure ScanFonts(handle,anz: integer; var fcoll: PFontCollection);
 procedure ScanConst(const datapath: string; var pcoll: PParameterCollection);
-{$IFNDEF BETA}
 function decode_name(c: PChar): string;
-{$ENDIF}
 
 
 var
@@ -143,7 +141,6 @@ function lrc_intersect(r1: LGRECT; var r2: GRECT): boolean;
 	end;
 
 
-{$IFNDEF BETA}
 function decode_name(c: PChar): string;
 	var s: string;
 	    q: integer;
@@ -154,7 +151,6 @@ function decode_name(c: PChar): string;
 			for q:=1 to length(s) do s[q]:=chr(ord(s[q]) xor 255);
 		decode_name:=StrPTrimF(s)
 	end;
-{$ENDIF}
 
 
 function CreatePassCode(pword: string; var pmask: longint): longint;
@@ -183,35 +179,6 @@ function CheckPassWord(pword: string; pcode: longint; var pmask: longint): boole
 
 
 function KeyCorrect(name,key: string): boolean;
-{$IFDEF BETA}
-	var compkey: string;
-	    q,l    : integer;
-
-	function c2s(b1,b2: byte): string;
-		var b: byte;
-
-		begin
-			b:=((b1+13) mod 256) xor ((b2+37) mod 256);
-			c2s:=chr((b and 15)+65)+chr(((b shr 3) and 15)+65)
-		end;
-
-	begin
-		KeyCorrect:=false;
-		if length(name)<3 then exit;
-		if length(key)<4 then exit;
-		if length(key)<length(name) then exit;
-		if gettime<BUILT then exit;
-		if gettime>EXPIRE then exit;
-		compkey:='';
-		if odd(length(name)) then name:=name+name[2];
-		l:=length(name);
-		for q:=1 to (l shr 1) do compkey:=compkey+c2s(ord(name[q]),ord(name[l+q-q]));
-		KeyCorrect:=(key=compkey) and not(KeyCorrect('',''));
-		{$IFDEF DEMO}
-		KeyCorrect:=false
-		{$ENDIF}
-	end;
-{$ELSE}
 	label _raus;
 
 	var s: string;
@@ -233,7 +200,6 @@ function KeyCorrect(name,key: string): boolean;
 		_raus:
 		KeyCorrect:=false
 	end;
-{$ENDIF}
 
 procedure DemoAlert(p: PWindow);
 

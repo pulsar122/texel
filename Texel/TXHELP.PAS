@@ -39,8 +39,7 @@ uses
 
 	Strings,Tos,Gem,
 	OTypes,OProcs,ODialogs,
-	txrsc,txlang,txtypes,txdhst,txmain
-	{$IFNDEF BETA},txprocs{$ENDIF};
+	txrsc,txlang,txtypes,txdhst,txmain,txprocs;
 
 
 
@@ -339,13 +338,7 @@ procedure TWeb.Work;
 				{$IFDEF DEMO}
 				txt:=txt+'('+STRING_DEMOVERSION+')';
 				{$ELSE}
-				{$IFDEF BETA}
-				if length(regname)=0 then txt:=txt+'(unregistrierte Version)'
-				else
-					txt:=txt+regname;
-				{$ELSE}
 				txt:=txt+decode_name(ash_name);
-				{$ENDIF}
 				{$ENDIF}
 				txt:=txt+#13#10;
 				fwrite(hdl,length(txt),@txt[1]);

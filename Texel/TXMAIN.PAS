@@ -17096,14 +17096,10 @@ function TTexelApplication.GetAuthorName: string;
 	var s: string;
 
 	begin
-		{$IFDEF BETA}
-		s:=regname;
-		{$ELSE}
 		{$IFDEF DEMO}
 		s:='';
 		{$ELSE}
 		s:=decode_name(ash_name);
-		{$ENDIF}
 		{$ENDIF}
 		if length(s)=0 then s:=GetEnv('USERNAME');
 		GetAuthorName:=s

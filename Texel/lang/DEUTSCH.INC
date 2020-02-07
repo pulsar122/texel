@@ -723,7 +723,6 @@
 	MESSAGE_STARTUP_UNREG   = 'TEXEL:|Texel wurde nicht korrekt installiert/registriert.';
 	MESSAGE_STARTUP_MILAN   = 'TEXEL:|Texel/Home kann nur auf einem Milan eingesetzt werden.';
 	MESSAGE_STARTUP_SCREEN  = 'Texel ben”tigt eine Aufl”sung von mind. 80x25 Zeichen. Bitte w„hlen sie eine h”here Aufl”sung oder einen kleineren Systemfont.';
-	MESSAGE_STARTUP_BETA    = 'TEXEL:|Diese Betaversion ist zu alt.';
 	MESSAGE_STARTUP_FOUND1  = 'TEXEL:|Datei "';
 	MESSAGE_STARTUP_FOUND2  = '" nicht gefunden.';
 	MESSAGE_STARTUP_LOAD1   = 'TEXEL:|Datei "';

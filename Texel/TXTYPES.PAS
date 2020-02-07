@@ -1406,11 +1406,9 @@ const
 	Exponent       : set of char = ['E','e'];
 	months365      : array [0..11] of integer = (31,28,31,30,31,30,31,31,30,31,30,31);
 	months366      : array [0..11] of integer = (31,29,31,30,31,30,31,31,30,31,30,31);
-	{$IFNDEF BETA}
 	ash_name       : array [0..30] of char = 'nnnnnnnnnnnnnnnnnnnnnnnnnnnnnn'#0;
 	ash_firma      : array [0..30] of char = 'ffffffffffffffffffffffffffffff'#0;
 	ash_serno      : array [0..10] of char = 'ssssssssss'#0;
-	{$ENDIF}
 
 
 var
