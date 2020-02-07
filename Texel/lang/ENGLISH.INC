@@ -716,9 +716,7 @@
 	MESSAGE_GENERAL_MEMORY  = 'TEXEL:|Zu wenig freier Speicher!';
 	MESSAGE_GENERAL_OLGA    = 'Kein OLGA-Manager installiert.';
 
-	MESSAGE_DEMO_DEMO       = 'Dies ist die Demoversion von Texel. Jegliches Speichern ist nicht m”glich.';
 	MESSAGE_DEMO_UNREG      = 'Diese Texel-Version ist nicht registriert, das Speichern ist daher nicht m”glich.';
-	MESSAGE_DEMO_MILAN      = 'Texel/Home l„uft nur auf einem Milan korrekt, das Speichern ist daher nicht m”glich.';
 	
 	MESSAGE_STARTUP_UNREG   = 'TEXEL:|Texel wurde nicht korrekt installiert/registriert.';
 	MESSAGE_STARTUP_MILAN   = 'TEXEL:|Texel/Home kann nur auf einem Milan eingesetzt werden.';
@@ -1163,12 +1161,6 @@
 	STRING_NONE             = 'keine';
 	STRING_YES              = 'ja';
 	STRING_NO               = 'nein';
-
-	STRING_DEMOVERSION      = 'Demoversion';
-	STRING_DEMO_STILL       = 'noch ';
-	STRING_DEMO_SECONDS     = ' Sekunden';
-	STRING_DEMO_START       = 'Texel-Demoversion starten';
-	STRING_DEMO_QUIT        = 'Texel-Demoversion beenden';
 
 	STRING_DB_SOURCE        = 'Quelle';
 	STRING_DB_RECORDS       = 'Datens„tze';

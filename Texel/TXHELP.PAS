@@ -335,11 +335,7 @@ procedure TWeb.Work;
 				if ret<0 then exit;
 				hdl:=integer(ret);
 				txt:=STRING_WEB_MAILDEF1+#13#10#13#10+STRING_WEB_MAILDEF2+' '+TEXELNAME+' '+VtoS(TEXELVER)+'r'+ltoa(RELEASE)+' '+STRING_WEB_MAILDATEOF+' '+TEXELDATE+':'#13#10#13#10#13#10#13#10+STRING_WEB_MAILDEF3+' ';
-				{$IFDEF DEMO}
-				txt:=txt+'('+STRING_DEMOVERSION+')';
-				{$ELSE}
 				txt:=txt+decode_name(ash_name);
-				{$ENDIF}
 				txt:=txt+#13#10;
 				fwrite(hdl,length(txt),@txt[1]);
 				fclose(hdl);

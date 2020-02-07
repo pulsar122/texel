@@ -60,9 +60,7 @@ procedure TSave.Work;
 function TSave.Save(fname: string; txlver: integer): boolean;
 { Werte fÅr txlver: 33 (1.6), 38 (2.0), 43 (2.1) oder TEXELCOMPAT  // todo: 20 (1.1), 30 (1.5) }
 	label _unreg,_raus;
-{$IFNDEF DEMO}
 	label _elmnext;
-{$ENDIF}
 
 	var p        : PCalcWindow;
       fn2,dtxt : string;
@@ -537,7 +535,6 @@ function TSave.Save(fname: string; txlver: integer): boolean;
 				DemoAlert(p);
 				goto _unreg
 			end;
-		{$IFNDEF DEMO}
 		test:=true;
 		pack_hor;
 		hsize:=packsize;
@@ -807,7 +804,6 @@ function TSave.Save(fname: string; txlver: integer): boolean;
 		p^.infobuf.Release:=RELEASE;
 		Save:=true;
 		TexelApp.UpdateFile(fname,-p^.GetOLGAGroup-1);
-		{$ENDIF}
 		_unreg:
 		fclose(hdl);
 		if werror then

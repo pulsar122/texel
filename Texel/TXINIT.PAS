@@ -86,8 +86,6 @@ constructor TStartupHandler.Init(AParent: PEventObject);
 				fail
 			end;
 		randomize;
-		{$IFNDEF DEMO}
-		{$ENDIF}
 		{$IFDEF NVDI5}
 		if NVDIVersion<$0500 then
 			begin
@@ -171,14 +169,6 @@ constructor TStartupHandler.Init(AParent: PEventObject);
 		{$ENDIF}
 		{$ENDIF}
 		ArrowMouse;
-		{$IFDEF DEMO}
-		if TexelApp.DemoNervAlert(false) then
-			begin
-				Application^.Quit;
-				inherited Done;
-				fail
-			end;
-		{$ENDIF}
 		sta:=nil;
 		new(startup,Init(nil,'',RTSTART));
 		if startup<>nil then
@@ -242,10 +232,6 @@ constructor TStartupHandler.Init(AParent: PEventObject);
 			end;
 		regname:='';
 		regkey:='';
-		{$IFDEF DEMO}
-		regname:='';
-		regkey:='';
-		{$ENDIF}
 		with TexelApp do
 			begin
 				LoadIcon(RTICONS,RTICALC);

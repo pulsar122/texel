@@ -79,26 +79,16 @@ procedure TAbout.Work;
 						if p<>nil then
 							begin
 								s:=StrPSpace(2-length(ltoa(RELEASE)));
-								{$IFDEF DEMO}
 								if RELEASE=0 then p^.SetText('   ASH-TEXEL Version '+VtoS(TEXELVER))
 								else
 									p^.SetText(s+'ASH-TEXEL Version '+VtoS(TEXELVER)+'r'+ltoa(RELEASE))
-								{$ELSE}
-								if RELEASE=0 then p^.SetText('   ASH-TEXEL Version '+VtoS(TEXELVER))
-								else
-									p^.SetText(s+'ASH-TEXEL Version '+VtoS(TEXELVER)+'r'+ltoa(RELEASE))
-								{$ENDIF}
 							end;
 						new(p,Init(ADialog,RTADATE,13,false,BUBBLE_EASTEREGG));
 						if p<>nil then p^.SetText('('+TEXELDATE+')');
 						new(p,Init(ADialog,RTANAME,41,false,''));
 						if p<>nil then
 							begin
-								{$IFDEF DEMO}
-								p^.Clear
-								{$ELSE}
 								p^.SetText('Name:     '+decode_name(ash_name))
-								{$ENDIF}
 							end;
 						new(serst,Init(ADialog,RTASERNO,41,false,''));
 						sertxt:='';
@@ -107,11 +97,7 @@ procedure TAbout.Work;
 						tstart:=0;
 						if serst<>nil then
 							begin
-								{$IFDEF DEMO}
-								sertxt:='      -- D E M O V E R S I O N --';
-								{$ELSE}
 								sertxt:='Reg.-Nr.: '+decode_name(ash_serno);
-								{$ENDIF}
 								serst^.SetText(sertxt)
 							end;
 						if Application^.Attr.Colors<16 then

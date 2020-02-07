@@ -14787,9 +14787,6 @@ procedure TCalcWindow.ColorID(OrgID,mX,mY,palIndex: integer);
 
 function TTexelApplication.DemoNervAlert(ende: boolean): boolean;
 	var len      : longint;
-{$IFDEF DEMO}
-	    demostart: PDemoStart;
-{$ENDIF}
 
 	begin
 		DemoNervAlert:=true;
@@ -14810,25 +14807,6 @@ function TTexelApplication.DemoNervAlert(ende: boolean): boolean;
 							exit
 						end;
 			end;
-		{$IFDEF DEMO}
-		ActivateExtResource;
-		new(demostart,Init(nil,'',RTDEMO));
-		if demostart<>nil then
-			begin
-				new(demostart^.pb,Init(demostart,RTDOK,id_OK,true,BUBBLE_EASTEREGG));
-				if demostart^.pb<>nil then
-					begin
-						with demostart^.pb^.ObjAddr^ do ob_flags:=ob_flags and not(DEFAULT);
-						demostart^.pb^.Disable;
-						demostart^.pb^.SetShortcut(#0)
-					end;
-				demostart^.ende:=ende;
-				demostart^.secs:=11;
-				demostart^.HandleModalTimer;
-				ExecDialog(demostart)
-			end;
-		DeactivateExtResource;
-		{$ENDIF}
 		DemoNervAlert:=false;
 	end;
 
@@ -15077,9 +15055,6 @@ procedure TTexelApplication.Terminate;
 	    hdl,q: integer;
 
 	begin
-		{$IFDEF DEMO}
-		DemoNervAlert(true);
-		{$ENDIF}
 		if abruf<>nil then
 			if (PAbruf(abruf)^.Dirty) or (tipflags.start<>oldTipStart) then
 				begin
@@ -17096,11 +17071,7 @@ function TTexelApplication.GetAuthorName: string;
 	var s: string;
 
 	begin
-		{$IFDEF DEMO}
-		s:='';
-		{$ELSE}
 		s:=decode_name(ash_name);
-		{$ENDIF}
 		if length(s)=0 then s:=GetEnv('USERNAME');
 		GetAuthorName:=s
 	end;

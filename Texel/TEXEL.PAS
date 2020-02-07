@@ -13,8 +13,7 @@
 
 {       | deutsch   | englisch          | franz”sisch      
 	------|-----------|-------------------|------------------
-  Final |           | ENGLISH           | FRENCH           
-  Demo  |      DEMO |      DEMO ENGLISH | DEMO FRENCH     }
+  Final |           | ENGLISH           | FRENCH          }
 
 {$B+,D-,G-,I-,L-,N-,P-,Q-,R-,S-,T-,V-,X+,Z-}
 

@@ -1534,7 +1534,6 @@ procedure TExport.SaveXLS(fname: string; const texbuf: TExportBuf);
 				DemoAlert(p);
 				goto _ende
 			end;
-		{$IFNDEF DEMO}
 		hdr[0]:=BOF;
 		hdr[1]:=$0400;
 		hdr[2]:=0;
@@ -1699,7 +1698,6 @@ procedure TExport.SaveXLS(fname: string; const texbuf: TExportBuf);
 		hdr[1]:=0;
 		if bwrite(hdr,4) then goto _ende;
 		bwrite(q,-1);
-		{$ENDIF}
 		_ende:
 		fclose(hdl);
 		freemem(buf,bufsize);
@@ -1723,7 +1721,6 @@ procedure TExport.SaveDIF(fname: string; const texbuf: TExportBuf);
 				DemoAlert(p);
 				goto _ende
 			end;
-		{$IFNDEF DEMO}
 		if writeline('TABLE') then goto _ende;
 		if writeline('0,1') then goto _ende;
 		if texbuf.difstandard=bf_Checked then
@@ -1816,7 +1813,6 @@ procedure TExport.SaveDIF(fname: string; const texbuf: TExportBuf);
 		if writeline('-1,0') then goto _ende;
 		if writeline('EOD') then goto _ende;
 		bwrite(q,-1);
-		{$ENDIF}
 		_ende:
 		fclose(hdl);
 		freemem(buf,bufsize);
@@ -1848,7 +1844,6 @@ procedure TExport.SaveSYLK(fname: string; const texbuf: TExportBuf);
 				DemoAlert(p);
 				goto _ende
 			end;
-		{$IFNDEF DEMO}
 		if writeline('ID;PTexel '+VtoS(TEXELVER)) then goto _ende;
 		if writeline('B;Y'+ltoa(rmax+1)+';X'+ltoa(cmax+1)) then goto _ende;
 		if writes('O;L') then goto _ende;
@@ -1904,7 +1899,6 @@ procedure TExport.SaveSYLK(fname: string; const texbuf: TExportBuf);
 			end;
 		if writeline('E') then goto _ende;
 		bwrite(q,-1);
-		{$ENDIF}
 		_ende:
 		fclose(hdl);
 		freemem(buf,bufsize);
@@ -1946,7 +1940,6 @@ procedure TExport.SaveCSV(fname: string; const texbuf: TExportBuf);
 				DemoAlert(p);
 				goto _ende
 			end;
-		{$IFNDEF DEMO}
 		for q:=0 to rmax do
 			begin
 				cell:=p^.GetCell(q,0);
@@ -1999,7 +1992,6 @@ procedure TExport.SaveCSV(fname: string; const texbuf: TExportBuf);
 				if writeline('') then goto _ende
 			end;
 		bwrite(q,-1);
-		{$ENDIF}
 		_ende:
 		fclose(hdl);
 		freemem(buf,bufsize);
@@ -2076,7 +2068,6 @@ procedure TExport.SaveRTF(fname: string; const texbuf: TExportBuf);
 				DemoAlert(p);
 				goto _ende
 			end;
-		{$IFNDEF DEMO}
 		fstdsize:=p^.GetStdFontSize shl 1;
 		if writeline('{\rtf1\ansi\deff0{\fonttbl{\f0\fnil Times;}}') then goto _ende;
 		if writeline('{\colortbl;') then goto _ende;
@@ -2261,7 +2252,6 @@ procedure TExport.SaveRTF(fname: string; const texbuf: TExportBuf);
 			end;
 		if writeline('}') then goto _ende;
 		bwrite(q,-1);
-		{$ENDIF}
 		_ende:
 		fclose(hdl);
 		freemem(buf,bufsize);
@@ -2329,7 +2319,6 @@ procedure TExport.SaveLATEX(fname: string; const texbuf: TExportBuf);
 				DemoAlert(p);
 				goto _ende
 			end;
-		{$IFNDEF DEMO}
 		if writeline('\begin{tabular}{*{'+ltoa(cmax+1)+'}{|c}|} \hline') then goto _ende;
 		for q:=0 to rmax do
 			begin
@@ -2352,7 +2341,6 @@ procedure TExport.SaveLATEX(fname: string; const texbuf: TExportBuf);
 			end;
 		if writeline('\end{tabular}') then goto _ende;
 		bwrite(q,-1);
-		{$ENDIF}
 		_ende:
 		fclose(hdl);
 		freemem(buf,bufsize);
@@ -2457,7 +2445,6 @@ procedure TExport.SaveASCII(fname: string; const texbuf: TExportBuf);
 				DemoAlert(p);
 				goto _ende
 			end;
-		{$IFNDEF DEMO}
 		rctrenn:=TexelApp.num2str(texbuf.ascii.rcTxt);
 		celltrenn:=TexelApp.num2str(texbuf.ascii.cellTxt);
 		tquote:=TexelApp.num2str(texbuf.ascii.textTxt);
@@ -2494,7 +2481,6 @@ procedure TExport.SaveASCII(fname: string; const texbuf: TExportBuf);
 					end
 			end;
 		bwrite(q,-1);
-		{$ENDIF}
 		_ende:
 		fclose(hdl);
 		freemem(buf,bufsize);
@@ -2546,7 +2532,6 @@ procedure TExport.SaveText(fname: string; const texbuf: TExportBuf);
 			end;
 		getmem(pc,(cmax+1) shl 1);
 		if pc=nil then goto _ende;
-		{$IFNDEF DEMO}
 		for w:=0 to cmax do pc^[w]:=round(p^.GetColWidth(w)/(p^.wWidth*p^.PercentSize));
 		for q:=0 to rmax do
 			begin
@@ -2584,7 +2569,6 @@ procedure TExport.SaveText(fname: string; const texbuf: TExportBuf);
 				if writeline('') then goto _raus
 			end;
 		bwrite(q,-1);
-		{$ENDIF}
 		_raus:
 		freemem(pc,(cmax+1) shl 1);
 		_ende:
@@ -2763,7 +2747,6 @@ procedure TExport.SaveHTML(fname: string; const texbuf: TExportBuf);
 				DemoAlert(p);
 				goto _ende
 			end;
-		{$IFNDEF DEMO}
 		colors:=(texbuf.htmlcolor=bf_Checked);
 		fntnames:=(texbuf.htmlfonts=bf_Checked);
 		escapes:=(texbuf.htmlnoesc=bf_Unchecked);
@@ -3128,7 +3111,6 @@ procedure TExport.SaveHTML(fname: string; const texbuf: TExportBuf);
 		if not(html40) then
 			if writeline('</HTML>') then goto _ende;
 		bwrite(q,-1);
-		{$ENDIF}
 		_ende:
 		fclose(hdl);
 		freemem(buf,bufsize);
@@ -3162,7 +3144,6 @@ procedure TExport.SaveUDO(fname: string; const texbuf: TExportBuf);
 				DemoAlert(p);
 				goto _ende
 			end;
-		{$IFNDEF DEMO}
 		if p^.Parms.psbuffer.columns=bf_Checked then rmax:=Min(254,rmax)
 		else
 			rmax:=Min(255,rmax);
@@ -3224,7 +3205,6 @@ procedure TExport.SaveUDO(fname: string; const texbuf: TExportBuf);
 			if writeline('!hline') then goto _ende;
 		if writeline('!end_table') then goto _ende;
 		bwrite(q,-1);
-		{$ENDIF}
 		_ende:
 		fclose(hdl);
 		freemem(buf,bufsize);
@@ -3257,7 +3237,6 @@ procedure TExport.SaveTXL(fname: string; const texbuf: TExportBuf);
 		else
 			if Exist(fname) then
 				if Application^.Alert(p,1,WAIT,MESSAGE_EXPORT_EXIST1+CompressPath(fname,78)+MESSAGE_EXPORT_EXIST2,BUTTON_YESNO)<>1 then goto _raus;
-		{$IFNDEF DEMO}
 		case texbuf.texelvers of
 		0:
 			PSave(p^.save)^.Save(fname,33); { 1.6 }
@@ -3269,7 +3248,6 @@ procedure TExport.SaveTXL(fname: string; const texbuf: TExportBuf);
 			{ 1.5 = 30, 1.1 = 20 }
 			PSave(p^.save)^.Save(fname,TEXELCOMPAT);
 		end;
-		{$ENDIF}
 		if texbuf.clipboard=bf_Checked then
 			begin
 				p^.Clipboard^.SetClipboardFormat(SCF_SHEET,GetExtension(fname));

@@ -112,17 +112,6 @@ type
 	end;
 {$ENDIF}
 
-{$IFDEF DEMO}
-	PDemoStart = ^TDemoStart;
-	TDemoStart = object(TDialog)
-		ende: boolean;
-		secs: integer;
-		pb  : PButton;
-		function GetModalTimer: longint; virtual;
-		procedure HandleModalTimer; virtual;
-	end;
-{$ENDIF}
-
 
 
 
@@ -427,34 +416,5 @@ procedure TBlockDialog.EndDlg(Indx: integer; DblClick: boolean);
 				end
 	end;
 
-
-{$IFDEF DEMO}
-
-function TDemoStart.GetModalTimer: longint;
-
-	begin
-		GetModalTimer:=1000
-	end;
-
-
-procedure TDemoStart.HandleModalTimer;
-
-	begin
-		dec(secs);
-		if pb<>nil then
-			begin
-				if secs>0 then pb^.SetText(STRING_DEMO_STILL+ltoa(secs)+STRING_DEMO_SECONDS+'...')
-				else
-					if secs=0 then
-						begin
-							pb^.Enable;
-							if ende then pb^.SetText(STRING_DEMO_QUIT)
-							else
-								pb^.SetText(STRING_DEMO_START);
-						end
-			end
-	end;
-
-{$ENDIF}
 
 end.

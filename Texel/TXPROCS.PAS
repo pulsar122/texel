@@ -205,11 +205,7 @@ procedure DemoAlert(p: PWindow);
 
 	begin
 		if Application=nil then exit;
-		{$IFDEF DEMO}
-		Application^.Alert(p,1,NOTE,MESSAGE_DEMO_DEMO,BUTTON_OK)
-		{$ELSE}
 		Application^.Alert(p,1,NOTE,MESSAGE_DEMO_UNREG,BUTTON_OK)
-		{$ENDIF}
 	end;
 
 
