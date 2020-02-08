@@ -716,10 +716,6 @@
 	MESSAGE_GENERAL_MEMORY  = 'TEXEL:|Zu wenig freier Speicher!';
 	MESSAGE_GENERAL_OLGA    = 'Kein OLGA-Manager installiert.';
 
-	MESSAGE_DEMO_UNREG      = 'Diese Texel-Version ist nicht registriert, das Speichern ist daher nicht m”glich.';
-	
-	MESSAGE_STARTUP_UNREG   = 'TEXEL:|Texel wurde nicht korrekt installiert/registriert.';
-	MESSAGE_STARTUP_MILAN   = 'TEXEL:|Texel/Home kann nur auf einem Milan eingesetzt werden.';
 	MESSAGE_STARTUP_SCREEN  = 'Texel ben”tigt eine Aufl”sung von mind. 80x25 Zeichen. Bitte w„hlen sie eine h”here Aufl”sung oder einen kleineren Systemfont.';
 	MESSAGE_STARTUP_FOUND1  = 'TEXEL:|Datei "';
 	MESSAGE_STARTUP_FOUND2  = '" nicht gefunden.';
@@ -727,7 +723,6 @@
 	MESSAGE_STARTUP_LOAD2   = '" konnte nicht geladen werden.';
 	MESSAGE_STARTUP_FRM1    = 'TEXEL:|Datei "';
 	MESSAGE_STARTUP_FRM2    = '" fehlerhaft';
-	MESSAGE_STARTUP_RSCERR  = 'TEXEL:|Resource-Dateien fehlerhaft.';
 	MESSAGE_STARTUP_WDIALOG = 'Ihr Betriebssystem besitzt leider keine Druckdialog-Routinen. Bitte installieren Sie daher WDIALOG ab Version 2.0 in Ihrem AUTO-Ordner bzw. unter N.AES als Autostart-Applikation in der Datei "N_AES.CNF".';
 	MESSAGE_STARTUP_NVDI    = 'Texel ben”tigt NVDI ab Version 5.0.';
 

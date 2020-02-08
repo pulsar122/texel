@@ -1,4 +1,4 @@
-(*  Resource Pascal-File v1.95 fÅr ResourceMaster ab v2.06 by ARDISOFT  *)
+(*  Resource Pascal-File v1.97 fÅr ResourceMaster ab v2.06 by ARDISOFT  *)
 CONST
 
     RTICONS2    = 0; (* form/dial *)
@@ -26,23 +26,20 @@ CONST
     RTP2CSS    = 173; (* BOX in tree RTPOPUPS2 *)
     RTP2TEXEL    = 177; (* BOX in tree RTPOPUPS2 *)
 
-    RTDEMO    = 2; (* form/dial *)
-    RTDOK    = 6; (* BUTTON in tree RTDEMO *)
-
-    RTPASS    = 3; (* form/dial *)
+    RTPASS    = 2; (* form/dial *)
     RTPWFILE    = 1; (* STRING in tree RTPASS *)
     RTPWPASS    = 2; (* FTEXT in tree RTPASS *)
     RTPWABBRUCH    = 3; (* BUTTON in tree RTPASS *)
     RTPWOK    = 4; (* BUTTON in tree RTPASS *)
 
-    RTCHGPASS    = 4; (* form/dial *)
+    RTCHGPASS    = 3; (* form/dial *)
     RTCPOLD    = 1; (* FTEXT in tree RTCHGPASS *)
     RTCPNEW    = 2; (* FTEXT in tree RTCHGPASS *)
     RTCPCHECK    = 3; (* FTEXT in tree RTCHGPASS *)
     RTCPABBRUCH    = 4; (* BUTTON in tree RTCHGPASS *)
     RTCPOK    = 5; (* BUTTON in tree RTCHGPASS *)
 
-    RTZIELWERT    = 5; (* form/dial *)
+    RTZIELWERT    = 4; (* form/dial *)
     RTZWZZELLE    = 1; (* FTEXT in tree RTZIELWERT *)
     RTZWWERT    = 2; (* FTEXT in tree RTZIELWERT *)
     RTZWVZELLE    = 3; (* FTEXT in tree RTZIELWERT *)
@@ -53,7 +50,7 @@ CONST
     RTZWSUCHEN    = 8; (* BUTTON in tree RTZIELWERT *)
     RTZWOK    = 9; (* BUTTON in tree RTZIELWERT *)
 
-    RTOBJECT    = 6; (* form/dial *)
+    RTOBJECT    = 5; (* form/dial *)
     RTOBSERVER    = 1; (* BUTTON in tree RTOBJECT *)
     RTOBLIST    = 3; (* BOX in tree RTOBJECT *)
     RTOBUP    = 10; (* BOXCHAR in tree RTOBJECT *)
@@ -64,7 +61,7 @@ CONST
     RTOBEINFUEGEN    = 16; (* BUTTON in tree RTOBJECT *)
     RTOBOK    = 17; (* BUTTON in tree RTOBJECT *)
 
-    RTEXPORT    = 7; (* form/dial *)
+    RTEXPORT    = 6; (* form/dial *)
     RTEXFORMAT    = 1; (* TEXT in tree RTEXPORT *)
     RTEXFORMPOP    = 2; (* BOXTEXT in tree RTEXPORT *)
     RTEXFORMCYC    = 3; (* BOXCHAR in tree RTEXPORT *)
@@ -145,14 +142,14 @@ CONST
     RTEXEXPORT    = 79; (* BUTTON in tree RTEXPORT *)
     RTEXOK    = 80; (* BUTTON in tree RTEXPORT *)
 
-    RTURL    = 8; (* form/dial *)
+    RTURL    = 7; (* form/dial *)
     RTUURL    = 1; (* FTEXT in tree RTURL *)
     RTUHELP    = 2; (* BOXTEXT in tree RTURL *)
     RTUABBRUCH    = 3; (* BUTTON in tree RTURL *)
     RTUOPEN    = 4; (* BUTTON in tree RTURL *)
     RTUOK    = 5; (* BUTTON in tree RTURL *)
 
-    RTDIAGRAM    = 9; (* form/dial *)
+    RTDIAGRAM    = 8; (* form/dial *)
     RTDIBEREICH    = 1; (* BOX in tree RTDIAGRAM *)
     RTDIBEDIT    = 2; (* STRING in tree RTDIAGRAM *)
     RTDIGRPTYP    = 3; (* BOX in tree RTDIAGRAM *)
@@ -233,7 +230,7 @@ CONST
     RTDIINSERT    = 81; (* BUTTON in tree RTDIAGRAM *)
     RTDIOK    = 82; (* BUTTON in tree RTDIAGRAM *)
 
-    RTOBJATTR    = 10; (* form/dial *)
+    RTOBJATTR    = 9; (* form/dial *)
     RTOABACKGROUND    = 1; (* BOX in tree RTOBJATTR *)
     RTOACOLTITLE    = 2; (* TEXT in tree RTOBJATTR *)
     RTOACOLOR    = 3; (* BOX in tree RTOBJATTR *)
@@ -245,7 +242,7 @@ CONST
     RTOASET    = 9; (* BUTTON in tree RTOBJATTR *)
     RTOAOK    = 10; (* BUTTON in tree RTOBJATTR *)
 
-    RTTEXTOBJATTR    = 11; (* form/dial *)
+    RTTEXTOBJATTR    = 10; (* form/dial *)
     RTTOABACKGROUND    = 1; (* BOX in tree RTTEXTOBJATTR *)
     RTTOACOLTITLE    = 2; (* TEXT in tree RTTEXTOBJATTR *)
     RTTOACOLOR    = 3; (* BOX in tree RTTEXTOBJATTR *)
@@ -267,7 +264,7 @@ CONST
     RTTOASET    = 19; (* BUTTON in tree RTTEXTOBJATTR *)
     RTTOAOK    = 20; (* BUTTON in tree RTTEXTOBJATTR *)
 
-    RTOBJSIZE    = 12; (* form/dial *)
+    RTOBJSIZE    = 11; (* form/dial *)
     RTOSSIZE    = 1; (* BOX in tree RTOBJSIZE *)
     RTOSX    = 2; (* FTEXT in tree RTOBJSIZE *)
     RTOSY    = 3; (* FTEXT in tree RTOBJSIZE *)
@@ -281,7 +278,7 @@ CONST
     RTOSSET    = 11; (* BUTTON in tree RTOBJSIZE *)
     RTOSOK    = 12; (* BUTTON in tree RTOBJSIZE *)
 
-    RTIMGOBJATTR    = 13; (* form/dial *)
+    RTIMGOBJATTR    = 12; (* form/dial *)
     RTIOABACKGROUND    = 1; (* BOX in tree RTIMGOBJATTR *)
     RTIOACOLTITLE    = 2; (* TEXT in tree RTIMGOBJATTR *)
     RTIOACOLOR    = 3; (* BOX in tree RTIMGOBJATTR *)
@@ -297,7 +294,7 @@ CONST
     RTIOASET    = 13; (* BUTTON in tree RTIMGOBJATTR *)
     RTIOAOK    = 14; (* BUTTON in tree RTIMGOBJATTR *)
 
-    RTLINKS    = 14; (* form/dial *)
+    RTLINKS    = 13; (* form/dial *)
     RTLILIST    = 2; (* BOX in tree RTLINKS *)
     RTLIDEC    = 11; (* BOXCHAR in tree RTLINKS *)
     RTLISLID    = 12; (* BOX in tree RTLINKS *)
@@ -308,7 +305,7 @@ CONST
     RTLIEDIT    = 18; (* BUTTON in tree RTLINKS *)
     RTLIOK    = 19; (* BUTTON in tree RTLINKS *)
 
-    RTABOUT    = 15; (* form/dial *)
+    RTABOUT    = 14; (* form/dial *)
     RTAKREIS    = 1; (* IMAGE in tree RTABOUT *)
     RTAGITTER    = 2; (* IMAGE in tree RTABOUT *)
     RTASCHATTEN    = 3; (* IMAGE in tree RTABOUT *)
@@ -321,7 +318,7 @@ CONST
     RTAOK    = 18; (* BUTTON in tree RTABOUT *)
     RTAUPDATE    = 20; (* BUTTON in tree RTABOUT *)
 
-    RTGDBC    = 16; (* form/dial *)
+    RTGDBC    = 15; (* form/dial *)
     RTGDSOURCE    = 1; (* STRING in tree RTGDBC *)
     RTGDIGNORELIST    = 3; (* BOX in tree RTGDBC *)
     RTGDIGNDEC    = 11; (* BOXCHAR in tree RTGDBC *)
@@ -339,7 +336,7 @@ CONST
     RTGDABBRUCH    = 32; (* BUTTON in tree RTGDBC *)
     RTGDOK    = 33; (* BUTTON in tree RTGDBC *)
 
-    RTWCOLORTB    = 17; (* form/dial *)
+    RTWCOLORTB    = 16; (* form/dial *)
     RTWTCSAVE    = 1; (* CICON in tree RTWCOLORTB *)
     RTWTCPRINT    = 2; (* CICON in tree RTWCOLORTB *)
     RTWTCCUT    = 3; (* CICON in tree RTWCOLORTB *)
@@ -364,7 +361,7 @@ CONST
     RTWTCDIAGRAM    = 22; (* CICON in tree RTWCOLORTB *)
     RTWTCHOME    = 23; (* CICON in tree RTWCOLORTB *)
 
-    RTELEMENTATTR    = 18; (* form/dial *)
+    RTELEMENTATTR    = 17; (* form/dial *)
     RTEACHECKBOX    = 1; (* BOX in tree RTELEMENTATTR *)
     RTEATITLE    = 2; (* FTEXT in tree RTELEMENTATTR *)
     RTEACELL    = 3; (* FTEXT in tree RTELEMENTATTR *)
@@ -373,7 +370,7 @@ CONST
     RTEASET    = 6; (* BUTTON in tree RTELEMENTATTR *)
     RTEAOK    = 7; (* BUTTON in tree RTELEMENTATTR *)
 
-    RTTIPS    = 19; (* form/dial *)
+    RTTIPS    = 18; (* form/dial *)
     RTTPTEXTS    = 1; (* BOX in tree RTTIPS *)
     RTTPTEXT1    = 2; (* STRING in tree RTTIPS *)
     RTTPTEXT2    = 3; (* STRING in tree RTTIPS *)
