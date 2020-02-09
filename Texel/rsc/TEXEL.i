@@ -1,4 +1,4 @@
-(*  Resource Pascal-File v1.95 fÅr ResourceMaster ab v2.06 by ARDISOFT  *)
+(*  Resource Pascal-File v1.97 fÅr ResourceMaster ab v2.06 by ARDISOFT  *)
 CONST
 
     RTMENU    = 0; (* menu *)

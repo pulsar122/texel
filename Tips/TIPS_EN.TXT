@@ -1,0 +1,77 @@
+Page breaks can be removed. Right click on the
+head of the relevant column or row and choose
+"Page break" from the Popup.
+
+The default font used in the cells of the sheet
+can be set in the dialog "Format - Sheet".
+
+To import and export special characters correctly
+from other computers and operating systems, you
+should install the program KEYTAB in your AUTO
+folder.
+
+With the  small grey (or black) triangle in the
+Tool bar you can hide the top part of the bar, in
+order to leave additional space for your sheet.
+This is useful if you have a small monitor.
+
+In order to have fast access to the Tool bar
+functions, you can use the function keys: F1 is
+Help, F2 bold, F3 italic, F4 underline, F5 left
+justified, F6 centred, F7 right justified etc.
+
+Use cell variables to refer to commonly
+referenced cells. '=amount*VAT' sounds a lot
+better than '=A12*C3'. See the online help for|details.
+
+If the lowest four items of the Help menu are
+greyed out, then ST-Guide is not installed.
+Please install it, then you will be able to use
+the detailed online help available from Texel.
+
+Have you used headers and footers, but they have
+not been printed? You have probably forgotten to
+click on the button "Minimum size" in the
+"Settings" dialog, in order to set aside space
+for them on the printed page.
+
+If you want to change the font in the header and
+footer, choose "Format - Sheet" from the menu.
+This will also change the font on the row and
+column headers.
+
+If Texel does not use the correct fonts when
+loading a document, then these fonts are missing
+from the system. Texel will then use the system
+font.
+
+If your Hades computer crashes when opening a
+document window, there is probably either no FPU
+emulator installed or else it's a buggy version.
+
+The Finance functions have been renamed, please
+check in the online help under "What's new... in
+version 2.10".
+
+The input of decimal numbers is now also possible
+using a comma, so for example '3,1415' is taken
+to be the same as '3.1415'.
+
+Texel can now also save sheets in the file format
+used by older Texel versions, in order to
+exchange data with users of Texel 1.6 and 2.0.
+
+Install BubbleGEM to reveal further tips. Copy
+BUBBLEGEM.APP to the MagiC START folder or
+install as an accessory. BubbleGEM is supplied
+with Texel.
+
+Texel now has several new export formats: RTF
+(word processor), Excel, HTML 4.0 with CSS1,
+Texel 1.6 and Texel 2.0.                                                                                                                                        
+                                                                                                           sTexel now has several new export formats: RTF|(word processor), Excel, HTML 4.0 with CSS1,|Texel 1.6 and Texel 2.0.                                                                                                                                        
+Texel can be controlled by the GEMScript
+protocol, you can write macros to automate your
+daily work and use it to run Texel. Please read
+the online help for further details. A script
+interpreter program eg. 'Scripter' is required.

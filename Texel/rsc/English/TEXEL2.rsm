@@ -3,7 +3,7 @@ ResourceMaster v3.65
 #N 99@0@AZAazA___  _@AZAazA090___  _@@_@
 #FoPascal@rsm2out@Pascal@i@@@[Pascal@0@
 #R 0@0@2@1@2@1@
-#M 21011100@0@7728@501@
+#M 21011100@0@7728@502@
 #T 0@2@RTICONS2@2@2@2@
 #O 1@23@RTI2CALC@@
 #T 1@2@RTPOPUPS2@181@181@181@
@@ -294,7 +294,7 @@ ResourceMaster v3.65
 #O 17@26@RTLIACTIVATE@@
 #O 18@26@RTLIEDIT@@
 #O 19@26@RTLIOK@@
-#T 14@2@RTABOUT@22@22@22@
+#T 14@2@RTABOUT@22@23@22@
 #O 1@23@RTAKREIS@@
 #O 2@23@RTAGITTER@@
 #O 3@23@RTASCHATTEN@@
@@ -366,4 +366,4 @@ ResourceMaster v3.65
 #O 8@22@RTTPHELP@@
 #O 9@26@RTTPNEXT@@
 #O 10@26@RTTPOK@@
-#c 3375@
+#c 25012@

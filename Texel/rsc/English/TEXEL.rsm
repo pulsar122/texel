@@ -1,9 +1,9 @@
-ResourceMaster v3.2 ž
+ResourceMaster v3.65   
 #C 40@0@0@0@
 #N 99@0@AZAazA___  _@AZAazA090___  _@@_@
 #FoPascal@rsm2out@Pascal@i@@@[Pascal@0@
 #R 0@0@2@1@2@1@
-#M 01011@0@7728@
+#M 01011100@0@7728@501@
 #T 0@1@RTMENU@56@56@56@
 #O 3@32@RTM1@@
 #O 4@32@RTM2@@
@@ -772,4 +772,4 @@ ResourceMaster v3.2 ž
 #O 34@22@RTPFHELP@@
 #O 35@26@RTPFABBRUCH@@
 #O 36@26@RTPFOK@@
-#c 12478@
+#c 16623@

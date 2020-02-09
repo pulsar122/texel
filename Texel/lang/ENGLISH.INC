@@ -348,11 +348,11 @@
 	BUBBLE_EXPORT_QUOTING   = 'Bestimmt, ob AnfÅhrungszeichen (Textquote) innerhalb von Texten verdoppelt werden (dies ist fast immer der Fall)';
 	BUBBLE_EXPORT_FPOINT    = 'Gibt an, welches Zeichen in der Datei bei Zahlen Vor- und Nachkommastellen trennen soll';
 	BUBBLE_EXPORT_EMPTY     = 'Bei diesem Exportformat gibt es keine weiteren Einstellungsmîglichkeiten';
-	BUBBLE_EXPORT_HTML      = 'Die Optionen fÅr den HTML-Export';
-	BUBBLE_EXPORT_DIF       = 'Die Optionen fÅr den DIF-Export';
-	BUBBLE_EXPORT_CSV       = 'Die Optionen fÅr den CSV-Export';
-	BUBBLE_EXPORT_ASCII     = 'Die Optionen fÅr den ASCII-Export';
-	BUBBLE_EXPORT_XLS       = 'Die Optionen fÅr den Excel-Export';
+	BUBBLE_EXPORT_HTML      = 'The options for HTML export';
+	BUBBLE_EXPORT_DIF       = 'The options for DIF export';
+	BUBBLE_EXPORT_CSV       = 'The options for CSV export';
+	BUBBLE_EXPORT_ASCII     = 'The options for ASCII export';
+	BUBBLE_EXPORT_XLS       = 'The options for Excel export';
 	BUBBLE_EXPORT_RTITLE    = 'Wenn dieser Button markiert ist, wird der angegebene Bereich exportiert, sonst das ganze Blatt';
 	BUBBLE_EXPORT_FORMATS   = 'Mit diesem Popup kann das Exportformat festgelegt werden';
 	BUBBLE_EXPORT_CLIPBOARD = 'Wenn dieser Button markiert ist, erfolgt der Export automatisch ins Klemmbrett';
@@ -688,7 +688,7 @@
 	BUBBLE_PATHS_META       = 'Legt das Verzeichnis fÅr die Druckausgabe in GEM-Metafiles fest';
 	BUBBLE_PATHS_ID4        = 'Aus diesem Verzeichnis werden ID4-OLGA-Objekte normalerweise importiert';
 	BUBBLE_PATHS_TEXT       = 'Legt das Verzeichnis fest, in dem sich normalerweise die Texte fÅr Text-Objekte befinden';
-	BUBBLE_PATHS_GRAFIK     = 'Legt das Verzeichnis fest, in dem sich normalerweise die Bilder (*.IMG) fÅr Grafik-Objekte befinden';
+	BUBBLE_PATHS_GRAFIK     = 'Sets the folder where pictures (*.IMG) for graphics objects are normally located';
 	BUBBLE_PATHS_DIAGRAMM   = 'Das Standardverzeichnis fÅr manuell gespeicherte Diagrammdateien';
 	BUBBLE_PATHS_LDW        = 'Aus diesem Verzeichnis werden LDW-Ausspuldateien (*.LDP) normalerweise importiert';
 	BUBBLE_PATHS_DIF        = 'Aus diesem Verzeichnis werden DIF-Dateien normalerweise importiert';
@@ -702,28 +702,28 @@
 { texel.msg }
 
 	BUTTON_OK               = '  &OK  ';
-	BUTTON_CANCEL           = '&Abbruch';
-	BUTTON_OKCANCEL         = '  &OK  |&Abbruch';
-	BUTTON_OKMINIMALCANCEL  = '  &OK  |&Minimal|&Abbruch';
-	BUTTON_GOCANCEL         = ' &Weiter |&Abbruch';
-	BUTTON_YESNO            = '  &Ja  | &Nein ';
-	BUTTON_YESNOCANCEL      = '  &Ja  | &Nein |&Abbruch';
-	BUTTON_OBJCELLCANCEL    = '&Objekt|&Zellen|&Abbruch';
+	BUTTON_CANCEL           = '&Cancel';
+	BUTTON_OKCANCEL         = '  &OK  |&Cancel';
+	BUTTON_OKMINIMALCANCEL  = '  &OK  |&Minimal|&Cancel';
+	BUTTON_GOCANCEL         = ' &Weiter |&Cancel';
+	BUTTON_YESNO            = '  &Yes   | &No ';
+	BUTTON_YESNOCANCEL      = ' &Yes  |  &No  |&Cancel ';
+	BUTTON_OBJCELLCANCEL    = '&Objekt|&Zellen|&Cancel';
 	BUTTON_FORMDOC          = '&Vorlage|&Dokument';
-	BUTTON_SAVECANCEL       = '&Speichern|&Abbruch';
+	BUTTON_SAVECANCEL       = '&Speichern|&Cancel';
 
 	MESSAGE_GENERAL_RANGE   = 'Bitte geben Sie einen gÅltigen Bereich ein.';
 	MESSAGE_GENERAL_MEMORY  = 'TEXEL:|Zu wenig freier Speicher!';
-	MESSAGE_GENERAL_OLGA    = 'Kein OLGA-Manager installiert.';
+	MESSAGE_GENERAL_OLGA    = 'OLGA is not installed.';
 
-	MESSAGE_STARTUP_SCREEN  = 'Texel benîtigt eine Auflîsung von mind. 80x25 Zeichen. Bitte wÑhlen sie eine hîhere Auflîsung oder einen kleineren Systemfont.';
-	MESSAGE_STARTUP_FOUND1  = 'TEXEL:|Datei "';
+	MESSAGE_STARTUP_SCREEN  = 'Texel needs a resolution of at least 80x25 characters. Please choose a higher resolution or use a smaller system font.';
+	MESSAGE_STARTUP_FOUND1  = 'TEXEL:|File "';
 	MESSAGE_STARTUP_FOUND2  = '" nicht gefunden.';
-	MESSAGE_STARTUP_LOAD1   = 'TEXEL:|Datei "';
-	MESSAGE_STARTUP_LOAD2   = '" konnte nicht geladen werden.';
-	MESSAGE_STARTUP_FRM1    = 'TEXEL:|Datei "';
+	MESSAGE_STARTUP_LOAD1   = 'TEXEL:|File "';
+	MESSAGE_STARTUP_LOAD2   = '" could not be loaded.';
+	MESSAGE_STARTUP_FRM1    = 'TEXEL:|File "';
 	MESSAGE_STARTUP_FRM2    = '" fehlerhaft';
-	MESSAGE_STARTUP_WDIALOG = 'Ihr Betriebssystem besitzt leider keine Druckdialog-Routinen. Bitte installieren Sie daher WDIALOG ab Version 2.0 in Ihrem AUTO-Ordner bzw. unter N.AES als Autostart-Applikation in der Datei "N_AES.CNF".';
+	MESSAGE_STARTUP_WDIALOG = 'Your operating system unfortunately has no printer dialog routines. Please install WDIALOG V2 or higher in your AUTO folder. Under N.AES install as an auto-start application in the file "N_AES.CNF".';
 	MESSAGE_STARTUP_NVDI    = 'Texel benîtigt NVDI ab Version 5.0.';
 
 	MESSAGE_WINDOW_MEMORY   = 'Texel:|Nicht genÅgend Speicher fÅr neues Fenster frei!';
@@ -758,9 +758,9 @@
 	MESSAGE_CLIP_PASTE      = 'Im Klemmbrett befinden sich keine passenden Daten, die eingefÅgt werden kînnen.';
 	MESSAGE_CLIP_IMPORT     = 'Keine passende Datei im Klemmbrett vorhanden.';
 	
-	MESSAGE_EMBED_ARTWORX   = 'ArtWorx konnte nicht aufgerufen werden.';
-	MESSAGE_EMBED_OLGA1     = 'Der OLGA-"';
-	MESSAGE_EMBED_OLGA2     = '"-Server konnte nicht aufgerufen werden.';
+	MESSAGE_EMBED_ARTWORX   = 'ArtWorx can not be called.';
+	MESSAGE_EMBED_OLGA1     = 'The OLGA "';
+	MESSAGE_EMBED_OLGA2     = '"server can not be called.';
 	MESSAGE_EMBED_DELETE    = 'Objekt wirklich lîschen?';
 	MESSAGE_EMBED_EXIST1    = 'Die Datei "';
 	MESSAGE_EMBED_EXIST2    = '" existiert bereits. öberschreiben?';
@@ -794,11 +794,11 @@
 	MESSAGE_OPEN_ERROR1     = 'Datei "';
 	MESSAGE_OPEN_ERROR2     = '" konnte nicht geladen werden.';
 	
-	MESSAGE_SAVE_FORMDOC    = 'Das Blatt ist eine Vorlage. Speichern als Vorlage oder als neues Dokument?';
-	MESSAGE_SAVE_EMBEDDED   = 'Ein eingebettetes Objekt wurde in seinem ID4-Server noch nicht gespeichert. Trotz evtl. alter Objektdaten speichern?';
-	MESSAGE_SAVE_MEMORY     = 'Das Blatt konnte nicht gespeichert werden (Speichermangel)';
-	MESSAGE_SAVE_WPROT      = 'Das Blatt konnte nicht gespeichert werden (DatentrÑger schreibgeschÅtzt?)';
-	MESSAGE_SAVE_DISKFULL   = 'Das Blatt konnte nicht gespeichert werden (DatentrÑger voll?)';
+	MESSAGE_SAVE_FORMDOC    = 'This is a template sheet. Save as a template or as new document?';
+	MESSAGE_SAVE_EMBEDDED   = 'An embedded object has not yet been saved in the ID4 server. Save despite old object data?';
+	MESSAGE_SAVE_MEMORY     = 'The sheet cannot be saved (memory shortage).';
+	MESSAGE_SAVE_WPROT      = 'The sheet cannot be saved (disk write-protected?)';
+	MESSAGE_SAVE_DISKFULL   = 'The sheet cannot be saved (disk full?)';
 
 	MESSAGE_SAVEAS_EXIST1   = 'Die Datei "';
 	MESSAGE_SAVEAS_EXIST2   = '" existiert bereits. öberschreiben?';
@@ -1036,15 +1036,15 @@
 
 { startup }
 
-	STARTUP_INF             = 'DATEI "TEXEL.INF" LADEN';
+	STARTUP_INF             = 'LOAD FILE "TEXEL.INF"';
 	STARTUP_PATHS           = 'ZUGRIFFSPFADE LADEN';
 	STARTUP_STRUCTS         = 'STRUKTUREN INITIALISIEREN';
 	STARTUP_HISTORY         = 'ABRUF-DATEIEN LADEN';
 	STARTUP_MENUS           = 'MENöS EINRICHTEN';
-	STARTUP_DAT             = 'DATEI "TEXEL.DAT" LADEN';
-	STARTUP_USRDAT          = 'DATEI "TEXELUSR.DAT" LADEN';
-	STARTUP_FRM             = 'DATEI "TEXEL.FRM" LADEN';
-	STARTUP_USRFRM          = 'DATEI "TEXELUSR.FRM" LADEN';
+	STARTUP_DAT             = 'LOAD FILE "TEXEL.DAT"';
+	STARTUP_USRDAT          = 'LOAD FILE "TEXELUSR.DAT"';
+	STARTUP_FRM             = 'LOAD FILE "TEXEL.FRM"';
+	STARTUP_USRFRM          = 'LOAD FILE "TEXELUSR.FRM"';
 	STARTUP_PRINTDIAL       = 'DRUCKDIALOG INITIALISIEREN';
 	STARTUP_FINISH          = 'ARBEITSUMGEBUNG EINRICHTEN';
 
@@ -1172,11 +1172,11 @@
 	STRING_INFO_TIMEAT      = 'um';
 	
 	STRING_FINDVAL_INTERVAL = 'kein Startintervall';
-	STRING_FINDVAL_CANCEL   = 'Abbruch';
+	STRING_FINDVAL_CANCEL   = 'Cancel';
 	STRING_FINDVAL_ITERAT   = 'Iterationen?';
 	STRING_FINDVAL_NOSOLUTN = 'keine Lîsung';
 	STRING_FINDVAL_STATUS   = 'Status';
-	STRING_FINDVAL_SEARCH   = 'Suchen... (Abbruch mit <Esc>)';
+	STRING_FINDVAL_SEARCH   = ' Search... (Cancel with <Esc>';
 	STRING_FINDVAL_ERROR    = 'Fehler';
 	STRING_FINDVAL_OK       = 'OK.';
 	
