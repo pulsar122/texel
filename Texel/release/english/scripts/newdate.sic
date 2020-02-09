@@ -1,0 +1,38 @@
+// External Scripter script that parses all time
+// specifications anew in the passed sheet
+// (or the top one if no sheet was specified);
+// thanks to this the rounding errors of old
+// Texel versions will be removed;
+// tm 97-11-28
+
+
+if (address("texel"))
+{
+	if (argc<1) datei=GetFront();
+	else
+		datei=argv[0];
+
+	rmax=GetRows();
+	cmax=GetColumns();
+
+	printf("Change %d lines in sheet \"%s\".\n",rmax,datei);
+
+
+	for (r=0; r<rmax; r++)
+	{
+		printf("Line %d...",r+1);
+
+		for(c=0; c<cmax; c++)
+		{
+			if (IsCellConst(r,c,datei))
+			{
+				SetCell(r,c,GetCellFormula(r,c,datei),datei);
+			}
+		}
+
+		printf("ok.\n");
+	}
+
+	Recalc();
+	printf("Finished!\n");
+}

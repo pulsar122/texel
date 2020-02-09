@@ -1,0 +1,11 @@
+;Here one can enter the names of user-defined external GEMScripts.
+;Numbers for user-defined scripts must be in the range >=0 and <=22000
+;Numbers <0 are reserved for Texel!
+;A description of the function for the Functions manager follows the
+;semicolon.
+;A Space is the only separator permitted.
+;The function will appear in category 12 ("External").
+
+Circular_area 42  ; Circular_area(r)|Calculates the area of a circle of radius r
+
+

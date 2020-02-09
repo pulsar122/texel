@@ -1,0 +1,157 @@
+;Functions (the names can be altered)
+;new categories can be created (id>0)
+
+#1  Math, Trigonometry
+#2  Statistics
+#3  Logic
+#4  Finance
+#5  Date & Time
+#6  Physics
+#7  Information
+#8  Bit manipulation
+#9  Database
+#10 Matrix
+#11 Text
+#12 External
+
+;The names at the beginning of lines can be altered!
+;However, to call the correct Help page, the hypertext source
+;has to be altered to match any changes, and then recompiled.
+;Also spreadsheets produced by German versions may not work correctly
+;- if you want to edit these further, use the German texel.dat
+;
+;Only spaces are allowed as separators
+
+Rand             0    1000  1  ; Rand|Returns a random number between 0 (inclusive) and 1 (exclusive)
+Error            0    1001  7  ; Error|Sets the value of the cell to #ERR
+Today            0    1010  5  ; Today|Returns the day's date as serial date
+Now              0    1011  5  ; Now|Returns date and time (of day) as serial date
+Hour1            0    1012  5  ; Hour1|Returns the hour as serial number
+Min1             0    1013  5  ; Min1|Returns a minute as serial number
+Sec1             0    1014  5  ; Sec1|Returns a second as serial number
+False            0    1015  3  ; False|Returns the value of logical false (0)
+True             0    1016  3  ; True|Returns the value of logical true (1)
+Pi               0    1017  1  ; Pi|Returns the value of Pi (=3.14...)
+
+IsNumber         1!   1100  7  ; IsNumber(range)|Returns True (1), if all cells contain only numbers
+IsText           1!   1101  7  ; IsText(range)|Returns True (1), if all cells contain only text characters
+IsEmpty          1!   1102  7  ; IsEmpty(range)|Returns True (1), if all cells are empty
+IsError          1!   1103  7  ; IsError(range)|Returns True (1), if at least one cell contains faulty arithmetic
+
+NumFC            1!   1150  7  ; NumFC(range)|Returns the number of Formulae and Constants cells within the given range
+Columns          1!   1151  7  ; Columns(range)|Returns the number of columns within the given range
+Rows             1!   1152  7  ; Rows(range)|Returns the number of rows within the given range
+NumEC            1!   1153  7  ; NumEC(range)|Returns the number of non-empty cells within the given range
+MDet             1!   1160  10 ; MDet(range)|Calculates the determinant of the square matrix specified by range
+
+Sin              1    2000  1  ; Sin(number)|Returns the sine of a number
+Cos              1    2001  1  ; Cos(number)|Returns the cosine of a number
+Tan              1    2002  1  ; Tan(number)|Returns the tangent of a number
+Cot              1    2003  1  ; Cot(number)|Returns the cotangent of a number
+Sinh             1    2004  1  ; Sinh(number)|Returns the hyperbolic sine of a number
+Cosh             1    2005  1  ; Cosh(number)|Returns the hyperbolic cosine of a number
+Tanh             1    2006  1  ; Tanh(number)|Returns the hyperbolic tangent of a number
+Arcsin           1    2007  1  ; Arcsin(number)|Returns the inverse sine of a number
+Arccos           1    2008  1  ; Arccos(number)|Returns the inverse cosine of a number
+Arctan           1    2009  1  ; Arctan(number)|Returns the inverse tangent of a number
+Arccot           1    2010  1  ; Arccot(number)|Returns the inverse cotangent of a number
+Arcsinh          1    2011  1  ; Arcsinh(number)|Returns the inverse hyperbolic sine of a number
+Arccosh          1    2012  1  ; Arccosh(number)|Returns the inverse hyperbolic cosine of a number
+Arctanh          1    2013  1  ; Arctanh(number)|Returns the inverse hyperbolic tangent of a number
+Arccoth          1    2014  1  ; Arccoth(number)|Returns the inverse hyperbolic cotangent of a number
+Sec              1    2015  1  ; Sec(number)|Returns the secant of a number
+Cosec            1    2016  1  ; Cosec(number)|Returns the cosecant of a number
+Coth             1    2017  1  ; Coth(number)|Returns the hyperbolic cotangent of a number
+Deg              1    2090  1  ; Deg(number)|Converts circular measure of an angle in radians to degrees
+Rad              1    2091  1  ; Rad(angle)|Converts degrees of an angle to circular measure in radians
+Value            1    2092  1  ; Value(number)|Returns the value of the number or selected cell
+
+Sgn              1    2100  1  ; Sgn(number)|Returns the sign of a number
+Abs              1    2101  1  ; Abs(number)|Returns the absolute value of a number
+DecPrt           1    2102  1  ; DecPrt(number)|Returns the decimal part of a floating point number
+Int              1    2103  1  ; Int(number)|Returns the integer part of a floating point number
+Round            1    2104  1  ; Round(number)|Returns the closest integer to a floating point number
+NRound           1    2105  1  ; NRound(number)|Rounds a floating point number towards zero as an integer
+IsEven           1    2106  1  ; IsEven(x)|Returns True (1), if x is even
+IsOdd            1    2107  1  ; IsOdd(x)|Returns True (1), if x is odd
+bNot             1    2108  8  ; bNot(x)|Returns the bitwise complement of x
+Recip            1    2109  1  ; Recip(x)|Returns 1/x, the reciprocal value of x
+
+Exp              1    2150  1  ; Exp(number)|Exponential function (e^number)
+Ln               1    2151  1  ; Ln(number)|Returns the natural logarithm (to base e = 2.718...) of a number
+Lg               1    2152  1  ; Lg(number)|Returns the common logarithm (to base 10) of a number
+SqRoot           1    2153  1  ; SqRoot(number)|Returns the square root of a number
+Fact             1    2154  1  ; Fact(number)|Returns the factorial of a non-negative integer
+Not              1    2155  3  ; Not(logical_value)|Inverts the True or False values
+Lb               1    2156  1  ; Lb(number)|Returns the binary logarithm (to base 2) of a number
+Square           1    2157  1  ; Square(number)|Returns the square of a number
+
+StdNormDist      1    2200  2  ; StdNormDist(x)|Returns the value of the standard normal distribution N(0,1)
+Balmer           1    2250  6  ; Balmer(number)|Returns the frequencies of the Balmer series
+
+Hour             1    2260  5  ; Hour(number)|Returns the hours part of a serial date
+Minute           1    2261  5  ; Minute(number)|Returns the minutes part of a serial date
+Second           1    2262  5  ; Second(number)|Returns the seconds part of a serial date
+Year             1    2263  5  ; Year(number)|Returns the year part of a serial date
+Month            1    2264  5  ; Month(number)|Returns the month part of a serial date
+Day              1    2265  5  ; Day(number)|Returns the day part of a serial date
+Easter           1    2266  5  ; Easter(year)|Returns the date of Easter Sunday as a serial date
+Days             1    2267  5  ; Days(year)|Returns the number of days in the year
+LeapYear         1    2268  5  ; LeapYear(year)|Returns 1 if the year is a leap year, 0 otherwise
+Hours            1    2269  5  ; Hours(number)|Returns the absolute hours of a serial date
+
+Log              2?   2300  1  ; Log(x[;b])|Returns the logarithm to base b of x (if b is absent then to base 10 = common log)
+Weekday          2?   2310  5  ; Weekday(number[;type])|Returns the weekday of a serial date
+
+ExpDist          2    2400  2  ; ExpDist(x;Alpha)|Returns the values of the Exponential distribution
+Random           2    2401  1  ; Random(a;b)|Returns a random integer between a and b (inclusive)
+Root             2?   2402  1  ; Root(x[;r])|Returns the r-th root of x (if r is absent then taken as 2 = square root)
+Arctan2          2    2403  1  ; Arctan2(x;y)|Returns the angle between the X-axis and the given coordinates
+Mod              2    2404  1  ; Mod(x;y)|Calculates x mod y, i.e. the remainder of the integer division x/y
+Div              2    2405  1  ; Div(x;y)|Calculates x div y (integer division)
+bShiftL          2    2410  8  ; bShiftL(x;n)|Moves x by n bits to the left
+bShiftR          2    2411  8  ; bShiftR(x;n)|Moves x by n bits to the right
+
+Sum              #*   5000  1  ; Sum(range)|Calculates the sum of the values in the specified range(s)
+Product          #*   5001  1  ; Product(range)|Calculates the product of the values in the specified range(s)
+Min              #*   5002  2  ; Min(range)|Finds the minimum value in the specified range(s)
+Max              #*   5003  2  ; Max(range)|Finds the maximum value in the specified range(s)
+And              #*   5004  3  ; And(truth_value)|Returns: 0, 1 (i.e. false or true)
+Or               #*   5005  3  ; Or(truth_value)|Returns 1 if at least one value is true, else 0
+bAnd             #*   5010  8  ; bAnd(values)|Combines the given values with bitwise AND
+bOr              #*   5011  8  ; bOr(values)|Combines the given values with bitwise OR
+bXor             #*   5012  8  ; bXor(values)|Combines the given values with bitwise XOR (exclusive OR)
+ScriptNo         #*   5020  12 ; ScriptNo(n[;values])|Executes the GEMScript script "n.tsc" from the folder "Scripts\"
+
+Mean             #*   5100  2  ; Mean(values)|Returns the arithmetic mean of the specified values
+GeoMean          #*   5101  2  ; GeoMean(values)|Returns the geometric mean of the specified values
+HarmMean         #*   5102  2  ; HarmMean(values)|Returns the harmonic mean of the specified values
+RMS              #*   5103  2  ; RMS(values)|Returns the root mean square of the specified values
+Variance         #*   5110  2  ; Variance(values)|Calculates the sample variance of the specified values
+VarianceN        #*   5111  2  ; VarianceN(values)|Calculates the variance of the parent population of the values
+StDev            #*   5112  2  ; StDev(values)|Calculates the sample standard deviation of the values
+StDevN           #*   5113  2  ; StDevN(values)|Calculates the standard deviation of the parent population of the values
+MeanDev          #*   5114  2  ; MeanDev(values)|Returns the mean absolute deviation of the specified values
+SumQuadDev       #*   5115  2  ; SumQuadDev(values)|Returns the mean square deviation of the values
+Median           #*   5116  2  ; Median(values)|Calculates the median (0.5-quantile) of the values
+LowerQuartile    #*   5117  2  ; LowerQuartile(values)|Calculates the 0.25-quantile of the values
+UpperQuartile    #*   5118  2  ; UpperQuartile(values)|Calculates the 0.75-quantile of the values
+QuartileDif      #*   5119  2  ; QuartileDif(values)|Calculates the difference between the upper and lower quartile
+Spread           #*   5120  2  ; Spread(values)|Calculates the difference between the largest and smallest value
+
+EquiDist         -3   5200  2  ; EquiDist(x;a;b)|Returns the equipartition distribution of the interval (a,b)
+NormDist         -3   5201  2  ; NormDist(x;m;z)|Returns the values of the normal distribution N(m,s^2) with z=s^2
+Date             -3   5210  5  ; Date(year;month;day)|Calculates the serial date of the date
+Time             -3   5211  5  ; Time(hour;minute;second)|Calculates the serial time (of day)
+LiA              -3   5250  4  ; LiA(cost;rest;length)|Linear depreciation per period
+DIA              -4   5251  4  ; DIA(cost;rest;length;period)|Arithmetically-accelerated depreciation
+GDA2             -45  5252  4  ; GDA2(cost;rest;length;period[;months])|Geometrically-accelerated depreciation
+DigA             -3   5253  4  ; DigA(cost;length;period)|Special "digital" depreciation (for computers) (= DIA to 0)
+GDA              -45  5254  4  ; GDA(cost;rest;length;period[;factor])|Decreasing double rate depreciation
+RMZ              -34  5255  4  ; RMZ(interest;ToP;BV[;PV])|Annuity (regular payment) of a loan or an investment with constant interest
+
+If               -13  5300  3  ; If(x[;Then_value[;Else_value]])|Conditional action (truth check)
+Option           -2*  5301  7  ; Option(Index;Argument 1[;...Argument n])|Returns the argument with the relevant index (1..n)
+Quantile         #2*  5302  2  ; Quantile(alpha;values)|Calculates the alpha-quantile of the values
+
+MMult            #*   9999 10  ; MMult(range1;range2;rangeZ)|Multiplies two matrices and writes the result in the destination range

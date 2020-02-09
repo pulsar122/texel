@@ -1,0 +1,9 @@
+;Hier k”nnen Namen fr benutzerdefinierte externe GEMScript-
+;Skripten eingetragen werden;
+;Nummern benutzerdefinierter Skripte mssen immer >=0 und <=22000
+;sein, Nummern <0 sind fr Texel reserviert!
+;nach dem Semikolon folgt die Beschreibung fr Funktionsmanager;
+;als Trenner drfen nur Spaces verwendet werden;
+;die Funktionen werden in die Kategorie 12 ("Extern") aufgenommen.
+
+Kreisfl„che  42  ; Kreisfl„che(r)|Berechnet die Fl„che eines Kreises mit dem Radius r

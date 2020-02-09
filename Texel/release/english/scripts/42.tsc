@@ -1,0 +1,17 @@
+// Calculates the area of a circle with radius r=argv[2]
+// tm 97-11-20
+
+proc main(...)
+{
+	if (argc<3) exit(1);
+
+	datei = argv[0];
+	zelle = argv[1];
+	r     = argv[2];
+
+	/* Calculate area */
+	wert = pi() * r * r;
+
+	/* Return the result */
+	Texel.ReturnCellValue(datei,zelle,wert);
+}

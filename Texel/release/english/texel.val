@@ -1,0 +1,11 @@
+e      2.71828182845904523218
+
+;The following physical constants are taken from
+;Stroppe "Physik", 8. Edition, VEB Fachbuchverlag, Leipzig 1990
+c      2.9979246E8   Speed of light in vacuum [m/s]
+g      9.80665       Acceleration due to gravity [m/s^2]
+R      8.3144        Universal gas constant [J/(mol K)]
+u      1.66057E-27   Atomic mass unit [kg]
+h      6.626176E-34  Planck's quantum constant [Js]
+
+;user defined global constants will be saved in TEXELUSR.VAL

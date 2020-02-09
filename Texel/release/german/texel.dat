@@ -1,0 +1,152 @@
+;die Funktionskategorien (die Namen kînnen geÑndert werden)
+;neue Kategorien kînnen angelegt werden (id>0)
+
+#1  Mathe, Trigonometrie
+#2  Statistik
+#3  Logik
+#4  Finanzen
+#5  Datum & Zeit
+#6  Physik
+#7  Information
+#8  Bitmanipulation
+#9  Datenbank
+#10 Matrix
+#11 Text
+#12 Extern
+
+;die Namen am Zeilenanfang kînnen beliebig geÑndert werden!
+;als Trenner dÅrfen nur Spaces verwendet werden
+
+Zuf              0    1000  1  ; Zuf|Liefert eine Zufallszahl zwischen 0 (inkl.) und 1 (exkl.)
+Fehler           0    1001  7  ; Fehler|Setzt den Wert der Zelle auf #FEHLER
+Heute            0    1010  5  ; Heute|Liefert das Tagesdatum als serielle Zeitangabe
+Jetzt            0    1011  5  ; Jetzt|Liefert Datum und Uhrzeit als serielle Zeitangabe
+std1             0    1012  5  ; std1|Liefert eine Stunde als serielle Zahl
+min1             0    1013  5  ; min1|Liefert eine Minute als serielle Zahl
+sek1             0    1014  5  ; sek1|Liefert eine Sekunde als serielle Zahl
+Falsch           0    1015  3  ; Falsch|Liefert den Wert fÅr logisch falsch (0)
+Wahr             0    1016  3  ; Wahr|Liefert den Wert fÅr logisch wahr (1)
+Pi               0    1017  1  ; Pi|Liefert den Wert der Kreiszahl Pi (=3.14...)
+
+IstZahl          1!   1100  7  ; IstZahl(Bereich)|Gibt Wahr (1) zurÅck, wenn alle Zellen Zahlen enthalten
+IstText          1!   1101  7  ; IstText(Bereich)|Gibt Wahr (1) zurÅck, wenn alle Zellen Text enthalten
+IstLeer          1!   1102  7  ; IstLeer(Bereich)|Gibt Wahr (1) zurÅck, wenn alle Zellen leer sind
+IstFehler        1!   1103  7  ; IstFehler(Bereich)|Gibt Wahr (1) zurÅck, wenn alle Zellen fehlerhafte Rechenergebnisse enthalten
+
+Anzahl           1!   1150  7  ; Anzahl(Bereich)|Gibt die Anzahl der Formel- und Konstantenzellen innerhalb des Bereichs zurÅck
+Spalten          1!   1151  7  ; Spalten(Bereich)|Liefert die Anzahl der Spalten im angegebenen Bereich
+Zeilen           1!   1152  7  ; Zeilen(Bereich)|Liefert die Anzahl der Zeilen im angegebenen Bereich
+Anzahl2          1!   1153  7  ; Anzahl2(Bereich)|Gibt die Anzahl der nichtleeren Zellen innerhalb des Bereichs zurÅck
+MDet             1!   1160  10 ; MDet(Bereich)|Berechnet die Determinante der durch den Bereich angegebenen quadratischen Matrix
+
+Sin              1    2000  1  ; Sin(Zahl)|Liefert den Sinus einer Zahl
+Cos              1    2001  1  ; Cos(Zahl)|Liefert den Cosinus einer Zahl
+Tan              1    2002  1  ; Tan(Zahl)|Liefert den Tangens einer Zahl
+Cot              1    2003  1  ; Cot(Zahl)|Liefert den Cotangens einer Zahl
+Sinh             1    2004  1  ; Sinh(Zahl)|Liefert den hyperbolischen Sinus einer Zahl
+Cosh             1    2005  1  ; Cosh(Zahl)|Liefert den hyperbolischen Cosinus einer Zahl
+Tanh             1    2006  1  ; Tanh(Zahl)|Liefert den hyperbolischen Tangens einer Zahl
+Arcsin           1    2007  1  ; Arcsin(Zahl)|Liefert den Arkussinus einer Zahl
+Arccos           1    2008  1  ; Arccos(Zahl)|Liefert den Arkuscosinus einer Zahl
+Arctan           1    2009  1  ; Arctan(Zahl)|Liefert den Arkustangens einer Zahl
+Arccot           1    2010  1  ; Arccot(Zahl)|Liefert den Arkuscotangens einer Zahl
+Arsinh           1    2011  1  ; Arsinh(Zahl)|Liefert den hyperbolischen Areasinus einer Zahl
+Arcosh           1    2012  1  ; Arcosh(Zahl)|Liefert den hyperbolischen Areacosinus einer Zahl
+Artanh           1    2013  1  ; Artanh(Zahl)|Liefert den hyperbolischen Areatangens einer Zahl
+Arcoth           1    2014  1  ; Arcoth(Zahl)|Liefert den hyperbolischen Areacotangens einer Zahl
+Sec              1    2015  1  ; Sec(Zahl)|Liefert den Sekans einer Zahl
+Cosec            1    2016  1  ; Cosec(Zahl)|Liefert den Cosekans einer Zahl
+Coth             1    2017  1  ; Coth(Zahl)|Liefert den hyperbolischen Cotangens einer Zahl
+Grad             1    2090  1  ; Grad(Zahl)|Wandelt ein Bogenmaû in Grad um
+Rad              1    2091  1  ; Rad(Winkel)|Wandelt Grad in Bogenmaû um
+Wert             1    2092  1  ; Wert(Zahl)|Liefert den Wert der Zahl oder Zelle zurÅck
+
+Sgn              1    2100  1  ; Sgn(Zahl)|Liefert das Vorzeichen einer Zahl
+Abs              1    2101  1  ; Abs(Zahl)|Liefert den Absolutwert einer Zahl
+Nachkomma        1    2102  1  ; Nachkomma(Zahl)|Liefert die Nachkommastellen einer Zahl
+Int              1    2103  1  ; Int(Zahl)|Liefert den ganzzahligen Anteil einer Zahl
+Runden           1    2104  1  ; Runden(Zahl)|Rundet mathematisch auf ganze Zahlen
+NRunden          1    2105  1  ; NRunden(Zahl)|Rundet auf ganze Zahlen in Richtung Null
+IstGerade        1    2106  1  ; IstGerade(x)|Gibt Wahr (1) zurÅck, wenn x gerade ist
+IstUngerade      1    2107  1  ; IstUngerade(x)|Gibt Wahr (1) zurÅck, wenn x ungerade ist
+bNicht           1    2108  8  ; bNicht(x)|Liefert das bitweise Komplement von x
+Kehrwert         1    2109  1  ; Kehrwert(x)|Liefert 1/x, den reziproken Wert von x
+
+Exp              1    2150  1  ; Exp(Zahl)|Exponentialfunktion (e^Zahl)
+Ln               1    2151  1  ; Ln(Zahl)|Liefert den natÅrlichen Logarithmis (zur Basis e = 2.718...)
+Lg               1    2152  1  ; Lg(Zahl)|Liefert den 10er-Logarithmus (zur Basis 10) einer Zahl
+QWurzel          1    2153  1  ; QWurzel(Zahl)|Liefert die Quadratwurzel einer Zahl
+Fakt             1    2154  1  ; Fakt(Zahl)|Liefert die FakultÑt einer nichtnegativen ganzen Zahl
+Nicht            1    2155  3  ; Nicht(Wahrheitswert)|Kehrt den Wert des Arguments um
+Lb               1    2156  1  ; Lb(Zahl)|Liefert den logarithmus dualis (zur Basis 2) einer Zahl
+Quadrat          1    2157  1  ; Quadrat(Zahl)|Liefert das Quadrat einer Zahl
+
+StdNormVert      1    2200  2  ; StdNormVert(x)|Liefert die Werte der Standardnormalverteilung N(0,1)
+Balmer           1    2250  6  ; Balmer(Zahl)|Liefert die Frequenzen der Balmer-Serie
+
+Stunde           1    2260  5  ; Stunde(Zahl)|Liefert die Stunden einer seriellen Zeitangabe
+Minute           1    2261  5  ; Minute(Zahl)|Liefert die Minuten einer seriellen Zeitangabe
+Sekunde          1    2262  5  ; Sekunde(Zahl)|Liefert die Sekunden einer seriellen Zeitangabe
+Jahr             1    2263  5  ; Jahr(Zahl)|Liefert das Jahr einer seriellen Zeitangabe
+Monat            1    2264  5  ; Monat(Zahl)|Liefert den Monat einer seriellen Zeitangabe
+Tag              1    2265  5  ; Tag(Zahl)|Liefert den Tag einer seriellen Zeitangabe
+Ostern           1    2266  5  ; Ostern(Jahr)|Liefert das Datum von Ostern als serielle Zeitangabe
+Tage             1    2267  5  ; Tage(Jahr)|Gibt die Anzahl der Tage im Jahr zurÅck
+Schaltjahr       1    2268  5  ; Schaltjahr(Jahr)|Gibt 1 zurÅck, wenn das Jahr ein Schaltjahr ist, 0 sonst
+Stunden          1    2269  5  ; Stunden(Zahl)|Liefert die absoluten Stunden einer seriellen Zeitangabe
+
+Log              2?   2300  1  ; Log(x[;b])|Liefert den Logarithmus zur Basis b von x
+Wochentag        2?   2310  5  ; Wochentag(Zahl[;Typ])|Liefert den Wochentag einer seriellen Zeitangabe
+
+ExpVert          2    2400  2  ; ExpVert(x;Alpha)|Liefert die Werte der Exponentialverteilung
+Zufall           2    2401  1  ; Zufall(a;b)|Liefert eine ganze Zufallszahl zwischen a und b (inkl.)
+Wurzel           2?   2402  1  ; Wurzel(x[;r])|Berechnet die r-te Wurzel von x
+Arctan2          2    2403  1  ; Arctan2(x;y)|Liefert den Winkel zwischen der X-Achse und den angegebenen Koordinaten
+Mod              2    2404  1  ; Mod(x;y)|Berechnet x mod y, also den Rest der ganzzahligen Division x/y
+Div              2    2405  1  ; Div(x;y)|Berechnet x div y (ganzzahlige Division)
+bSchiebL         2    2410  8  ; bSchiebL(x;n)|Verschiebt (shiftet) x um n Bits nach links
+bSchiebR         2    2411  8  ; bSchiebR(x;n)|Verschiebt (shiftet) x um n Bits nach rechts
+
+Summe            #*   5000  1  ; Summe(Werte)|Berechnet die Summe der angegebenen Werte
+Produkt          #*   5001  1  ; Produkt(Werte)|Berechnet das Produkt der angegebenen Werte
+Min              #*   5002  2  ; Min(Werte)|Ermittelt das Minimum der angegebenen Werte
+Max              #*   5003  2  ; Max(Werte)|Ermittelt das Maximum der angegebenen Werte
+Und              #*   5004  3  ; Und(Wahrheitswerte)|Liefert 1, wenn alle Werte ungleich 0 sind
+Oder             #*   5005  3  ; Oder(Wahrheitswerte)|Liefert 1, wenn mindestens ein Wert ungleich 0 ist
+bUnd             #*   5010  8  ; bUnd(Werte)|VerknÅpft die angegebenen Werte mit bitweisem UND
+bOder            #*   5011  8  ; bOder(Werte)|VerknÅpft die angegebenen Werte mit bitweisem ODER
+bEor             #*   5012  8  ; bEor(Werte)|VerknÅpft die angegebenen Werte mit bitweisem XOR (exklusives ODER)
+SkriptNr         #*   5020  12 ; SkriptNr(n[;Werte])|FÅhrt das GEMScript-Skript "n.tsc" im Ordner "Skripte\" aus
+
+Mittelwert       #*   5100  2  ; Mittelwert(Werte)|Liefert das arithmetische Mittel der angegebenen Werte
+GeoMittel        #*   5101  2  ; GeoMittel(Werte)|Liefert das geometrische Mittel der angegebenen Werte
+HarMittel        #*   5102  2  ; HarMittel(Werte)|Liefert das harmonische Mittel der angegebenen Werte
+QuadMittel       #*   5103  2  ; QuadMittel(Werte)|Liefert das quadratische Mittel der angegebenen Werte
+Varianz          #*   5110  2  ; Varianz(Werte)|Berechnet die Stichprobenvarianz der angegebenen Werte
+VarianzN         #*   5111  2  ; VarianzN(Werte)|Berechnet die Varianz der Grundgesamtheit der Werte
+StdAbw           #*   5112  2  ; StdAbw(Werte)|Berechnet die Stichproben-Standardabweichung der Werte
+StdAbwN          #*   5113  2  ; StdAbwN(Werte)|Berechnet die Standardabweichung der Grundgesamtheit der Werte
+MittelAbw        #*   5114  2  ; MittelAbw(Werte)|Liefert die mittlere absolute Abweichung der angegebenen Werte
+SumQuadAbw       #*   5115  2  ; SumQuadAbw(Werte)|Liefert die mittlere quadratische Abweichung der Werte
+Median           #*   5116  2  ; Median(Werte)|Berechnet den Median (0.5-Quantil) der Werte
+QuartilUnten     #*   5117  2  ; QuartilUnten(Werte)|Berechnet das 0.25-Quantil der Werte
+QuartilOben      #*   5118  2  ; QuartilOben(Werte)|Berechnet das 0.75-Quantil der Werte
+Quartilsabstand  #*   5119  2  ; Quartilsabstand(Werte)|Berechnet die Differenz zwischen oberem und unterem Quartil
+Spannweite       #*   5120  2  ; Spannweite(Werte)|Berechnet die Differenz zwischen grîûtem und kleinstem Wert
+
+GleichVert       -3   5200  2  ; GleichVert(x;a;b)|Liefert die Gleichverteilung auf dem Intervall (a,b)
+NormVert         -3   5201  2  ; NormVert(x;m;z)|Liefert die Werte der Normalverteilung N(m,s^2) mit z=s^2
+Datum            -3   5210  5  ; Datum(Jahr;Monat;Tag)|Berechnet die serielle Zeitangabe des Datums
+Zeit             -3   5211  5  ; Zeit(Stunde;Minute;Sekunde)|Berechnet die serielle Zeitangabe der Uhrzeit
+LIA              -3   5250  4  ; LIA(Ansch;Rest;Dauer)|Lineare Abschreibung pro Periode
+DIA              -4   5251  4  ; DIA(Ansch;Rest;Dauer;Periode)|Arithmetisch-degressive Abschreibung
+GDA2             -45  5252  4  ; GDA2(Ansch;Rest;Dauer;Periode[;Monate])|Geometrisch-degressive Abschreibung
+DigA             -3   5253  4  ; DigA(Ansch;Dauer;Periode)|Digitale Abschreibung (= DIA mit Restwert 0)
+GDA              -45  5254  4  ; GDA(Ansch;Rest;Dauer;Periode[;Faktor])|Degressive Doppelratenabschreibung
+RMZ              -34  5255  4  ; RMZ(Zins;Zzr;Bw[;Zw])|AnnuitÑt (regelm. Zahlung) eines Darlehens oder einer Invest. bei konst. Zinssatz
+
+Wenn             -13  5300  3  ; Wenn(Wahrheitswert[;Dann_Wert[;Sonst_Wert]])|FÅhrt eine WahrheitsprÅfung aus
+Wahl             -2*  5301  7  ; Wahl(Index;Argument 1[;...Argument n])|Gibt das Argument mit dem passenden Index (1..n) zurÅck
+Quantil          #2*  5302  2  ; Quantil(alpha;Werte)|Berechnet das alpha-Quantil der Werte
+
+MMult            #*   9999 10  ; MMult(Bereich1;Bereich2;BereichZ)|Multipliziert zwei Matrizen und schreibt das Ergebnis in den Zielbereich

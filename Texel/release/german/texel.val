@@ -1,0 +1,11 @@
+e      2,71828182845904523218
+
+;die folgenden physikalischen Konstanten stammen aus
+;Stroppe "Physik", 8. Auflage, VEB Fachbuchverlag, Leipzig 1990
+c      2,9979246E8   Lichtgeschwindigkeit im Vakuum [m/s]
+g      9,80665       Erdbeschleunigung [m/s^2]
+R      8,3144        Gaskonstante [J/(mol K)]
+u      1,66057E-27   atomare Masseeinheit [kg]
+h      6,626176E-34  Plancksches Wirkungsquantum [Js]
+
+;benutzerdefinierte globale Konstanten werden in texelusr.val gespeichert!

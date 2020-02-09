@@ -1,0 +1,35 @@
+// externes Scripter-Skript, das im bergebenen Sheet
+// (bzw. im obersten, wenn kein Sheet angegeben wurde)
+// alle Uhrzeitangaben neu parst; dadurch werden die
+// Rundungsfehler alter Texel-Versionen beseitigt;
+// tm 97-11-28
+
+if (address("texel"))
+{
+	if (argc<1) datei=GetFront();
+	else
+		datei=argv[0];
+	
+	rmax=GetRows();
+	cmax=GetColumns();
+	
+	printf("ndere %d Zeilen im Sheet \"%s\".\n",rmax,datei);
+	
+	for (r=0; r<rmax; r++)
+	{
+		printf("Zeile %d...",r+1);
+		
+		for(c=0; c<cmax; c++)
+		{
+			if (IsCellConst(r,c,datei))
+			{
+				SetCell(r,c,GetCellFormula(r,c,datei),datei);
+			}
+		}
+		
+		printf("ok.\n");
+	}
+	
+	Recalc();
+	printf("Fertig!\n");
+}

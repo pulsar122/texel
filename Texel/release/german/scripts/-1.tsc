@@ -1,0 +1,56 @@
+// MMult(bereich1,bereich2,bereichZ)
+// tm 97-11-23
+// multipliziert die zwei Matrizen bereich1,bereich2
+// und schreibt das Ergebnis ab der linken oberen Zelle
+// des Zielbereichs ins Blatt
+
+proc main(...)
+{
+	if (argc<5) exit(1);
+
+	datei = argv[0];
+	zelle = argv[1];
+	
+	if (address("texel"))
+	{
+		m1   = GetRange(argv[2],datei);
+		m2   = GetRange(argv[3],datei);
+		dest = GetRange(argv[4],datei);
+		
+		r1s = m1[0];
+		c1s = m1[1];
+		r1e = m1[2];
+		c1e = m1[3];
+	
+		r2s = m2[0];
+		c2s = m2[1];
+		r2e = m2[2];
+		c2e = m2[3];
+	
+		dr = dest[0];
+		dc = dest[1];
+		
+		if (((r1e - r1s) == (c2e - c2s)) && ((c1e - c1s) == (r2e - r2s)))
+		{
+			for (r=r1s; r<=r1e; r++)
+			{
+				for (c=c2s; c<=c2e; c++)
+				{
+					wert = 0.0;
+					
+					for (i=c1s; i<=c1e; i++)
+					{
+						z1 = GetCell(r,i,datei);
+						z2 = GetCell(i+r2s-c1s,c,datei);
+						
+						wert += z1*z2;
+					}
+	
+					SetCell(r+dr-r1s,c+dc-c2s,wert,datei);
+				}
+			}
+		}
+	
+		ReturnCellValue(datei,zelle,0.0);
+	}
+}

@@ -1,0 +1,24 @@
+// Texel-Demoskript (fÅr Scripter von Holger Weets und Christian Wempe)
+// als Argumente werden immer Åbergeben:
+//    Dateiname (z.B. "C:\Texel\balmer.txl")
+//    Zellreferenz (z.B. "B52")
+// danach kînnen noch beliebig viele Parameter (auch Bereichsangaben
+// der Form "A1:C23") folgen
+// die RÅckgabe an Texel *muû* mit dem GEMScript-Kommando
+// ReturnCellValue(datei,zelle,wert) erfolgen; die Zielzelle
+// muû die aufrufende Zelle sein ("=SkriptNr(...)")
+
+
+proc main(...)
+{
+	if (argc<2) exit(1);
+
+	datei = argv[0];
+	zelle = argv[1];
+	wert  = 0.0;
+	
+	/* hier beginnt das eigentliche "Makro" */
+
+	/* RÅckgabe des Ergebnisses */
+	Texel.ReturnCellValue(datei,zelle,wert);
+}
