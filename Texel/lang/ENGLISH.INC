@@ -83,13 +83,13 @@
 	BUBBLE_EASTEREGG       = '"Holland hat schîne Inseln, Heidelberg schîne Tabellenkalkulationen!"';
 
 	BUBBLE_GENERAL_RANGE    = 'Zeigt den aktuellen Block an, auf den die Aktionen dieses Dialogs wirken. Durch Anklicken bzw. mit Control+B kînnen Sie einen neuen Block definieren.';
-	BUBBLE_GENERAL_HELP     = 'Ruft die ST-Guide-Onlinehilfe auf. Wenn der ST-Guide nicht installiert ist, ist dieser Button nicht anwÑhlbar.';
-	BUBBLE_GENERAL_CANCEL   = 'Schlieût den Dialog, ohne eine Aktion auszufÅhren';
+	BUBBLE_GENERAL_HELP     = 'Calls the ST-Guide online help. If ST-Guide is not installed this button will be disabled';
+	BUBBLE_GENERAL_CANCEL   = 'Closes the dialog without carrying out the action';
 	BUBBLE_GENERAL_SET      = 'Setzt die aktuellen Werte dieses Dialogs im markierten Block, ohne den Dialog zu verlassen';
 	BUBBLE_GENERAL_SET2     = 'Setzt die aktuellen Werte, ohne den Dialog zu verlassen';
 	BUBBLE_GENERAL_SETOK    = 'Setzt die aktuellen Werte im markierten Bereich und verlÑût den Dialog';
-	BUBBLE_GENERAL_OK       = 'öbernimmt die aktuellen Werte und verlÑût den Dialog';
-	BUBBLE_GENERAL_OK2      = 'öbernimmt die Einstellungen';
+	BUBBLE_GENERAL_OK       = 'Accepts the current values and closes the dialog';
+	BUBBLE_GENERAL_OK2      = 'Accept the settings';
 	BUBBLE_GENERAL_OBJSET   = 'Setzt die aktuellen Werte dieses Dialogs beim zugehîrigen Objekt, ohne den Dialog zu verlassen';
 	BUBBLE_GENERAL_OBJSETOK = 'Setzt die aktuellen Werte beim zugehîrigen Objekt und verlÑût den Dialog';
 	BUBBLE_GENERAL_CLOSE    = 'Schlieût den Dialog';
@@ -358,12 +358,12 @@
 	BUBBLE_EXPORT_CLIPBOARD = 'Wenn dieser Button markiert ist, erfolgt der Export automatisch ins Klemmbrett';
 	BUBBLE_EXPORT_FILE      = 'Zeigt eine Dateiauswahlbox an, mit der die Exportdatei festgelegt wird';
 	BUBBLE_EXPORT_FILENAME  = 'Zeigt die ausgewÑhlte Exportdatei an (falls eine solche festgelegt wurde)';
-	BUBBLE_EXPORT_EXPORT    = 'Exportiert das Blatt';
-	BUBBLE_EXPORT_OK        = 'Exportiert das Blatt und schlieût den Dialog';
+	BUBBLE_EXPORT_EXPORT    = 'Exports the sheet';
+	BUBBLE_EXPORT_OK        = 'Exports the sheet and closes the dialog';
 	BUBBLE_EXPORT_SAVEWITH  = 'Bestimmt, welche Teile bzw. welche Attribute des Blattes exportiert werden';
-	BUBBLE_EXPORT_DOCTYPE   = 'Legt den HTML-Dokumenttyp fest. "3.0" ist Netscape-Standard, "3.2" und "4.0" sind offizieller W3C-Standard. Derzeit ist "3.2" die beste Wahl.';
+	BUBBLE_EXPORT_DOCTYPE   = 'Sets the HTML document type. "3.0" is Netscape standard, "3.2" and "4.0" are the official W3C standards. At present "3.2" is the best choice|;
 	BUBBLE_EXPORT_SAVEDT    = 'Bestimmt, ob der Dokumenttyp Åberhaupt in der Exportdatei gespeichert wird. Wenn die Tabelle in eine andere HTML-Datei eingebunden wird, ist dies unnîtig.';
-	BUBBLE_EXPORT_COLORS    = 'Legt fest, ob die Farbinformationen in die HTML-Tabelle exportiert werden';
+	BUBBLE_EXPORT_COLORS    = 'Exports the colours to the HTML table';
 	BUBBLE_EXPORT_FONTS     = 'Bestimmt, ob die Zeichensatznamen exportiert werden. Geht nur, wenn auch die Farben exportiert werden.';
 	BUBBLE_EXPORT_DIFTYPE   = 'Wird zur Festlegung des DIF-Typs benîtigt, da M$-Produkte eine andere Zeilen/Spalten-Codierung verwenden als Åblich...';
 	BUBBLE_EXPORT_DIFSTAND  = 'Mit dieser Option kann eine Standard-DIF-Datei exportiert werden';
@@ -372,7 +372,7 @@
 	BUBBLE_EXPORT_DIFFORM   = 'Legt fest, ob beim Speichern von Werten das Zahlenformat beachtet wird';
 	BUBBLE_EXPORT_CSVFORM   = 'Legt fest, ob beim Speichern von Werten das Zahlenformat beachtet wird';
 	BUBBLE_EXPORT_ASCIIFORM = 'Legt fest, ob beim Speichern von Werten das Zahlenformat beachtet wird';
-	BUBBLE_EXPORT_EMBED     = 'Legt fest, ob die eingebetteten Objekte als <EMBED>-Tags exportiert werden. Die meisten Objekte kînnen allerdings nur mit CAB korrekt angezeigt werden, nicht aber mit dem Netscape Navigator oder M$ Internet Explorer.';
+	BUBBLE_EXPORT_EMBED     = 'If checked, inserted objects will be exported with the <EMBED> tag. Most objects can only be correctly displayed by CAB, not with Netscape or M$ Internet Explorer.';
 	BUBBLE_EXPORT_FILTER    = 'Legt fest, fÅr welches Betriebssystem die Datei exportiert werden soll, um u.a. die Umlaute korrekt exportieren zu kînnen. Damit mehr als der "Atari"-Filter zur VerfÅgung steht, muû KEYTAB installiert sein.';
 	BUBBLE_EXPORT_ESCAPES   = 'ACHTUNG, NUR FöR HTML-EXPERTEN!!! Wenn diese Option aktiv ist, werden die vier HTML-Steuerzeichen <>&" nicht in ihre HTML-Namen umgewandelt, so daû man in den Zellen direkt HTML kodieren kann.';
 	BUBBLE_EXPORT_XLSVER    = 'Bestimmt, fÅr welche Excel-Version das Texel-Dokument exportiert werden soll. Excel 2.0 (BIFF2) kann von allen Excel-Versionen ohne EinschrÑnkungen importiert werden.';
@@ -434,11 +434,11 @@
 	BUBBLE_PRINT_INFO       = 'Zeigt Informationen Åber den GerÑtetreiber an';
 
 	BUBBLE_SHFORM_SIZE      = 'Ermîglicht es, die Blattgrîûe nachtrÑglich zu Ñndern';
-	BUBBLE_SHFORM_ROWS      = 'Legt die Zeilenanzahl fest (max. 16384)';
-	BUBBLE_SHFORM_COLUMNS   = 'Bestimmt die Anzahl der Spalten (max. 702)';
-	BUBBLE_SHFORM_FONTID    = 'Stellt den Zeichensatz fÅr die Zeilen- und Spaltenbeschriftungen ein';
-	BUBBLE_SHFORM_FONTSIZE  = 'Bestimmt die Zeichenhîhe der Zeilen- und Spaltenbeschriftungen';
-	BUBBLE_SHFORM_GRID      = 'Wenn dieses KÑstchen markiert ist, werden auch die einfachen Gitterlinien gezeichnet, sonst nicht';
+	BUBBLE_SHFORM_ROWS      = 'Sets the number of rows (max. 16384)';
+	BUBBLE_SHFORM_COLUMNS   = 'Sets the number of columns (max. 702)';
+	BUBBLE_SHFORM_FONTID    = 'Choose the font to use for the sheet rows and column lables';
+	BUBBLE_SHFORM_FONTSIZE  = 'Choose the font size to use for the sheet rows and column lables';
+	BUBBLE_SHFORM_GRID      = 'If checked, single grid lines are also drawn';
 	BUBBLE_SHFORM_AUTOCALC  = 'Bestimmt, ob das Blatt nach jeder Eingabe neu durchgerechnet werden soll';
 	BUBBLE_SHFORM_FORM      = 'Wenn diese Checkbox angekreuzt ist, ist das Blatt eine sog. Vorlage, d.h. es kann nicht mehr versehentlich unter seinem Namen gespeichert werden, sondern'
 	                           +' man wird bei jedem Speichern aufgefordert, einen neuen Namen auszuwÑhlen';
@@ -644,10 +644,10 @@
 	BUBBLE_PASS_CANCEL      = 'Bricht den Ladevorgang ab';
 	BUBBLE_PASS_OK          = 'BestÑtigt das Paûwort. Wenn dieses korrekt eingegeben wurde, wird das Blatt geladen.';
 	
-	BUBBLE_CHGPASS_OLD      = 'Hier muû das alte Paûwort korrekt eingegeben werden, wenn ein solches bereits festgelegt wurde und man dieses Ñndern mîchte. Groû-/Kleinschreibung wird berÅcksichtigt!';
-	BUBBLE_CHGPASS_NEW      = 'Hier wird das neue Paûwort eingetragen. Groû-/Kleinschreibung wird berÅcksichtigt!';
-	BUBBLE_CHGPASS_CHECK    = 'Das neue Paûwort wird nur akzeptiert, wenn in dieses Feld exakt dasselbe Paûwort eingetragen wurde';
-	BUBBLE_CHGPASS_OK       = 'éndert das Paûwort bzw. Åbernimmt das neue Paûwort';
+	BUBBLE_CHGPASS_OLD      = 'The old password must be entered here, if it exists and you want to change it. Please note that this is case sensitive!';
+	BUBBLE_CHGPASS_NEW      = 'The new password should beentered here. Case sensitive!';
+	BUBBLE_CHGPASS_CHECK    = 'The new password is only accepted if exactly the same password is entered in this field';
+	BUBBLE_CHGPASS_OK       = 'Alters the password or accepts the new password';
 	
 	BUBBLE_FILL_ROWS        = 'Die Reihe wird in einer Zeile berechnet';
 	BUBBLE_FILL_COLUMNS     = 'Die Reihe wird in einer Spalte berechnet';
@@ -683,37 +683,37 @@
 	BUBBLE_TIP_NEXT         = 'Zeigt den nÑchsten Tip an';
 	BUBBLE_TIP_START        = 'Hiermit wird festgelegt, ob dieser Dialog bei jedem Texel-Start erscheint. Der Dialog kann ansonsten auch Åber das globale "Hilfe"-MenÅ aufgerufen werden.';
 	
-	BUBBLE_PATHS_TXL        = 'Legt fest, wo Texel-Dokumente normalerweise geladen und gespeichert werden';
-	BUBBLE_PATHS_EXPORT     = 'Legt das Standard-Exportverzeichnis fÅr alle Exportformate fest';
-	BUBBLE_PATHS_META       = 'Legt das Verzeichnis fÅr die Druckausgabe in GEM-Metafiles fest';
-	BUBBLE_PATHS_ID4        = 'Aus diesem Verzeichnis werden ID4-OLGA-Objekte normalerweise importiert';
-	BUBBLE_PATHS_TEXT       = 'Legt das Verzeichnis fest, in dem sich normalerweise die Texte fÅr Text-Objekte befinden';
+	BUBBLE_PATHS_TXL        = 'Sets where Texel documents are normally loaded from and saved to';
+	BUBBLE_PATHS_EXPORT     = 'Sets the default export folder for all export formats';
+	BUBBLE_PATHS_META       = 'Sets the folder for the export of GEM Metafiles';
+	BUBBLE_PATHS_ID4        = 'ID4-OLGA-objects are normally imported from this folder';
+	BUBBLE_PATHS_TEXT       = 'Sets the folder where texts for text objects are normally located';
 	BUBBLE_PATHS_GRAFIK     = 'Sets the folder where pictures (*.IMG) for graphics objects are normally located';
-	BUBBLE_PATHS_DIAGRAMM   = 'Das Standardverzeichnis fÅr manuell gespeicherte Diagrammdateien';
-	BUBBLE_PATHS_LDW        = 'Aus diesem Verzeichnis werden LDW-Ausspuldateien (*.LDP) normalerweise importiert';
-	BUBBLE_PATHS_DIF        = 'Aus diesem Verzeichnis werden DIF-Dateien normalerweise importiert';
-	BUBBLE_PATHS_CSV        = 'Aus diesem Verzeichnis werden CSV-Dateien normalerweise importiert';
-	BUBBLE_PATHS_ASCII      = 'Aus diesem Verzeichnis werden allgemeine ASCII-Dateien normalerweise importiert';
-	BUBBLE_PATHS_DBF        = 'Aus diesem Verzeichnis werden dBase-Datenbanken normalerweise importiert';
-	BUBBLE_PATHS_EXCEL      = 'Aus diesem Verzeichnis werden Excel-Dokumente normalerweise importiert';
-	BUBBLE_PATHS_123        = 'Aus diesem Verzeichnis werden Lotus-123-Dateien normalerweise importiert';
-	BUBBLE_PATHS_PSION      = 'Aus diesem Verzeichnis werden Psion-3a-RechenblÑtter normalerweise importiert';
+	BUBBLE_PATHS_DIAGRAMM   = 'The folder for manually saved chart files';
+	BUBBLE_PATHS_LDW        = 'The folder from where LDW files (*.LDP) files are normally imported';
+	BUBBLE_PATHS_DIF        = 'The folder from where DIF files are normally imported';
+	BUBBLE_PATHS_CSV        = 'The folder from where CSV files are normally imported';
+	BUBBLE_PATHS_ASCII      = 'The folder from where general ASCII files are normally imported';
+	BUBBLE_PATHS_DBF        = 'The folder from where dBase files are normally imported';
+	BUBBLE_PATHS_EXCEL      = 'The folder from where Excel documents are normally imported';
+	BUBBLE_PATHS_123        = 'The folder from where Lotus-123 files are normally imported';
+	BUBBLE_PATHS_PSION      = 'The folder from where Psion 3a spreadsheets are normally imported';
 	
 { texel.msg }
 
 	BUTTON_OK               = '  &OK  ';
 	BUTTON_CANCEL           = '&Cancel';
 	BUTTON_OKCANCEL         = '  &OK  |&Cancel';
-	BUTTON_OKMINIMALCANCEL  = '  &OK  |&Minimal|&Cancel';
-	BUTTON_GOCANCEL         = ' &Weiter |&Cancel';
+	BUTTON_OKMINIMALCANCEL  = '  &OK  |&Minimum|&Cancel';
+	BUTTON_GOCANCEL         = ' C&ont. |&Cancel';
 	BUTTON_YESNO            = '  &Yes   | &No ';
 	BUTTON_YESNOCANCEL      = ' &Yes  |  &No  |&Cancel ';
-	BUTTON_OBJCELLCANCEL    = '&Objekt|&Zellen|&Cancel';
-	BUTTON_FORMDOC          = '&Vorlage|&Dokument';
-	BUTTON_SAVECANCEL       = '&Speichern|&Cancel';
+	BUTTON_OBJCELLCANCEL    = '&Object|C&ells |&Cancel';
+	BUTTON_FORMDOC          = '&Templte|&Document';
+	BUTTON_SAVECANCEL       = '  &Save   |&Cancel';
 
 	MESSAGE_GENERAL_RANGE   = 'Bitte geben Sie einen gÅltigen Bereich ein.';
-	MESSAGE_GENERAL_MEMORY  = 'TEXEL:|Zu wenig freier Speicher!';
+	MESSAGE_GENERAL_MEMORY  = 'TEXEL:|Not enough free memory!';
 	MESSAGE_GENERAL_OLGA    = 'OLGA is not installed.';
 
 	MESSAGE_STARTUP_SCREEN  = 'Texel needs a resolution of at least 80x25 characters. Please choose a higher resolution or use a smaller system font.';
@@ -722,11 +722,11 @@
 	MESSAGE_STARTUP_LOAD1   = 'TEXEL:|File "';
 	MESSAGE_STARTUP_LOAD2   = '" could not be loaded.';
 	MESSAGE_STARTUP_FRM1    = 'TEXEL:|File "';
-	MESSAGE_STARTUP_FRM2    = '" fehlerhaft';
+	MESSAGE_STARTUP_FRM2    = '" is faulty.';
 	MESSAGE_STARTUP_WDIALOG = 'Your operating system unfortunately has no printer dialog routines. Please install WDIALOG V2 or higher in your AUTO folder. Under N.AES install as an auto-start application in the file "N_AES.CNF".';
 	MESSAGE_STARTUP_NVDI    = 'Texel benîtigt NVDI ab Version 5.0.';
 
-	MESSAGE_WINDOW_MEMORY   = 'Texel:|Nicht genÅgend Speicher fÅr neues Fenster frei!';
+	MESSAGE_WINDOW_MEMORY   = 'Texel:|Not enough memory free for a new window!';
 	MESSAGE_WINDOW_WINDOWS  = 'Kein Fenster mehr verfÅgbar.';
 	MESSAGE_WINDOW_DDMOVE   = 'Der Drag&Drop-Block paût nicht ganz auf das Blatt, es werden nicht alle Zellen verschoben!';
 	MESSAGE_WINDOW_DDCOPY   = 'Der Drag&Drop-Block paût nicht ganz auf das Blatt, es werden nicht alle Zellen kopiert!';
@@ -805,35 +805,35 @@
 	MESSAGE_SAVEAS_NEW1     = 'Neuen Dateinamen "';
 	MESSAGE_SAVEAS_NEW2     = '" Åbernehmen?';
 
-	MESSAGE_IMPORT_LOAD1    = 'Datei "';
-	MESSAGE_IMPORT_LOAD2    = '" konnte nicht geladen werden.';
-	MESSAGE_IMPORT_DBSIZE   = 'Die Datenbank ist zu groû. Texel kann z.Z. maximal 16384 DatensÑtze importieren.';
-	MESSAGE_IMPORT_MEMORY1  = 'Datei "';
-	MESSAGE_IMPORT_MEMORY2  = '" konnte nicht geladen werden (Speichermangel)';
-	MESSAGE_IMPORT_EXIST1   = 'Datei "';
-	MESSAGE_IMPORT_EXIST2   = '" nicht gefunden.';
+	MESSAGE_IMPORT_LOAD1    = 'File "';
+	MESSAGE_IMPORT_LOAD2    = '" could not be loaded.';
+	MESSAGE_IMPORT_DBSIZE   = 'The database is too large. Texel can import a maximum of 16384 records';
+	MESSAGE_IMPORT_MEMORY1  = 'File "';
+	MESSAGE_IMPORT_MEMORY2  = '" could not be loaded (memory shortage).';
+	MESSAGE_IMPORT_EXIST1   = 'File "';
+	MESSAGE_IMPORT_EXIST2   = '" not found.';
 	MESSAGE_IMPORT_LOTUS1   = '"';
-	MESSAGE_IMPORT_LOTUS2   = '" ist keine Lotus-1-2-3-Datei.';
+	MESSAGE_IMPORT_LOTUS2   = '" is not a Lotus 1-2-3 file.';
 	MESSAGE_IMPORT_PSION1   = '"';
-	MESSAGE_IMPORT_PSION2   = '" ist keine Psion3(a)-SPR-Datei.';
+	MESSAGE_IMPORT_PSION2   = '" is not a Psion3(a) SPR file.';
 	MESSAGE_IMPORT_WKS1     = '"';
-	MESSAGE_IMPORT_WKS2     = '" ist keine WKS/WK1-Datei.';
+	MESSAGE_IMPORT_WKS2     = '" is not a WKS/WK1 file.';
 	MESSAGE_IMPORT_WKPASS1  = '"';
-	MESSAGE_IMPORT_WKPASS2  = '" ist verschlÅsselt und kann deshalb nicht importiert werden.';
+	MESSAGE_IMPORT_WKPASS2  = '" is encrypted and therefore cannot be imported.';
 	MESSAGE_IMPORT_WKEMPTY1 = '"';
-	MESSAGE_IMPORT_WKEMPTY2 = '" enthÑlt keine Daten.';
-	MESSAGE_IMPORT_OLE1     = 'OLE/COM-Datei "';
-	MESSAGE_IMPORT_OLE2     = '" konnte nicht geladen werden.';
+	MESSAGE_IMPORT_WKEMPTY2 = '" contains no data.';
+	MESSAGE_IMPORT_OLE1     = 'OLE/COM file "';
+	MESSAGE_IMPORT_OLE2     = '" could not be loaded.';
 	MESSAGE_IMPORT_EXCEL1   = '"';
-	MESSAGE_IMPORT_EXCEL2   = '"|ist keine MS-Excel-2.0/3.0/4.0-Datei.';
+	MESSAGE_IMPORT_EXCEL2   = '"|is not an MS Excel 2.0/3.0/4.0 file!';
 	MESSAGE_IMPORT_XLS1     = '"';
-	MESSAGE_IMPORT_XLS2     = '" ist kein XLS-Kalkulationsblatt.';
+	MESSAGE_IMPORT_XLS2     = '" is not an XLS spreadsheet.';
 	MESSAGE_IMPORT_XLPASS1  = '"';
-	MESSAGE_IMPORT_XLPASS2  = '" ist passwortgeschÅtzt und kann daher nicht geladen werden.';
-	MESSAGE_IMPORT_XLDATE1  = 'Achtung:|"';
-	MESSAGE_IMPORT_XLDATE2  = '" enthÑlt Datumsangaben im 1904-Format, das Texel nicht unterstÅtzt.';
+	MESSAGE_IMPORT_XLPASS2  = '" is password protected and therefore cannot be loaded.';
+	MESSAGE_IMPORT_XLDATE1  = 'Warning:|"';
+	MESSAGE_IMPORT_XLDATE2  = '" contains dates in the 1904 format, which Texel does not support.';
 	MESSAGE_IMPORT_LDP1     = '"';
-	MESSAGE_IMPORT_LDP2     = '" ist keine LDW/LDP-Ausspuldatei.';
+	MESSAGE_IMPORT_LDP2     = '" is not an LDW/LDP file.';
 
 	MESSAGE_EXPORT_EXIST1   = 'Die Datei "';
 	MESSAGE_EXPORT_EXIST2   = '" existiert bereits. öberschreiben?';
