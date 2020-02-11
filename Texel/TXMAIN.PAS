@@ -797,7 +797,6 @@ type
 		function IsDate(const s: string; var sz: TNumber; var ret: string; var frm: integer; exceldate: boolean): boolean;
 		function Time(Hour,Minute,Second: integer): TNumber;
 		function IsTime(const s: string; var sz: TNumber; var ret: string; var frm: integer): boolean;
-		function DemoNervAlert(ende: boolean): boolean;
 	end;
 
 	PPSDialog = ^TPSDialog;
@@ -847,8 +846,6 @@ procedure free_sub_dialogs(sub_dialogs: PPDLG_SUB);
 var
 
 	TexelApp: TTexelApplication;
-	regname,
-	regkey  : string;
 	mailbuf,
 	helpbuf : pointer;
 
@@ -14785,32 +14782,6 @@ procedure TCalcWindow.ColorID(OrgID,mX,mY,palIndex: integer);
 	end;
 
 
-function TTexelApplication.DemoNervAlert(ende: boolean): boolean;
-	var len      : longint;
-
-	begin
-		DemoNervAlert:=true;
-		if not(ende) then
-			begin
-				len:=GetFileSize(DataPath+TEXELRSC,0);
-				if len>=0 then
-					if len<>DEMORSCLEN1 then
-						begin
-							Alert(nil,0,STOP,MESSAGE_STARTUP_RSCERR,BUTTON_OK);
-							exit
-						end;
-				len:=GetFileSize(DataPath+TEXELRSC2,0);
-				if len>=0 then
-					if len<>DEMORSCLEN2 then
-						begin
-							Alert(nil,0,STOP,MESSAGE_STARTUP_RSCERR,BUTTON_OK);
-							exit
-						end;
-			end;
-		DemoNervAlert:=false;
-	end;
-
-
 destructor TTexelApplication.Done;
 
 	begin
@@ -15915,18 +15886,18 @@ procedure TTexelApplication.HandleTimer;
 				with PAbout(about)^ do
 					if ADialog<>nil then
 						if ADialog^.Attr.Status=ws_Open then
-							if serst<>nil then
+							if laufst<>nil then
 								begin
 									if mstimer<TEXELTIMER then
 										begin
-											serst^.SetText(StrPLeft(serscroll,40));
-											serscroll:=StrPRight(serscroll,length(serscroll)-1);
-											if length(serscroll)<40 then
+											laufst^.SetText(StrPLeft(laufscroll,40));
+											laufscroll:=StrPRight(laufscroll,length(laufscroll)-1);
+											if length(laufscroll)<40 then
 												begin
 													if arraycount<DANKMAX then
 														begin
 															inc(arraycount);
-															serscroll:=serscroll+dank[arraycount]
+															laufscroll:=laufscroll+dank[arraycount]
 														end
 													else
 														goto _aus
@@ -15945,11 +15916,11 @@ procedure TTexelApplication.HandleTimer;
 						_aus:
 						with PAbout(about)^ do
 							begin
-								serscroll:=dank[0];
+								laufscroll:=dank[0];
 								arraycount:=0;
 								if ADialog<>nil then
-									if serst<>nil then
-										serst^.SetText(sertxt);
+									if laufst<>nil then
+										laufst^.SetText(lauftxt);
 								tstart:=0
 							end;
 						mstimer:=TEXELTIMER
@@ -17071,7 +17042,7 @@ function TTexelApplication.GetAuthorName: string;
 	var s: string;
 
 	begin
-		s:=decode_name(ash_name);
+		s:='';
 		if length(s)=0 then s:=GetEnv('USERNAME');
 		GetAuthorName:=s
 	end;

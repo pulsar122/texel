@@ -314,9 +314,9 @@ CONST
     RTADATE    = 6; (* STRING in tree RTABOUT *)
     RTAASH    = 13; (* IMAGE in tree RTABOUT *)
     RTANAME    = 16; (* TEXT in tree RTABOUT *)
-    RTASERNO    = 17; (* TEXT in tree RTABOUT *)
-    RTAOK    = 18; (* BUTTON in tree RTABOUT *)
-    RTAUPDATE    = 20; (* BUTTON in tree RTABOUT *)
+    RTAOK    = 17; (* BUTTON in tree RTABOUT *)
+    RTAUPDATE    = 19; (* BUTTON in tree RTABOUT *)
+    RTALAUF    = 22; (* TEXT in tree RTABOUT *)
 
     RTGDBC    = 15; (* form/dial *)
     RTGDSOURCE    = 1; (* STRING in tree RTGDBC *)

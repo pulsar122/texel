@@ -39,7 +39,7 @@ uses
 
 	Strings,Tos,Gem,
 	OTypes,OProcs,ODialogs,
-	txrsc,txlang,txtypes,txdhst,txmain,txprocs;
+	txrsc,txlang,txtypes,txdhst,txmain;
 
 
 
@@ -335,7 +335,6 @@ procedure TWeb.Work;
 				if ret<0 then exit;
 				hdl:=integer(ret);
 				txt:=STRING_WEB_MAILDEF1+#13#10#13#10+STRING_WEB_MAILDEF2+' '+TEXELNAME+' '+VtoS(TEXELVER)+'r'+ltoa(RELEASE)+' '+STRING_WEB_MAILDATEOF+' '+TEXELDATE+':'#13#10#13#10#13#10#13#10+STRING_WEB_MAILDEF3+' ';
-				txt:=txt+decode_name(ash_name);
 				txt:=txt+#13#10;
 				fwrite(hdl,length(txt),@txt[1]);
 				fclose(hdl);

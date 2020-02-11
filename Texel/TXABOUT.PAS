@@ -12,11 +12,11 @@ type
 
 	PAbout = ^TAbout;
 	TAbout = object(TMenu)
-		serst     : PStatic;
-		serscroll,
-		sertxt    : string;
-		arraycount: integer;
-		tstart    : word;
+		laufst     : PStatic;											(* Laufschrift Object *)
+		laufscroll,
+		lauftxt    : string;
+		arraycount : integer;
+		tstart     : word;
 		procedure Work; virtual;
 	end;
 
@@ -29,7 +29,7 @@ uses
 
 	Dos,Gem,
 	OTypes,OProcs,
-	txrsc,txlang,txtypes,txmain,txprocs;
+	txrsc,txlang,txtypes,txmain;
 
 
 type
@@ -85,20 +85,15 @@ procedure TAbout.Work;
 							end;
 						new(p,Init(ADialog,RTADATE,13,false,BUBBLE_EASTEREGG));
 						if p<>nil then p^.SetText('('+TEXELDATE+')');
-						new(p,Init(ADialog,RTANAME,41,false,''));
-						if p<>nil then
-							begin
-								p^.SetText('Name:     '+decode_name(ash_name))
-							end;
-						new(serst,Init(ADialog,RTASERNO,41,false,''));
-						sertxt:='';
-						serscroll:=dank[0];
+						new(laufst,Init(ADialog,RTALAUF,41,false,''));
+						lauftxt:='';
+						laufscroll:=dank[0];
 						arraycount:=0;
 						tstart:=0;
-						if serst<>nil then
+						if laufst<>nil then
 							begin
-								sertxt:='Reg.-Nr.: '+decode_name(ash_serno);
-								serst^.SetText(sertxt)
+								lauftxt:=' ';
+								laufst^.SetText(lauftxt)
 							end;
 						if Application^.Attr.Colors<16 then
 							begin
