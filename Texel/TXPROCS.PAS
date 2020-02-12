@@ -17,11 +17,8 @@ function llrc_intersect(r1: LGRECT; var r2: LGRECT): boolean;
 function lrc_intersect(r1: LGRECT; var r2: GRECT): boolean;
 function CreatePassCode(pword: string; var pmask: longint): longint;
 function CheckPassWord(pword: string; pcode: longint; var pmask: longint): boolean;
-function KeyCorrect(name,key: string): boolean;
-procedure DemoAlert(p: PWindow);
 procedure ScanFonts(handle,anz: integer; var fcoll: PFontCollection);
 procedure ScanConst(const datapath: string; var pcoll: PParameterCollection);
-function decode_name(c: PChar): string;
 
 
 var
@@ -35,7 +32,7 @@ implementation
 
 uses
 
-	Strings,Tos,Gem,OProcs,txlang,txtypes,txnewvdi;
+	Strings,Tos,Gem,OProcs,txtypes,txnewvdi;
 
 
 
@@ -141,18 +138,6 @@ function lrc_intersect(r1: LGRECT; var r2: GRECT): boolean;
 	end;
 
 
-function decode_name(c: PChar): string;
-	var s: string;
-	    q: integer;
-
-	begin
-		s:=StrPPas(c);
-		if length(s)>0 then
-			for q:=1 to length(s) do s[q]:=chr(ord(s[q]) xor 255);
-		decode_name:=StrPTrimF(s)
-	end;
-
-
 function CreatePassCode(pword: string; var pmask: longint): longint;
 	var q  : integer;
 	    ret: longint;
@@ -175,37 +160,6 @@ function CheckPassWord(pword: string; pcode: longint; var pmask: longint): boole
 
 	begin
 		CheckPassWord:=(CreatePassCode(pword,pmask)=pcode)
-	end;
-
-
-function KeyCorrect(name,key: string): boolean;
-	label _raus;
-
-	var s: string;
-
-	begin
-		KeyCorrect:=false;
-		if StrPPas(ash_name)=StrPFill(30,'n') then goto _raus;
-		if StrPPas(ash_firma)=StrPFill(30,'f') then exit;
-		if StrPPas(ash_serno)=StrPFill(10,'s') then goto _raus;
-		if (length(name)>0) or (length(key)>0) then exit;
-		if (length(decode_name(ash_name))=0) and (length(decode_name(ash_firma))=0) then goto _raus;
-		s:=decode_name(ash_serno);
-		if length(s)<>10 then exit;
-		if StrPLeft(s,2)<>'27' then goto _raus;
-		if s[9]<>'0' then exit;
-		if StrPRight(s,8)='00000000' then goto _raus;
-		KeyCorrect:=((atol(StrPMid(s,3,6)) and 5)=(ord(s[10])-48)) and not(KeyCorrect('a','B'));
-		exit;
-		_raus:
-		KeyCorrect:=false
-	end;
-
-procedure DemoAlert(p: PWindow);
-
-	begin
-		if Application=nil then exit;
-		Application^.Alert(p,1,NOTE,MESSAGE_DEMO_UNREG,BUTTON_OK)
 	end;
 
 

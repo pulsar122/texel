@@ -71,13 +71,6 @@ constructor TStartupHandler.Init(AParent: PEventObject);
 		Application^.Attr.Country:=FRG;
 		{$ENDIF}
 		{$ENDIF}
-		if not(KeyCorrect('','')) then
-			begin
-				Application^.Alert(nil,1,STOP,MESSAGE_STARTUP_UNREG,BUTTON_OK);
-				Application^.Quit;
-				inherited Done;
-				fail
-			end;
 		if ((Application^.Attr.MaxPX+1) div Application^.Attr.charSWidth<80) or ((Application^.Attr.MaxPY+1) div Application^.Attr.charSHeight<25) then
 			begin
 				Application^.Alert(nil,1,STOP,MESSAGE_STARTUP_SCREEN,BUTTON_OK);
@@ -225,13 +218,6 @@ constructor TStartupHandler.Init(AParent: PEventObject);
 						Attr.PixH:=setupbuffer.pixh
 					end
 			end;
-		if (length(regname)<5) or (length(regkey)<6) or not(KeyCorrect(regname,regkey)) then
-			begin
-				regname:='';
-				regkey:=''
-			end;
-		regname:='';
-		regkey:='';
 		with TexelApp do
 			begin
 				LoadIcon(RTICONS,RTICALC);
@@ -503,8 +489,6 @@ procedure TStartupHandler.readConfigINF;
 		TexelApp.setupbuffer.formerrcell:=GetPrivateProfileInt('Setup','FormErrCell',bf_Checked,TEXELINF);
 		TexelApp.setupbuffer.infodial:=GetPrivateProfileInt('Setup','InfoDial',bf_Unchecked,TEXELINF);
 		SliceMouseNext;
-		regname:=GetPrivateProfileString('Beta','Name','',TEXELINF);
-		regkey:=GetPrivateProfileString('Beta','Key','',TEXELINF);
 		ArrowMouse
 	end;
 	

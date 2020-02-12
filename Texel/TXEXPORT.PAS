@@ -658,11 +658,6 @@ function TExport.InitFile(var fname: string; const texbuf: TExportBuf): boolean;
 		InitFile:=false;
 		if length(fname)=0 then exit;
 		p:=PCalcWindow(Parent);
-		if not(KeyCorrect(regname,regkey)) then
-			begin
-				DemoAlert(p);
-				exit
-			end;
 		if texbuf.clipboard=bf_Checked then
 			begin
 				if p^.Clipboard=nil then exit;
@@ -1529,11 +1524,6 @@ procedure TExport.SaveXLS(fname: string; const texbuf: TExportBuf);
 	begin
 		p:=PCalcWindow(Parent);
 		if not(InitFile(fname,texbuf)) then exit;
-		if not(KeyCorrect(regname,regkey)) then
-			begin
-				DemoAlert(p);
-				goto _ende
-			end;
 		hdr[0]:=BOF;
 		hdr[1]:=$0400;
 		hdr[2]:=0;
@@ -1716,11 +1706,6 @@ procedure TExport.SaveDIF(fname: string; const texbuf: TExportBuf);
 	begin
 		p:=PCalcWindow(Parent);
 		if not(InitFile(fname,texbuf)) then exit;
-		if not(KeyCorrect(regname,regkey)) then
-			begin
-				DemoAlert(p);
-				goto _ende
-			end;
 		if writeline('TABLE') then goto _ende;
 		if writeline('0,1') then goto _ende;
 		if texbuf.difstandard=bf_Checked then
@@ -1839,11 +1824,6 @@ procedure TExport.SaveSYLK(fname: string; const texbuf: TExportBuf);
 	begin
 		p:=PCalcWindow(Parent);
 		if not(InitFile(fname,texbuf)) then exit;
-		if not(KeyCorrect(regname,regkey)) then
-			begin
-				DemoAlert(p);
-				goto _ende
-			end;
 		if writeline('ID;PTexel '+VtoS(TEXELVER)) then goto _ende;
 		if writeline('B;Y'+ltoa(rmax+1)+';X'+ltoa(cmax+1)) then goto _ende;
 		if writes('O;L') then goto _ende;
@@ -1935,11 +1915,6 @@ procedure TExport.SaveCSV(fname: string; const texbuf: TExportBuf);
 	begin
 		p:=PCalcWindow(Parent);
 		if not(InitFile(fname,texbuf)) then exit;
-		if not(KeyCorrect(regname,regkey)) then
-			begin
-				DemoAlert(p);
-				goto _ende
-			end;
 		for q:=0 to rmax do
 			begin
 				cell:=p^.GetCell(q,0);
@@ -2063,11 +2038,6 @@ procedure TExport.SaveRTF(fname: string; const texbuf: TExportBuf);
 	begin
 		p:=PCalcWindow(Parent);
 		if not(InitFile(fname,texbuf)) then exit;
-		if not(KeyCorrect(regname,regkey)) then
-			begin
-				DemoAlert(p);
-				goto _ende
-			end;
 		fstdsize:=p^.GetStdFontSize shl 1;
 		if writeline('{\rtf1\ansi\deff0{\fonttbl{\f0\fnil Times;}}') then goto _ende;
 		if writeline('{\colortbl;') then goto _ende;
@@ -2314,11 +2284,6 @@ procedure TExport.SaveLATEX(fname: string; const texbuf: TExportBuf);
 	begin
 		p:=PCalcWindow(Parent);
 		if not(InitFile(fname,texbuf)) then exit;
-		if not(KeyCorrect(regname,regkey)) then
-			begin
-				DemoAlert(p);
-				goto _ende
-			end;
 		if writeline('\begin{tabular}{*{'+ltoa(cmax+1)+'}{|c}|} \hline') then goto _ende;
 		for q:=0 to rmax do
 			begin
@@ -2440,11 +2405,6 @@ procedure TExport.SaveASCII(fname: string; const texbuf: TExportBuf);
 	begin
 		p:=PCalcWindow(Parent);
 		if not(InitFile(fname,texbuf)) then exit;
-		if not(KeyCorrect(regname,regkey)) then
-			begin
-				DemoAlert(p);
-				goto _ende
-			end;
 		rctrenn:=TexelApp.num2str(texbuf.ascii.rcTxt);
 		celltrenn:=TexelApp.num2str(texbuf.ascii.cellTxt);
 		tquote:=TexelApp.num2str(texbuf.ascii.textTxt);
@@ -2525,11 +2485,6 @@ procedure TExport.SaveText(fname: string; const texbuf: TExportBuf);
 	begin
 		p:=PCalcWindow(Parent);
 		if not(InitFile(fname,texbuf)) then exit;
-		if not(KeyCorrect(regname,regkey)) then
-			begin
-				DemoAlert(p);
-				goto _ende
-			end;
 		getmem(pc,(cmax+1) shl 1);
 		if pc=nil then goto _ende;
 		for w:=0 to cmax do pc^[w]:=round(p^.GetColWidth(w)/(p^.wWidth*p^.PercentSize));
@@ -2742,11 +2697,6 @@ procedure TExport.SaveHTML(fname: string; const texbuf: TExportBuf);
 	begin
 		p:=PCalcWindow(Parent);
 		if not(InitFile(fname,texbuf)) then exit;
-		if not(KeyCorrect(regname,regkey)) then
-			begin
-				DemoAlert(p);
-				goto _ende
-			end;
 		colors:=(texbuf.htmlcolor=bf_Checked);
 		fntnames:=(texbuf.htmlfonts=bf_Checked);
 		escapes:=(texbuf.htmlnoesc=bf_Unchecked);
@@ -3139,11 +3089,6 @@ procedure TExport.SaveUDO(fname: string; const texbuf: TExportBuf);
 	begin
 		p:=PCalcWindow(Parent);
 		if not(InitFile(fname,texbuf)) then exit;
-		if not(KeyCorrect(regname,regkey)) then
-			begin
-				DemoAlert(p);
-				goto _ende
-			end;
 		if p^.Parms.psbuffer.columns=bf_Checked then rmax:=Min(254,rmax)
 		else
 			rmax:=Min(255,rmax);
@@ -3221,11 +3166,6 @@ procedure TExport.SaveTXL(fname: string; const texbuf: TExportBuf);
 	begin
 		if length(fname)=0 then exit;
 		p:=PCalcWindow(Parent);
-		if not(KeyCorrect(regname,regkey)) then
-			begin
-				DemoAlert(p);
-				exit
-			end;
 		BusyMouse;
 		if texbuf.clipboard=bf_Checked then
 			begin

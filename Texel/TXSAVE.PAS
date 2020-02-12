@@ -31,7 +31,7 @@ uses
 
 	Tos,
 	OTypes,OProcs,
-	txlang,txtypes,txprocs,txmain;
+	txlang,txtypes,txmain;
 
 
 
@@ -41,11 +41,6 @@ procedure TSave.Work;
 
 	begin
 		p:=PCalcWindow(Parent);
-		if not(KeyCorrect(regname,regkey)) then
-			begin
-				DemoAlert(p);
-				exit
-			end;
 		fname:=p^.GetWindowFileName;
 		if length(fname)=0 then p^.saveas^.Work
 		else
@@ -59,7 +54,7 @@ procedure TSave.Work;
 
 function TSave.Save(fname: string; txlver: integer): boolean;
 { Werte fÅr txlver: 33 (1.6), 38 (2.0), 43 (2.1) oder TEXELCOMPAT  // todo: 20 (1.1), 30 (1.5) }
-	label _unreg,_raus;
+	label _close,_raus;
 	label _elmnext;
 
 	var p        : PCalcWindow;
@@ -488,11 +483,6 @@ function TSave.Save(fname: string; txlver: integer): boolean;
 	begin
 		p:=PCalcWindow(Parent);
 		Save:=false;
-		if not(KeyCorrect(regname,regkey)) then
-			begin
-				DemoAlert(p);
-				exit
-			end;
 		buf:=nil;
 		embdirty:=false;
 		pe:=p^.Embedded;
@@ -530,11 +520,6 @@ function TSave.Save(fname: string; txlver: integer): boolean;
 				goto _raus
 			end;
 		hdl:=integer(res);
-		if not(KeyCorrect(regname,regkey)) then
-			begin
-				DemoAlert(p);
-				goto _unreg
-			end;
 		test:=true;
 		pack_hor;
 		hsize:=packsize;
@@ -559,13 +544,13 @@ function TSave.Save(fname: string; txlver: integer): boolean;
 				Resvd4:=0
 			end;
 		header.Release:=RELEASE;
-		if bwrite(header,sizeof(TTexelHeader)) then goto _unreg;
+		if bwrite(header,sizeof(TTexelHeader)) then goto _close;
 		fillchar(head2,sizeof(head2),0);
 		if p^.infobuf.Encrypt=bf_Checked then head2.CryptFlag:=1;
 		head2.RSeed:=randseed xor p^.PassWord.Mask;
 		head2.PassFlag:=p^.PassWord.Flag;
 		head2.PassCode:=p^.PassWord.Code;
-		if bwrite(head2,sizeof(TTexelHead2)) then goto _unreg;
+		if bwrite(head2,sizeof(TTexelHead2)) then goto _close;
 		bwrite(dummy,-1);
 		coffs:=0;
 		pe:=p^.Embedded;
@@ -574,7 +559,7 @@ function TSave.Save(fname: string; txlver: integer): boolean;
 				if (pe^.GetType<>EMB_TYPE_CHECKBOX) or (txlver>=43) then inc(coffs);
 				pe:=pe^.Next
 			end;
-		if bfwrite(coffs,2) then goto _unreg;
+		if bfwrite(coffs,2) then goto _close;
 		if coffs>0 then
 			begin
 				pe:=p^.Embedded;
@@ -582,51 +567,51 @@ function TSave.Save(fname: string; txlver: integer): boolean;
 					begin
 						objtyp:=pe^.GetType;
 						if (objtyp=EMB_TYPE_CHECKBOX) and (txlver<43) then goto _elmnext;
-						if bfwrite(objtyp,2) then goto _unreg;
+						if bfwrite(objtyp,2) then goto _close;
 						dtxt:=pe^.GetFile;
-						if bfwrite(dtxt,length(dtxt)+1) then goto _unreg;
+						if bfwrite(dtxt,length(dtxt)+1) then goto _close;
 						if pe^.IsEmbedded then dummy:=pe^.DataLen
 						else
 							dummy:=0;
-						if bfwrite(dummy,4) then goto _unreg;
+						if bfwrite(dummy,4) then goto _close;
 						if dummy>0 then
-							if bfwrite(pe^.Data^,dummy) then goto _unreg;
-						if bfwrite(pe^.oabuf,sizeof(pe^.oabuf)) then goto _unreg;
-						if bfwrite(pe^.XPos_mm100,4) then goto _unreg;
-						if bfwrite(pe^.YPos_mm100,4) then goto _unreg;
-						if bfwrite(pe^.Width_mm100,4) then goto _unreg;
-						if bfwrite(pe^.Height_mm100,4) then goto _unreg;
+							if bfwrite(pe^.Data^,dummy) then goto _close;
+						if bfwrite(pe^.oabuf,sizeof(pe^.oabuf)) then goto _close;
+						if bfwrite(pe^.XPos_mm100,4) then goto _close;
+						if bfwrite(pe^.YPos_mm100,4) then goto _close;
+						if bfwrite(pe^.Width_mm100,4) then goto _close;
+						if bfwrite(pe^.Height_mm100,4) then goto _close;
 						prp:=pe^.IsProportional;
-						if bfwrite(prp,sizeof(boolean)) then goto _unreg;
+						if bfwrite(prp,sizeof(boolean)) then goto _close;
 						prp:=pe^.IsEmbedded;
-						if bfwrite(prp,sizeof(boolean)) then goto _unreg;
+						if bfwrite(prp,sizeof(boolean)) then goto _close;
 						if txlver>34 then
 							begin
 								prp:=pe^.CanPrint;
-								if bfwrite(prp,sizeof(boolean)) then goto _unreg;
+								if bfwrite(prp,sizeof(boolean)) then goto _close;
 								prp:=pe^.IsLocked;
-								if bfwrite(prp,sizeof(boolean)) then goto _unreg;
+								if bfwrite(prp,sizeof(boolean)) then goto _close;
 							end;
 						case objtyp of
 						EMB_TYPE_IMG:
 							begin
-								if bfwrite(PEmbeddedIMG(pe)^.skalieren,sizeof(boolean)) then goto _unreg;
+								if bfwrite(PEmbeddedIMG(pe)^.skalieren,sizeof(boolean)) then goto _close;
 							end;
 						EMB_TYPE_TEXT:
 							begin
-								if bfwrite(PEmbeddedText(pe)^.umbruch,sizeof(boolean)) then goto _unreg;
-								if bfwrite(PEmbeddedText(pe)^.txOffs,2) then goto _unreg;
-								if bfwrite(PEmbeddedText(pe)^.tyOffs,2) then goto _unreg
+								if bfwrite(PEmbeddedText(pe)^.umbruch,sizeof(boolean)) then goto _close;
+								if bfwrite(PEmbeddedText(pe)^.txOffs,2) then goto _close;
+								if bfwrite(PEmbeddedText(pe)^.tyOffs,2) then goto _close
 							end;
 						EMB_TYPE_TAD:
 							begin
-								if bfwrite(PEmbeddedTAD(pe)^.dbvalid,sizeof(boolean)) then goto _unreg;
+								if bfwrite(PEmbeddedTAD(pe)^.dbvalid,sizeof(boolean)) then goto _close;
 								if PEmbeddedTAD(pe)^.dbvalid then
-									if bfwrite(PEmbeddedTAD(pe)^.diabuf,sizeof(TDiagrammBuf)) then goto _unreg
+									if bfwrite(PEmbeddedTAD(pe)^.diabuf,sizeof(TDiagrammBuf)) then goto _close
 							end;
 						EMB_TYPE_CHECKBOX:
 							begin
-								if bfwrite(PEmbeddedCheckBox(pe)^.ocbbuf,sizeof(TEmbedCheckBuf)) then goto _unreg;
+								if bfwrite(PEmbeddedCheckBox(pe)^.ocbbuf,sizeof(TEmbedCheckBuf)) then goto _close;
 							end
 						end;
 						_elmnext:
@@ -654,65 +639,65 @@ function TSave.Save(fname: string; txlver: integer): boolean;
 		newsb:=p^.sheetbuffer;
 		newsb.font:=p^.GetStdFontIndex;
 		newsb.size:=p^.GetStdFontSize;
-		if bwrite(p^.Parms,sizeof(TTexelParms)) then goto _unreg;
-		if bwrite(newtb,sizeof(TDialogBuffer)) then goto _unreg;
+		if bwrite(p^.Parms,sizeof(TTexelParms)) then goto _close;
+		if bwrite(newtb,sizeof(TDialogBuffer)) then goto _close;
 		if txlver<42 then
 			begin
-				if bwrite(newsb.font,sizeof(TSheetBuffer)-12) then goto _unreg;
+				if bwrite(newsb.font,sizeof(TSheetBuffer)-12) then goto _close;
 			end
 		else
-			if bwrite(newsb.font,sizeof(TSheetBuffer)-10) then goto _unreg;
-		if bwrite(p^.zwbuf,sizeof(TZielBuf)) then goto _unreg;
-		if bwrite(p^.diagrammbuf,sizeof(TDiagrammBuf)) then goto _unreg;
+			if bwrite(newsb.font,sizeof(TSheetBuffer)-10) then goto _close;
+		if bwrite(p^.zwbuf,sizeof(TZielBuf)) then goto _close;
+		if bwrite(p^.diagrammbuf,sizeof(TDiagrammBuf)) then goto _close;
 		if txlver<34 then
 			begin
-				if bwrite(p^.exportbuf,sizeof(TExportBuf)-12) then goto _unreg;
+				if bwrite(p^.exportbuf,sizeof(TExportBuf)-12) then goto _close;
 			end
 		else
 			if txlver<39 then
 				begin
-					if bwrite(p^.exportbuf,sizeof(TExportBuf)-10) then goto _unreg;
+					if bwrite(p^.exportbuf,sizeof(TExportBuf)-10) then goto _close;
 				end
 			else
 				if txlver<44 then
 					begin
-						if bwrite(p^.exportbuf,sizeof(TExportBuf)-2) then goto _unreg;
+						if bwrite(p^.exportbuf,sizeof(TExportBuf)-2) then goto _close;
 					end
 				else
-					if bwrite(p^.exportbuf,sizeof(TExportBuf)) then goto _unreg;
-		if bwrite(p^.sortbuf,sizeof(TSortBuf)) then goto _unreg;
-		if bwrite(p^.infobuf,sizeof(TInfoBuf)-4) then goto _unreg;
-		if bwrite(p^.findbuf,sizeof(TFindBuf)) then goto _unreg;
-		if bwrite(p^.replacebuf,sizeof(TReplaceBuf)) then goto _unreg;
-		if bwrite(p^.fillbuf,sizeof(TFillBuffer)) then goto _unreg;
+					if bwrite(p^.exportbuf,sizeof(TExportBuf)) then goto _close;
+		if bwrite(p^.sortbuf,sizeof(TSortBuf)) then goto _close;
+		if bwrite(p^.infobuf,sizeof(TInfoBuf)-4) then goto _close;
+		if bwrite(p^.findbuf,sizeof(TFindBuf)) then goto _close;
+		if bwrite(p^.replacebuf,sizeof(TReplaceBuf)) then goto _close;
+		if bwrite(p^.fillbuf,sizeof(TFillBuffer)) then goto _close;
 		coffs:=0;
-		if bwrite(coffs,2) then goto _unreg;
-		if bwrite(p^.PRow^,(p^.Parms.Rows+1) shl 1) then goto _unreg;
-		if bwrite(p^.PCol^,(p^.Parms.Columns+1) shl 1) then goto _unreg;
+		if bwrite(coffs,2) then goto _close;
+		if bwrite(p^.PRow^,(p^.Parms.Rows+1) shl 1) then goto _close;
+		if bwrite(p^.PCol^,(p^.Parms.Columns+1) shl 1) then goto _close;
 		l:=0;
 		for q:=0 to p^.Parms.Columns do
 			begin
 				if p^.PColNames^[q]<>nil then
 					begin
-						if bwrite(PString(p^.PColNames^[q])^,length(PString(p^.PColNames^[q])^)+1) then goto _unreg
+						if bwrite(PString(p^.PColNames^[q])^,length(PString(p^.PColNames^[q])^)+1) then goto _close
 					end
 				else
-					if bwrite(l,1) then goto _unreg
+					if bwrite(l,1) then goto _close
 			end;
-		if bwrite(p^.PRowFlags^,p^.Parms.Rows+1) then goto _unreg;
-		if bwrite(p^.PColFlags^,p^.Parms.Columns+1) then goto _unreg;
+		if bwrite(p^.PRowFlags^,p^.Parms.Rows+1) then goto _close;
+		if bwrite(p^.PColFlags^,p^.Parms.Columns+1) then goto _close;
 		if header.PackAlgo=PA_VERTICAL then
 			begin
-				if pack_ver then goto _unreg
+				if pack_ver then goto _close
 			end
 		else
-			if pack_hor then goto _unreg;
+			if pack_hor then goto _close;
 		coffs:=65535;
-		if bwrite(coffs,2) then goto _unreg;
+		if bwrite(coffs,2) then goto _close;
 		if p^.Parameter<>nil then coffs:=p^.Parameter^.Count
 		else
 			coffs:=0;
-		if bwrite(coffs,2) then goto _unreg;
+		if bwrite(coffs,2) then goto _close;
 		l:=0;
 		if coffs>0 then
 			for q:=0 to coffs-1 do
@@ -720,44 +705,44 @@ function TSave.Save(fname: string; txlver: integer): boolean;
 					pp:=p^.Parameter^.At(q);
 					if pp^.Name<>nil then
 						begin
-							if bwrite(pp^.Name^,length(pp^.Name^)+1) then goto _unreg
+							if bwrite(pp^.Name^,length(pp^.Name^)+1) then goto _close
 						end
 					else
-						if bwrite(l,1) then goto _unreg;
+						if bwrite(l,1) then goto _close;
 					if pp^.Txt<>nil then
 						begin
-							if bwrite(pp^.Txt^,length(pp^.Txt^)+1) then goto _unreg
+							if bwrite(pp^.Txt^,length(pp^.Txt^)+1) then goto _close
 						end
 					else
-						if bwrite(l,1) then goto _unreg;
+						if bwrite(l,1) then goto _close;
 					if pp^.Descr<>nil then
 						begin
-							if bwrite(pp^.Descr^,length(pp^.Descr^)+1) then goto _unreg
+							if bwrite(pp^.Descr^,length(pp^.Descr^)+1) then goto _close
 						end
 					else
-						if bwrite(l,1) then goto _unreg
+						if bwrite(l,1) then goto _close
 				end;
 		if p^.UsrFormats<>nil then coffs:=p^.UsrFormats^.Count
 		else
 			coffs:=0;
-		if bwrite(coffs,2) then goto _unreg;
+		if bwrite(coffs,2) then goto _close;
 		l:=0;
 		if coffs>0 then
 			for q:=0 to coffs-1 do
 				begin
 					pfm:=p^.UsrFormats^.At(q);
-					if bwrite(pfm^.Index,2) then goto _unreg;
+					if bwrite(pfm^.Index,2) then goto _close;
 					if pfm^.Name<>nil then
 						begin
-							if bwrite(pfm^.Name^,length(pfm^.Name^)+1) then goto _unreg
+							if bwrite(pfm^.Name^,length(pfm^.Name^)+1) then goto _close
 						end
 					else
-						if bwrite(l,1) then goto _unreg
+						if bwrite(l,1) then goto _close
 				end;
 		if p^.BlockHistory<>nil then coffs:=p^.BlockHistory^.Count
 		else
 			coffs:=0;
-		if bwrite(coffs,2) then goto _unreg;
+		if bwrite(coffs,2) then goto _close;
 		l:=0;
 		if coffs>0 then
 			for q:=0 to coffs-1 do
@@ -765,21 +750,21 @@ function TSave.Save(fname: string; txlver: integer): boolean;
 					ps:=p^.BlockHistory^.At(q);
 					if ps<>nil then
 						begin
-							if bwrite(ps^,length(ps^)+1) then goto _unreg
+							if bwrite(ps^,length(ps^)+1) then goto _close
 						end
 					else
-						if bwrite(l,1) then goto _unreg
+						if bwrite(l,1) then goto _close
 				end;
 		dummy:=0;
 		if p^.wnd_prnt_set<>nil then
 			if p^.wnd_prnt_set^.magic='pset' then dummy:=p^.wnd_prnt_set^.len;
-		if bwrite(dummy,4) then goto _unreg;
+		if bwrite(dummy,4) then goto _close;
 		if dummy>0 then
-			if bwrite(p^.wnd_prnt_set^,dummy) then goto _unreg;
+			if bwrite(p^.wnd_prnt_set^,dummy) then goto _close;
 		if txlver>35 then
-			if bwrite(p^.prnRangeFlag,2) then goto _unreg;
+			if bwrite(p^.prnRangeFlag,2) then goto _close;
 		coffs:=p^.pfbox^.List^.Count;
-		if bwrite(coffs,2) then goto _unreg;
+		if bwrite(coffs,2) then goto _close;
 		l:=0;
 		if coffs>0 then
 			for q:=0 to coffs-1 do
@@ -788,23 +773,23 @@ function TSave.Save(fname: string; txlver: integer): boolean;
 					if pf^.Name<>nil then
 						begin
 							fn2:=StrPTrimF(pf^.Name^);
-							if bwrite(fn2,length(fn2)+1) then goto _unreg
+							if bwrite(fn2,length(fn2)+1) then goto _close
 						end
 					else
-						if bwrite(l,1) then goto _unreg;
-					if bwrite(pf^.Index,2) then goto _unreg
+						if bwrite(l,1) then goto _close;
+					if bwrite(pf^.Index,2) then goto _close
 				end;
 		coffs:=0;
-		if bwrite(coffs,2) then goto _unreg;
+		if bwrite(coffs,2) then goto _close;
 		coffs:=0;
-		if bwrite(coffs,2) then goto _unreg;
-		if bwrite(coffs,2) then goto _unreg;
+		if bwrite(coffs,2) then goto _close;
+		if bwrite(coffs,2) then goto _close;
 		bwrite(dummy,-1);
 		p^.infobuf.Version:=TEXELVER;
 		p^.infobuf.Release:=RELEASE;
 		Save:=true;
 		TexelApp.UpdateFile(fname,-p^.GetOLGAGroup-1);
-		_unreg:
+		_close:
 		fclose(hdl);
 		if werror then
 			begin
@@ -850,11 +835,6 @@ procedure TSaveAs.SaveAs(const fname: string; flag: integer);
 					end
 				else
 					if Application^.Alert(p,1,WAIT,MESSAGE_SAVEAS_EXIST1+CompressPath(fname,78)+MESSAGE_SAVEAS_EXIST2,BUTTON_YESNO)<>1 then exit
-			end;
-		if not(KeyCorrect(regname,regkey)) then
-			begin
-				DemoAlert(p);
-				exit
 			end;
 		oldname:=p^.GetWindowFilename;
 		if flag=1 then
