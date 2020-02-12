@@ -361,7 +361,7 @@
 	BUBBLE_EXPORT_EXPORT    = 'Exports the sheet';
 	BUBBLE_EXPORT_OK        = 'Exports the sheet and closes the dialog';
 	BUBBLE_EXPORT_SAVEWITH  = 'Bestimmt, welche Teile bzw. welche Attribute des Blattes exportiert werden';
-	BUBBLE_EXPORT_DOCTYPE   = 'Sets the HTML document type. "3.0" is Netscape standard, "3.2" and "4.0" are the official W3C standards. At present "3.2" is the best choice|;
+	BUBBLE_EXPORT_DOCTYPE   = 'Sets the HTML document type. "3.0" is Netscape standard, "3.2" and "4.0" are the official W3C standards. At present "3.2" is the best choice.';
 	BUBBLE_EXPORT_SAVEDT    = 'Bestimmt, ob der Dokumenttyp Åberhaupt in der Exportdatei gespeichert wird. Wenn die Tabelle in eine andere HTML-Datei eingebunden wird, ist dies unnîtig.';
 	BUBBLE_EXPORT_COLORS    = 'Exports the colours to the HTML table';
 	BUBBLE_EXPORT_FONTS     = 'Bestimmt, ob die Zeichensatznamen exportiert werden. Geht nur, wenn auch die Farben exportiert werden.';
