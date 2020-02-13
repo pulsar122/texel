@@ -11,7 +11,7 @@
  *  www.uni-karlsruhe.de/~Thomas.Much   *
  ****************************************
  *      erstellt am:        13.07.1992  *
- *      letztes Update am:  05.03.1999  *
+ *      letztes Update am:  29.04.1999  *
  ****************************************}
 
 {
@@ -67,7 +67,7 @@ uses
 const
 
 	GOVersion             = $0150;
-	GODate                = $03051999;
+	GODate                = $04291999;
 
 	em_OK                 =     0;
 	em_OutOfMemory        =    -1;

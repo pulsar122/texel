@@ -11,7 +11,7 @@
  *  www.uni-karlsruhe.de/~Thomas.Much   *
  ****************************************
  *      erstellt am:        13.07.1992  *
- *      letztes Update am:  05.03.1999  *
+ *      letztes Update am:  29.04.1999  *
  ****************************************}
 
 {
@@ -7853,7 +7853,8 @@ constructor TApplication.Init(AName: string);
 							end
 					end;
 				if SpeedoActive then vst_error(vdiHandle,0,spderr);
-				apName:=NewStr(scmd+StrPSpace(8-length(scmd))+#0);
+				GlobalAlloc(pointer(apName),16);
+				apName^:=scmd+StrPSpace(8-length(scmd))+#0;
 				GDOSActive:=(vq_gdos<>0);
 				spderr:=0;
 				if GDOSActive then Attr.addFonts:=vst_load_fonts(vdiHandle,0);
@@ -8202,10 +8203,10 @@ destructor TApplication.Done;
 		DisposeStr(XAcc.AppTypeHR);
 		DisposeStr(XAcc.ExtFeatures);
 		DisposeStr(XAcc.GenericName);
-		DisposeStr(apName);
 		DisposeStr(apPath);
     DisposeStr(Name);
 		GlobalFree(pointer(xaccname),xaccnlen);
+		GlobalFree(pointer(apName),16);
 		Application:=nil;
     inherited Done;
   end;
