@@ -94,19 +94,19 @@
 	BUBBLE_GENERAL_OBJSETOK = 'Setzt die aktuellen Werte beim zugehîrigen Objekt und verlÑût den Dialog';
 	BUBBLE_GENERAL_CLOSE    = 'Schlieût den Dialog';
 	
-	BUBBLE_SETUP_DEFDOC     = 'Legt grundsÑtzliche Werte fÅr alle ArbeitsblÑtter fest, die beim Anlegen eines neuen Dokuments verwendet werden';
-	BUBBLE_SETUP_WINDOW     = 'Bestimmt Eigenschaften von allen ArbeitsblÑttern';
-	BUBBLE_SETUP_GENERAL    = 'Bestimmt das globale Verhalten der gesamten Applikation';
-	BUBBLE_SETUP_STARTEND   = 'Bestimmt das Programmverhalten beim Start bzw. Beenden von Texel';
+	BUBBLE_SETUP_DEFDOC     = 'Sets the default values which will be used when creating a new worksheet';
+	BUBBLE_SETUP_WINDOW     = 'Defines window options for all worksheets';
+	BUBBLE_SETUP_GENERAL    = 'Defines options which affect the whole application';
+	BUBBLE_SETUP_STARTEND   = 'Sets the program behaviour on starting or quitting Texel';
 	BUBBLE_SETUP_START      = 'Bestimmt das Programmverhalten beim Start von Texel';
 	BUBBLE_SETUP_END        = 'Bestimmt das Programmverhalten beim Beenden von Texel';
-	BUBBLE_SETUP_ROWS       = 'Gibt an, wieviele Zeilen ein neues Blatt standardmÑûig hat (max. 16384)';
-	BUBBLE_SETUP_COLUMNS    = 'Gibt an, wieviele Spalten ein neues Blatt standardmÑûig hat (max. 702)';
-	BUBBLE_SETUP_COLWIDTH   = 'Die Standardspaltenbreite wird in Zeichen angegeben; sie wird abhÑngig vom verwendeten Zeichensatz entsprechend in Pixel umgerechnet';
-	BUBBLE_SETUP_AUTOCALC   = 'Legt fest, ob bei neuen BlÑttern die automatische Neuberechnung standardmÑûig eingeschaltet ist (das sollte eigentlich immer der Fall sein)';
-	BUBBLE_SETUP_FONTID     = 'Legt den Standardzeichensatz fest';
-	BUBBLE_SETUP_FONTSIZE   = 'Bestimmt die Standardzeichenhîhe';
-	BUBBLE_SETUP_SIZERRANGE = 'Bestimmt, welcher Bereich um die Spalten- bzw. Reihentrennungslinien verwendet wird, um die Zellenbreite und -hîhe mit der Maus zu Ñndern';
+	BUBBLE_SETUP_ROWS       = 'The default number of rows in a new sheet (max. 16384)';
+	BUBBLE_SETUP_COLUMNS    = 'The default number of columns in a new sheet (max. 702)';
+	BUBBLE_SETUP_COLWIDTH   = 'The column width is specified in characters; it will be converted to pixels from the font in use';
+	BUBBLE_SETUP_AUTOCALC   = 'Determines whether auto-calculation should be enabled for new sheets (actually this should always be the case)';
+	BUBBLE_SETUP_FONTID     = 'Sets the default font';
+	BUBBLE_SETUP_FONTSIZE   = 'Sets the default font size';
+	BUBBLE_SETUP_SIZERRANGE = 'When changing row height or column width with the mouse, determines the sensitivity of the separator region to mouse clicks';
 	BUBBLE_SETUP_FPOINT     = 'Legt die Standardanzahl von Nachkommastellen fÅr jede neu eingegebene Zahl fest';
 	BUBBLE_SETUP_HISTORY    = 'Legt fest, wieviele EintrÑge in der Liste des Block-Dialogs (<Control>+<B>) gespeichert werden';
 	BUBBLE_SETUP_CRSWRAP    = 'Bestimmt, ob der Cursor auf die gegenÅberliegende Seite des Blattes springt, wenn er Åber den Blattrand hinausbewegt wird';
@@ -469,9 +469,9 @@
 	BUBBLE_PREVIEW_OK       = 'VerlÑût die Seitenansicht';
 
 	BUBBLE_INFO_FILE        = 'Zeigt den kompletten Dateinamen des Blattes an';
-	BUBBLE_INFO_AUTHOR      = 'Hier kann man eintragen, wer dieses Blatt erstellt hat. In "Seite einrichten" kann man darauf in den Kopf- und Fuûzeilen mit #a zugreifen.';
-	BUBBLE_INFO_INDEX       = 'Hier kînnen - durch Komma getrennte - Stichworte eingetragen werden, nach denen man in STELLA suchen kann';
-	BUBBLE_INFO_REM         = 'beliebige Anmerkungen zum Blatt';
+	BUBBLE_INFO_AUTHOR      = 'The author of the sheet can be entered here. In "Page settings" this can be accessed in the header and footer with #a.';
+	BUBBLE_INFO_INDEX       = 'Comma separated keywords can be entered here, so that one can search for them with STELLA.';
+	BUBBLE_INFO_REM         = 'Any annotations to the sheet';
 	BUBBLE_INFO_CREATED     = 'Zeigt an, wann das Blatt erzeugt wurde';
 	BUBBLE_INFO_LATEST      = 'Zeigt an, wann das Blatt zuletzt geladen wurde';
 	BUBBLE_INFO_USED        = 'Zeigt an, wie oft das Blatt geîffnet wurde';
@@ -481,8 +481,8 @@
 	BUBBLE_INFO_PASSWORD    = 'Ruft einen Dialog auf, mit dem die Datei paûwortgeschÅtzt werden kann';
 	BUBBLE_INFO_TITLE       = 'Ein optionaler Titel des Dokuments, der von einigen Export-Formaten verwendet wird. In "Seite einrichten" kann man darauf in den Kopf- und Fuûzeilen mit #n zugreifen.';
 
-	BUBBLE_SINFO_AUTHOR     = 'Hier kann man eintragen, wer dieses Blatt erstellt. In "Seite einrichten" kann man darauf in den Kopf- und Fuûzeilen mit #a zugreifen.';
-	BUBBLE_SINFO_OK         = 'Erzeugt ein neues Rechenblatt mit den oben angegebenen Informationen';
+	BUBBLE_SINFO_AUTHOR     = 'The author of the sheet can be entered here. In "Page settings" this can be accessed in the header and footer with #a.';
+	BUBBLE_SINFO_OK         = 'Generates a new sheet with the above information';
 	
 	BUBBLE_FIND_SEARCHFOR   = 'Der Suchbegriff. Wildcards sind z.Z. noch nicht erlaubt';
 	BUBBLE_FIND_ROWS        = 'Zeilenweise Suche';
@@ -718,7 +718,7 @@
 
 	MESSAGE_STARTUP_SCREEN  = 'Texel needs a resolution of at least 80x25 characters. Please choose a higher resolution or use a smaller system font.';
 	MESSAGE_STARTUP_FOUND1  = 'TEXEL:|File "';
-	MESSAGE_STARTUP_FOUND2  = '" nicht gefunden.';
+	MESSAGE_STARTUP_FOUND2  = '" not found.';
 	MESSAGE_STARTUP_LOAD1   = 'TEXEL:|File "';
 	MESSAGE_STARTUP_LOAD2   = '" could not be loaded.';
 	MESSAGE_STARTUP_FRM1    = 'TEXEL:|File "';
@@ -774,25 +774,25 @@
 	MESSAGE_DIAGRAM_ROWEVEN = 'Bitte markieren Sie eine gerade Anzahl Datenzeilen.';
 	MESSAGE_DIAGRAM_COLEVEN = 'Bitte markieren Sie eine gerade Anzahl Datenspalten.';
 
-	MESSAGE_OPEN_MEMORY1    = 'Datei "';
-	MESSAGE_OPEN_MEMORY2    = '" konnte nicht geladen werden (Speichermangel)';
-	MESSAGE_OPEN_EXIST1     = 'Datei "';
-	MESSAGE_OPEN_EXIST2     = '" nicht gefunden.';
-	MESSAGE_OPEN_LOADED1    = 'Die Datei "';
-	MESSAGE_OPEN_LOADED2    = '" befindet sich bereits im Speicher. Nochmal laden?';
+	MESSAGE_OPEN_MEMORY1    = 'File "';
+	MESSAGE_OPEN_MEMORY2    = '" cannot be loaded (memory shortage).';
+	MESSAGE_OPEN_EXIST1     = 'File "';
+	MESSAGE_OPEN_EXIST2     = '" not found.';
+	MESSAGE_OPEN_LOADED1    = 'The file "';
+	MESSAGE_OPEN_LOADED2    = '" is already in memory. Reload it?';
 	MESSAGE_OPEN_FORMAT1    = '"';
-	MESSAGE_OPEN_FORMAT2    = '" ist keine Texel-Datei.';
+	MESSAGE_OPEN_FORMAT2    = '" is not a Texel file.';
 	MESSAGE_OPEN_VERSION1   = '"';
-	MESSAGE_OPEN_VERSION2   = '" (Dateiversion #';
-	MESSAGE_OPEN_VERSION3   = ', gespeichert mit Texel ';
-	MESSAGE_OPEN_VERSION4   = ') ist nicht zu dieser Texel-Version kompatibel.';
-	MESSAGE_OPEN_CCP        = 'Cut/Copy/Paste-Blîcke kînnen nicht direkt geladen werden. Bitte verwenden Sie "Bearbeiten - EinfÅgen" (Control+V).';
+	MESSAGE_OPEN_VERSION2   = '" (File version #';
+	MESSAGE_OPEN_VERSION3   = ', saved with Texel ';
+	MESSAGE_OPEN_VERSION4   = ') is not compatible with this version of Texel.';
+	MESSAGE_OPEN_CCP        = 'Cut/Copy/Paste blocks cannot be loaded directly. Please use "Edit - Paste" (Control+V).';
 	MESSAGE_OPEN_ALGO1      = '"';
-	MESSAGE_OPEN_ALGO2      = '": Unbekanntes Texel-Packverfahren';
-	MESSAGE_OPEN_PASSLEN    = 'Das Paûwort muû mind. 6 Zeichen lang sein.';
-	MESSAGE_OPEN_PASSWRONG  = 'Falsches Paûwort!';
-	MESSAGE_OPEN_ERROR1     = 'Datei "';
-	MESSAGE_OPEN_ERROR2     = '" konnte nicht geladen werden.';
+	MESSAGE_OPEN_ALGO2      = '": Unknown Texel packing method';
+	MESSAGE_OPEN_PASSLEN    = 'The password must be at least 6 chars long.';
+	MESSAGE_OPEN_PASSWRONG  = 'Wrong password!';
+	MESSAGE_OPEN_ERROR1     = 'File "';
+	MESSAGE_OPEN_ERROR2     = '" cannot be loaded.';
 	
 	MESSAGE_SAVE_FORMDOC    = 'This is a template sheet. Save as a template or as new document?';
 	MESSAGE_SAVE_EMBEDDED   = 'An embedded object has not yet been saved in the ID4 server. Save despite old object data?';
@@ -800,10 +800,10 @@
 	MESSAGE_SAVE_WPROT      = 'The sheet cannot be saved (disk write-protected?)';
 	MESSAGE_SAVE_DISKFULL   = 'The sheet cannot be saved (disk full?)';
 
-	MESSAGE_SAVEAS_EXIST1   = 'Die Datei "';
-	MESSAGE_SAVEAS_EXIST2   = '" existiert bereits. öberschreiben?';
-	MESSAGE_SAVEAS_NEW1     = 'Neuen Dateinamen "';
-	MESSAGE_SAVEAS_NEW2     = '" Åbernehmen?';
+	MESSAGE_SAVEAS_EXIST1   = 'The file "';
+	MESSAGE_SAVEAS_EXIST2   = '" already exists. Overwrite it?';
+	MESSAGE_SAVEAS_NEW1     = 'Accept new name "';
+	MESSAGE_SAVEAS_NEW2     = '" ?';
 
 	MESSAGE_IMPORT_LOAD1    = 'File "';
 	MESSAGE_IMPORT_LOAD2    = '" could not be loaded.';
