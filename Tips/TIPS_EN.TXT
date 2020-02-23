@@ -69,7 +69,11 @@ with Texel.
 Texel now has several new export formats: RTF
 (word processor), Excel, HTML 4.0 with CSS1,
 Texel 1.6 and Texel 2.0.                                                                                                                                        
-                                                                                                           sTexel now has several new export formats: RTF|(word processor), Excel, HTML 4.0 with CSS1,|Texel 1.6 and Texel 2.0.                                                                                                                                        
+
+Texel now has several new export formats: RTF
+(word processor), Excel, HTML 4.0 with CSS1,
+Texel 1.6 and Texel 2.0.                           
+
 Texel can be controlled by the GEMScript
 protocol, you can write macros to automate your
 daily work and use it to run Texel. Please read
