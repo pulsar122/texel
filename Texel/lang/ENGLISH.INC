@@ -27,7 +27,7 @@
 	GROUP_LAYOUT_PRINTWITH  = 'Drucken mit';
 	GROUP_LAYOUT_PRINTRANGE = 'Druckbereich';
 
-	GROUP_INFO_FILE         = 'Datei';
+	GROUP_INFO_FILE         = 'File';
 
 	GROUP_DELCELL_FILL      = 'AuffÅllen';
 
@@ -54,12 +54,12 @@
 	GROUP_SHEET_RULER       = 'Lineal';
 	GROUP_SHEET_GENERAL     = 'Allgemein';
 
-	GROUP_SORT_WHAT         = 'Sortieren von';
-	GROUP_SORT_NUMBERS      = 'Zahlen';
-	GROUP_SORT_SPACES       = 'Leerzellen';
-	GROUP_SORT_SORT1        = 'Sortieren nach';
-	GROUP_SORT_SORT2        = 'Anschlieûend nach';
-	GROUP_SORT_SORT3        = 'Anschlieûend nach';
+	GROUP_SORT_WHAT         = 'Sort by';
+	GROUP_SORT_NUMBERS      = 'Numbers';
+	GROUP_SORT_SPACES       = 'Emptycells';
+	GROUP_SORT_SORT1        = 'Sorting from';
+	GROUP_SORT_SORT2        = 'Afterwards';
+	GROUP_SORT_SORT3        = 'Afterwards';
 
 	GROUP_TEXT_FX           = 'Effekte';
 	GROUP_TEXT_ANGLE        = 'Winkel';
@@ -80,7 +80,7 @@
 
 { texel.hlp }
 
-	BUBBLE_EASTEREGG       = '"Holland hat schîne Inseln, Heidelberg schîne Tabellenkalkulationen!"';
+	BUBBLE_EASTEREGG       = '"Holland has beautiful islands, Heidelberg beautiful spreadsheets!"';
 
 	BUBBLE_GENERAL_RANGE    = 'Zeigt den aktuellen Block an, auf den die Aktionen dieses Dialogs wirken. Durch Anklicken bzw. mit Control+B kînnen Sie einen neuen Block definieren.';
 	BUBBLE_GENERAL_HELP     = 'Calls the ST-Guide online help. If ST-Guide is not installed this button will be disabled';
@@ -98,8 +98,8 @@
 	BUBBLE_SETUP_WINDOW     = 'Defines window options for all worksheets';
 	BUBBLE_SETUP_GENERAL    = 'Defines options which affect the whole application';
 	BUBBLE_SETUP_STARTEND   = 'Sets the program behaviour on starting or quitting Texel';
-	BUBBLE_SETUP_START      = 'Bestimmt das Programmverhalten beim Start von Texel';
-	BUBBLE_SETUP_END        = 'Bestimmt das Programmverhalten beim Beenden von Texel';
+	BUBBLE_SETUP_START      = 'Sets the program behaviour on starting Texel';
+	BUBBLE_SETUP_END        = 'Sets the program behaviour on quitting Texel';
 	BUBBLE_SETUP_ROWS       = 'The default number of rows in a new sheet (max. 16384)';
 	BUBBLE_SETUP_COLUMNS    = 'The default number of columns in a new sheet (max. 702)';
 	BUBBLE_SETUP_COLWIDTH   = 'The column width is specified in characters; it will be converted to pixels from the font in use';
@@ -107,35 +107,35 @@
 	BUBBLE_SETUP_FONTID     = 'Sets the default font';
 	BUBBLE_SETUP_FONTSIZE   = 'Sets the default font size';
 	BUBBLE_SETUP_SIZERRANGE = 'When changing row height or column width with the mouse, determines the sensitivity of the separator region to mouse clicks';
-	BUBBLE_SETUP_FPOINT     = 'Legt die Standardanzahl von Nachkommastellen fÅr jede neu eingegebene Zahl fest';
-	BUBBLE_SETUP_HISTORY    = 'Legt fest, wieviele EintrÑge in der Liste des Block-Dialogs (<Control>+<B>) gespeichert werden';
-	BUBBLE_SETUP_CRSWRAP    = 'Bestimmt, ob der Cursor auf die gegenÅberliegende Seite des Blattes springt, wenn er Åber den Blattrand hinausbewegt wird';
-	BUBBLE_SETUP_XINPUT     = 'Wenn diese Option eingeschaltet ist, werden Tastatureingaben immer an das Fenster unter dem Mauszeiger weitergeleitet (sonst an das oberste Fenster)';
-	BUBBLE_SETUP_CLOSER     = 'Wenn dieses KÑstchen angekreuzt ist, entspricht das Schlieûen eines Dialogs dem <Abbruch>-Button, sonst dem <OK>-Button (die Einstellung wird erst beim nÑchsten Start wirksam!)';
-	BUBBLE_SETUP_NEW        = 'Hiermit kann beim Programmstart automatisch ein neues Blatt geîffnet werden';
-	BUBBLE_SETUP_OPEN       = 'Wenn dieser Button markiert ist, zeigt Texel beim Programmstart eine Dateiauswahlbox an';
-	BUBBLE_SETUP_NOTHING    = 'Wenn dieser Button markiert ist, passiert nach dem Laden von Texel gar nichts';
-	BUBBLE_SETUP_FULLSIZE   = 'Gibt an, ob BlÑtter nach dem Laden auf volle Bildschirmgrîûe gebracht werden sollen. Bei Groûbildschirmen kann diese Option stîrend sein.';
+	BUBBLE_SETUP_FPOINT     = 'Sets the number of decimal places displayed for each number input';
+	BUBBLE_SETUP_HISTORY    = 'Sets the maximum number of entries in the Block dialog (Control+B)';
+	BUBBLE_SETUP_CRSWRAP    = 'Cursor wrap: Cursor jumps to opposite edge if moved off the edge of the sheet';
+	BUBBLE_SETUP_XINPUT     = 'If this button is checked, keyboard input will be to the window under the mouse cursor (otherwise to the topped window)';
+	BUBBLE_SETUP_CLOSER     = 'If this button is checked, clicking the closer box of a dialog corresponds to the <Cancel> button, otherwise the <OK> button (changes become active on the next program start!)';
+	BUBBLE_SETUP_NEW        = 'A new sheet will be displayed by default when starting the program';
+	BUBBLE_SETUP_OPEN       = 'If this button is checked, the file selector will be displayed at program start';
+	BUBBLE_SETUP_NOTHING    = 'If this button is checked, Texel will only display the menu on startup';
+	BUBBLE_SETUP_FULLSIZE   = 'If checked, sheets will be displayed at maximum size when loaded. With big screens this option can be annoying';
 	{$IFDEF NVDI5}
 	BUBBLE_SETUP_BLOCK      = 'Diese Option wird mit NVDI5 nicht benîtigt.';
 	{$ELSE}
-	BUBBLE_SETUP_BLOCK      = 'Schalten Sie diesen Button ein, falls Sie auf dem Bildschirm nicht das sehen, was Ihr GDOS ausdruckt (die Einstellung wird erst beim nÑchsten Start wirksam!)';
+	BUBBLE_SETUP_BLOCK      = 'Check this box if the screen display does not match printed output with GDOS (the settings become active on the next program start!)';
 	{$ENDIF}
-	BUBBLE_SETUP_RECALC     = 'Berechnet ein Blatt nach dem Laden neu (wichtig fÅr Datumsrechnungen). Sollte nur auf langsamen Rechnern ausgeschaltet werden.';
-	BUBBLE_SETUP_RTBLOCK    = 'Die Realtime-Blockmarkierung kann auf langsamen Rechnern zu langsam sein, deshalb kann sie hiermit ausgeschaltet werden.';
-	BUBBLE_SETUP_BACKUP     = 'Wenn dieser Button markiert ist, wird beim Speichern einer .TXL-Datei eine evtl. schon vorhandene Datei in .BAK umbenannt';
-	BUBBLE_SETUP_PRINTER    = 'Konfiguriert den Standard-Druckertreiber';
-	BUBBLE_SETUP_TOOLBAR    = 'Legt fest, ob bei neuen ArbeitsblÑttern die Toolbar eingeschaltet ist';
-	BUBBLE_SETUP_CURRENCY   = 'Bestimmt, welches WÑhrungsformat der entsprechende Toolbar-Button einstellt';
-	BUBBLE_SETUP_OVERFLOW   = 'Bestimmt, ob bei Zahlzellen getestet wird, ob die Zahl aus der Zelle herausragt und die Zahl daher durch Doppelkreuze (###) ersetzt wird. Ausschalten bringt fÅr langsame Rechner Geschwindigkeitsvorteile!';
-	BUBBLE_SETUP_BOTTOMLINE = 'Wenn diese Option eingeschaltet ist, lassen auch Fenster mit voller Grîûe am unteren Bildschirmrand Platz fÅr z.B. SMU oder AppLine';
-	BUBBLE_SETUP_SAVEOPT    = 'Bestimmt, ob die Einstellungen dieses Dialogs bei jedem Beenden von Texel automatisch gespeichert werden';
-	BUBBLE_SETUP_SAVEWORK   = 'Legt fest, ob die Arbeitsumgebung (d.h. welche Texel-RechenblÑtter gerade geîffnet sind) bei jedem Beenden von Texel automatisch gesichert wird';
-	BUBBLE_SETUP_EXCELDATE  = 'Legt fest, ob neue RechenblÑtter Datumsangaben im Excel-Format berechnen';
-	BUBBLE_SETUP_FORMERR    = 'Wenn diese Option eingeschaltet ist, werden Fehler bei der Eingabe von Formeln per BubbleHelp angezeigt.';
-	BUBBLE_SETUP_FORMCELL   = 'Wenn diese Option zusÑtzlich zu der darÅber eingeschaltet ist, wird die Eingabezeile mit dem fehlerhaften Formeltext aktiviert.';
-	BUBBLE_SETUP_INFODIAL   = 'Wenn diese Option eingeschaltet ist, wird vor dem ôffnen eines neuen Dokuments ein kleiner Info-Dialog angezeigt, in dem man Angaben zum Autor, Inhalt des Blattes etc. machen kann.';
-	BUBBLE_SETUP_PATHS      = 'Legt die Standardpfade fest, die beim Aufruf der Dateiauswahl erscheinen.';
+	BUBBLE_SETUP_RECALC     = 'Recalculates a sheet when it is loaded (important for dates). Should only be switched off on slow computers';
+	BUBBLE_SETUP_RTBLOCK    = 'Realtime block marking can be too slow on a slow computer, therefore you can switch it off by checking this box';
+	BUBBLE_SETUP_BACKUP     = 'If checked, an old file with the same name is renamed to .BAK before the current file is saved';
+	BUBBLE_SETUP_PRINTER    = 'Configures the standard printer driver';
+	BUBBLE_SETUP_TOOLBAR    = 'Determines whether the Toolbar is visible when a new sheet is created';
+	BUBBLE_SETUP_CURRENCY   = 'Determines which currency format will be used with the Toolbar button';
+	BUBBLE_SETUP_OVERFLOW   = 'If the number is too large to fit in the cell it will be displayed as (###). Switching this off gives a speed advantage for slower computers!';
+	BUBBLE_SETUP_BOTTOMLINE = 'If checked, leave enough space at the bottom of the sheet window for the display of e.g. SMU or AppLine';
+	BUBBLE_SETUP_SAVEOPT    = 'Save the settings of this dialog automatically when Texel is quit';
+	BUBBLE_SETUP_SAVEWORK   = 'Saves the environment (which Texel sheets are open) automatically when Texel is quit';
+	BUBBLE_SETUP_EXCELDATE  = 'Determines whether a new sheet calculates dates in Excel format';
+	BUBBLE_SETUP_FORMERR    = 'If enabled, an error caused by the incorrect input of formulae is displayed by BubbleHelp';
+	BUBBLE_SETUP_FORMCELL   = 'If this option is enabled as well as the one above, the Input line displays the faulty formula';
+	BUBBLE_SETUP_INFODIAL   = 'If this option is enabled, an info dialog will open before a new document is created. The author'#39's name, contents of the sheet etc. can be entered.';
+	BUBBLE_SETUP_PATHS      = 'Sets the default path used when the file selector is called';
 
 	BUBBLE_INPUT_EMPTY      = 'Die Eingabezeile ist z.Z. leer.';
 
@@ -145,66 +145,66 @@
 	BUBBLE_BLOCK_LIST       = 'Zeigt die bisher markierten Blîcke sowie die Zellvariablen an';
 	BUBBLE_BLOCK_OK         = 'VerlÑût den Blockeingabedialog. Wenn der neue Wert eine gÅltige Blockangabe ist, wird die Markierung entsprechend aktualisiert';
 
-	BUBBLE_FNBAR_FONTID     = 'Stellt den in den Zellen verwendeten Zeichensatz ein (Alt+F)';
-	BUBBLE_FNBAR_FONTSIZE   = 'Bestimmt die Zeichenhîhe (Alt+R)';
-	BUBBLE_FNBAR_PERCENT    = 'éndert die Darstellungsgrîûe des Blattes (Alt+Z)';
-	BUBBLE_FNBAR_BACKCOLOR  = 'éndert die Farbe des Hintergrundmusters der aktuellen Zelle(n)';
-	BUBBLE_FNBAR_PATTERN    = 'éndert das Hintergrundmuster der aktuellen Zelle(n)';
-	BUBBLE_FNBAR_AUTOCURSOR = 'Gibt die Richtung des Cursors nach <Return> an (AutoCursor)';
-	BUBBLE_FNBAR_BLOCK      = 'Zeigt die aktuelle Markierung (Cursor/Block) an bzw. erlaubt die manuelle Eingabe derselben (Control+B)';
-	BUBBLE_FNBAR_CANCEL     = 'Bricht die Texteingabe bei Zellen ab (Tab)';
-	BUBBLE_FNBAR_OK         = 'öbernimmt den Text in die Zelle (Return)';
-	BUBBLE_FNBAR_TEXTCOLOR  = 'éndert die Textfarbe im aktuellen Block';
-	BUBBLE_FNBAR_BORDER     = 'Versieht den aktuellen Block/die aktuelle Zelle mit einem Rahmen';
-	BUBBLE_FNBAR_TBONOFF    = 'Schaltet die Toolbar an bzw. aus';
+	BUBBLE_FNBAR_FONTID     = 'Sets the fonts used in the cells (Alt+F)';
+	BUBBLE_FNBAR_FONTSIZE   = 'Sets the font size (Alt+R)';
+	BUBBLE_FNBAR_PERCENT    = 'Alters the display size of the sheet (Alt+Z)';
+	BUBBLE_FNBAR_BACKCOLOR  = 'Alters the background colour of the current cell(s)';
+	BUBBLE_FNBAR_PATTERN    = 'Alters the background fill of the current cell(s)';
+	BUBBLE_FNBAR_AUTOCURSOR = 'Sets direction of cursor movement with <Return>(AutoCursor)';
+	BUBBLE_FNBAR_BLOCK      = 'Shows the current cell markings (Cursor/Block) or allows input of a range (Control+B)';
+	BUBBLE_FNBAR_CANCEL     = 'Terminates char. entry into a cell <Tab>';
+	BUBBLE_FNBAR_OK         = 'Confirms entry of chars in cell <Return>';
+	BUBBLE_FNBAR_TEXTCOLOR  = 'Changes text colour in current block';
+	BUBBLE_FNBAR_BORDER     = 'Adds a border to the current block or cell';
+	BUBBLE_FNBAR_TBONOFF    = 'Switches the Toolbar on or off';
 	
-	BUBBLE_TOOLBAR_SAVE     = 'Speichert das Kalkulationsblatt (Control+S)';
-	BUBBLE_TOOLBAR_PRINT    = 'Druckt das Kalkulationsblatt aus (Control+P)';
-	BUBBLE_TOOLBAR_CUT      = 'Schneidet die aktuelle Markierung aus (Control+X)';
-	BUBBLE_TOOLBAR_COPY     = 'Kopiert die aktuelle Markierung ins Klemmbrett (Control+C)';
-	BUBBLE_TOOLBAR_PASTE    = 'FÅgt den Inhalt des Klemmbretts an der aktuellen Position ein (Control+V)';
-	BUBBLE_TOOLBAR_SUM      = 'Aktiviert die zuletzt aktive Zelle und trÑgt in der Eingabezeile die Summenfunktion ein. Wenn ein Block markiert ist, wird dieser Bereich in die Summe eingefÅgt. (F10)';
-	BUBBLE_TOOLBAR_FN       = 'Ruft den Funktionsmanager auf (Shift+Control+F)';
-	BUBBLE_TOOLBAR_BOLD     = 'Schaltet bei der aktuellen Markierung Fettschrift ein bzw. aus (F2)';
-	BUBBLE_TOOLBAR_ITALIC   = 'Schaltet bei der aktuellen Markierung kursive Schrift ein bzw. aus (F3)';
-	BUBBLE_TOOLBAR_UNDERL   = 'Schaltet bei der aktuellen Markierung Unterstreichung ein bzw. aus (F4)';
-	BUBBLE_TOOLBAR_LEFT     = 'Richtet den Text im aktuellen Block linksbÅndig aus (F5)';
-	BUBBLE_TOOLBAR_CENTER   = 'Richtet den Text im aktuellen Block mittig aus (F6)';
-	BUBBLE_TOOLBAR_RIGHT    = 'Richtet den Text im aktuellen Block rechtsbÅndig aus (F7)';
-	BUBBLE_TOOLBAR_NUMBER   = 'Setzt im aktuellen Block das Zahlenformat {0,00}';
-	BUBBLE_TOOLBAR_DATE     = 'Setzt im aktuellen Block das Zahlenformat [TT].[MM].[JJJJ]';
-	BUBBLE_TOOLBAR_MONEY    = 'Setzt im aktuellen Block das in "Optionen - Einstellungen" gewÑhlte WÑhrungs-Zahlenformat';
-	BUBBLE_TOOLBAR_PERCENT  = 'Setzt im aktuellen Block das Zahlenformat (100){0}%';
-	BUBBLE_TOOLBAR_SORTUP   = 'Sortiert den aktuellen Block nach den (bis zu) ersten drei Spalten aufsteigend';
-	BUBBLE_TOOLBAR_SORTDOWN = 'Sortiert den aktuellen Block nach den (bis zu) ersten drei Spalten absteigend';
-	BUBBLE_TOOLBAR_FPLUS    = 'Erhîht die Anzahl der Nachkommastellen einer Formel- bzw. Konstantenzelle um eins (F8)';
-	BUBBLE_TOOLBAR_FMINUS   = 'Vermindert die Anzahl der Nachkommastellen einer Formel- bzw. Konstantenzelle um eins (F9)';
-	BUBBLE_TOOLBAR_DIAGRAM  = 'Erzeugt aus dem aktuell markierten Block ein Balkendiagramm. <Shift> kehrt Datenzeilen/-spalten um.';
-	BUBBLE_TOOLBAR_HOME     = 'Bringt den Cursor zur Zelle A1 (Home)';
+	BUBBLE_TOOLBAR_SAVE     = 'Saves the sheet (Control+S)';
+	BUBBLE_TOOLBAR_PRINT    = 'Prints the sheet (Control+P)';
+	BUBBLE_TOOLBAR_CUT      = 'Cuts the current selection (Control+X)';
+	BUBBLE_TOOLBAR_COPY     = 'Copies the current selection to the clipboard (Control+C)';
+	BUBBLE_TOOLBAR_PASTE    = 'Pastes the contents of the clipboard at the current position (Control+V)';
+	BUBBLE_TOOLBAR_SUM      = 'Activates the cell last active and places the Sum function on the Input line. If a block is selected this range will be inserted into the function (F10)';
+	BUBBLE_TOOLBAR_FN       = 'Calls the functions dialog (Shift+Control+F)';
+	BUBBLE_TOOLBAR_BOLD     = 'Switches bold on or off for text in a marked block or cell (F2)';
+	BUBBLE_TOOLBAR_ITALIC   = 'Switches italic on or off for text in a marked block or cell (F3)';
+	BUBBLE_TOOLBAR_UNDERL   = 'Switches underline on or off for text in a marked block or cell (F4)';
+	BUBBLE_TOOLBAR_LEFT     = 'Left justifies the text in a block or cell (F5)';
+	BUBBLE_TOOLBAR_CENTER   = 'Centre justifies the text in a block or cell (F6)';
+	BUBBLE_TOOLBAR_RIGHT    = 'Right justifies the text in a block or cell (F7)';
+	BUBBLE_TOOLBAR_NUMBER   = 'Alter number format in current cell(s) to {0,00}';
+	BUBBLE_TOOLBAR_DATE     = 'Alter number format in current cell(s) to [DD].[MM].[YYYY]';
+	BUBBLE_TOOLBAR_MONEY    = 'Alters the number format to the default currency chosen with "Options - Settings"';
+	BUBBLE_TOOLBAR_PERCENT  = 'Alters number format in current cell/s to (100){0}%';
+	BUBBLE_TOOLBAR_SORTUP   = 'Sorts the current block, forwards, on the first three columns';
+	BUBBLE_TOOLBAR_SORTDOWN = 'Sorts the current block, backwards, on the first three columns';
+	BUBBLE_TOOLBAR_FPLUS    = 'Increases the number of decimal places in a formula or constant cell by one (F8)';
+	BUBBLE_TOOLBAR_FMINUS   = 'Decreases the number of decimal places in a formula or constant cell by one (F9)';
+	BUBBLE_TOOLBAR_DIAGRAM  = 'Creates a bar chart from the marked block. <Shift> swaps line/column used for the X axis';
+	BUBBLE_TOOLBAR_HOME     = 'Moves the cursor to cell A1 (Home)   ';
 
-	BUBBLE_TEXTATTR_BOLD    = 'Schriftstil fett';
-	BUBBLE_TEXTATTR_LIGHT   = 'Schriftstil hell';
-	BUBBLE_TEXTATTR_ITALIC  = 'Schriftstil kursiv (Italic)';
-	BUBBLE_TEXTATTR_UNDERL  = 'Schriftstil unterstrichen';
-	BUBBLE_TEXTATTR_OUTL    = 'Schriftstil umrandet (Outline)';
-	BUBBLE_TEXTATTR_SHADOW  = 'Schriftstil schattiert (wird nicht von allen GDOS-Versionen und Bildschirmtreibern unterstÅtzt)';
-	BUBBLE_TEXTATTR_ROTAT   = 'Bestimmt den Rotationswinkel des Textes. Bei Bitmapfonts kann dies nur in 90-Grad-Schritten geschehen.';
-	BUBBLE_TEXTATTR_SKEW    = 'Legt die SchrÑgstellung (Skew) der Schrift fest'{$IFNDEF NVDI5}+' (nur mit Vektorfont-GDOS)'{$ENDIF};
-	BUBBLE_TEXTATTR_CLIP    = 'Legt fest, ob Textausgaben am Rand einer Zelle abgeschnitten werden';
-	BUBBLE_TEXTATTR_LEFT    = 'LinksbÅndiger Text';
-	BUBBLE_TEXTATTR_CENTER  = 'Horizontal zentrierter Text';
-	BUBBLE_TEXTATTR_RIGHT   = 'RechtsbÅndiger Text';
-	BUBBLE_TEXTATTR_COLOR   = 'Legt die Textfarbe fest';
-	BUBBLE_TEXTATTR_CROTAT  = 'Gibt an, ob der Rotationswert beachtet werden soll';
-	BUBBLE_TEXTATTR_CSKEW   = 'Gibt an, ob der SchrÑgstellungswert beachtet werden soll';
-	BUBBLE_TEXTATTR_CHALIGN = 'Gibt an, ob die horizontale Ausrichtung beachtet werden soll';
-	BUBBLE_TEXTATTR_CVALIGN = 'Gibt an, ob die vertikale Ausrichtung beachtet werden soll';
-	BUBBLE_TEXTATTR_CCOLOR  = 'Gibt an, ob die Textfarbe beachtet werden soll';
-	BUBBLE_TEXTATTR_TOP     = 'Oben ausgerichteter Text';
-	BUBBLE_TEXTATTR_MIDDLE  = 'Vertikal zentrierter Text';
-	BUBBLE_TEXTATTR_BOTTOM  = 'Unten ausgerichteter Text';
-	BUBBLE_TEXTATTR_FXOFF   = 'Schaltet alle Texteffekte aus';
-	BUBBLE_TEXTATTR_FXIGNOR = 'Stellt alle Texteffekte auf "nicht beachten"';
+	BUBBLE_TEXTATTR_BOLD    = 'Font style bold';
+	BUBBLE_TEXTATTR_LIGHT   = 'Font style light';
+	BUBBLE_TEXTATTR_ITALIC  = 'Font style italic';
+	BUBBLE_TEXTATTR_UNDERL  = 'Font style underlined';
+	BUBBLE_TEXTATTR_OUTL    = 'Font style outlined';
+	BUBBLE_TEXTATTR_SHADOW  = 'Shadowed (not available with all GDOS versions and screen drivers)';
+	BUBBLE_TEXTATTR_ROTAT   = 'Sets the rotation of the text. With bitmapped fonts this can only be in 90 degree steps';
+	BUBBLE_TEXTATTR_SKEW    = 'Slope or skew of font'{$IFNDEF NVDI5}+' (only with vector fonts)'{$ENDIF};
+	BUBBLE_TEXTATTR_CLIP    = 'Sets whether text should be clipped if it crosses a cell border';
+	BUBBLE_TEXTATTR_LEFT    = 'Left just. text ';
+	BUBBLE_TEXTATTR_CENTER  = 'Horizontally centred text';
+	BUBBLE_TEXTATTR_RIGHT   = 'Right just. text';
+	BUBBLE_TEXTATTR_COLOR   = 'Sets the text colour';
+	BUBBLE_TEXTATTR_CROTAT  = 'Pay regard to text rotation angle?';
+	BUBBLE_TEXTATTR_CSKEW   = 'Pay regard to text skewing?';
+	BUBBLE_TEXTATTR_CHALIGN = 'Pay regard to horizontal alignment?';
+	BUBBLE_TEXTATTR_CVALIGN = 'Pay regard to vertical alignment?';
+	BUBBLE_TEXTATTR_CCOLOR  = 'Pay regard to text colour?';
+	BUBBLE_TEXTATTR_TOP     = 'Text aligned to top';
+	BUBBLE_TEXTATTR_MIDDLE  = 'Vertically centred text';
+	BUBBLE_TEXTATTR_BOTTOM  = 'Text aligned to bottom';
+	BUBBLE_TEXTATTR_FXOFF   = 'Switches all text effects off';
+	BUBBLE_TEXTATTR_FXIGNOR = 'Disregard all text effects';
 	
 	BUBBLE_NUMFORM_CATEGORY = 'Zeigt alle verfÅgbaren Gruppen von Zahlenformaten an';
 	BUBBLE_NUMFORM_FORMLIST = 'Listet die Zahlenformate abhÑngig von der Auswahl in der Liste links auf';
@@ -244,8 +244,8 @@
 	BUBBLE_BORDER_HCOLOR    = 'Legt die Farbe fÅr die horizontale Durchstreichung fest';
 	BUBBLE_BORDER_VCOLOR    = 'Legt die Farbe fÅr die vertikale Durchstreichung fest';
 	
-	BUBBLE_CLIP_IMPORT      = 'Ruft den ASCII-Import fÅr die aktuelle Klemmbrett-Datei auf';
-	BUBBLE_CLIP_OK          = 'LÑdt eine DIF- oder CSV-Datei aus dem Klemmbrett';
+	BUBBLE_CLIP_IMPORT      = 'ASCII import for the current clipboard file';
+	BUBBLE_CLIP_OK          = 'Loads a DIF or CSV file from the clipboard';
 	
 	BUBBLE_ABOUT_OK         = 'Schlieût den "öber..."-Dialog';
 	BUBBLE_ABOUT_UPDATE     = 'ôffnet einen Dialog, in dem Sie erfahren, wie und wo sie auf die Texel-Vollversion aufsteigen kînnen!';
@@ -364,7 +364,7 @@
 	BUBBLE_EXPORT_DOCTYPE   = 'Sets the HTML document type. "3.0" is Netscape standard, "3.2" and "4.0" are the official W3C standards. At present "3.2" is the best choice.';
 	BUBBLE_EXPORT_SAVEDT    = 'Bestimmt, ob der Dokumenttyp Åberhaupt in der Exportdatei gespeichert wird. Wenn die Tabelle in eine andere HTML-Datei eingebunden wird, ist dies unnîtig.';
 	BUBBLE_EXPORT_COLORS    = 'Exports the colours to the HTML table';
-	BUBBLE_EXPORT_FONTS     = 'Bestimmt, ob die Zeichensatznamen exportiert werden. Geht nur, wenn auch die Farben exportiert werden.';
+	BUBBLE_EXPORT_FONTS     = 'Exports the font names to the HTML table. Only works if colours are also exported.';
 	BUBBLE_EXPORT_DIFTYPE   = 'Wird zur Festlegung des DIF-Typs benîtigt, da M$-Produkte eine andere Zeilen/Spalten-Codierung verwenden als Åblich...';
 	BUBBLE_EXPORT_DIFSTAND  = 'Mit dieser Option kann eine Standard-DIF-Datei exportiert werden';
 	BUBBLE_EXPORT_DIFMS     = 'Mit dieser Option werden DIF-Dateien exportiert, die von M$-Produkten korrekt importiert werden';
@@ -374,10 +374,10 @@
 	BUBBLE_EXPORT_ASCIIFORM = 'Legt fest, ob beim Speichern von Werten das Zahlenformat beachtet wird';
 	BUBBLE_EXPORT_EMBED     = 'If checked, inserted objects will be exported with the <EMBED> tag. Most objects can only be correctly displayed by CAB, not with Netscape or M$ Internet Explorer.';
 	BUBBLE_EXPORT_FILTER    = 'Legt fest, fÅr welches Betriebssystem die Datei exportiert werden soll, um u.a. die Umlaute korrekt exportieren zu kînnen. Damit mehr als der "Atari"-Filter zur VerfÅgung steht, muû KEYTAB installiert sein.';
-	BUBBLE_EXPORT_ESCAPES   = 'ACHTUNG, NUR FöR HTML-EXPERTEN!!! Wenn diese Option aktiv ist, werden die vier HTML-Steuerzeichen <>&" nicht in ihre HTML-Namen umgewandelt, so daû man in den Zellen direkt HTML kodieren kann.';
-	BUBBLE_EXPORT_XLSVER    = 'Bestimmt, fÅr welche Excel-Version das Texel-Dokument exportiert werden soll. Excel 2.0 (BIFF2) kann von allen Excel-Versionen ohne EinschrÑnkungen importiert werden.';
-	BUBBLE_EXPORT_CSS       = 'Legt ab HTML 4.0 die Stufe der "Cascading Style Sheets" fest; mit CSS werden diverse Attribute (Textfarbe etc.) gespeichert. Derzeit ist CSS1 (CSS Level 1) Standard.';
-	BUBBLE_EXPORT_KEYTAB    = 'KEYTAB.PRG muû in den AUTO-Ordner kopiert werden. Nach einem Neustart des Rechners stehen dann diverse Zeichenfilter zu VerfÅgung, die vom RTF- und Excel-Export automatisch genutzt werden.';
+	BUBBLE_EXPORT_ESCAPES   = 'WARNING, ONLY FOR HTML EXPERTS!!! If this option is active, the four HTML-control characters <>&" are not converted in HTML names, so that one can directly insert HTML code in the cells.';
+	BUBBLE_EXPORT_XLSVER    = 'For which Excel version the Texel document should be exported. Excel 2.0 (BIFF2) can be read by all versions of Excel.';
+	BUBBLE_EXPORT_CSS       = 'From HTML 4.0 sets the level of "Cascading Style Sheets", with CSS various attributes (text colour etc.) are saved. The current standard is CSS1 (CSS Level 1).';
+	BUBBLE_EXPORT_KEYTAB    = 'KEYTAB.PRG must be copied to the Auto folder. After a reboot various character filters will be available, which will used automatically by RTF and Excel export.';
 	BUBBLE_EXPORT_TEXEL     = 'Die Optionen fÅr den Export alter Texel-Dateien';
 	BUBBLE_EXPORT_TEXELVER  = 'Bestimmt, fÅr welche alte Texel-Version das Dokument exportiert werden soll.';
 
@@ -468,18 +468,18 @@
 	BUBBLE_PREVIEW_100      = 'Stellt die Vergrîûerung/Verkleinerung auf 100% zurÅck.';
 	BUBBLE_PREVIEW_OK       = 'VerlÑût die Seitenansicht';
 
-	BUBBLE_INFO_FILE        = 'Zeigt den kompletten Dateinamen des Blattes an';
+	BUBBLE_INFO_FILE        = 'Shows the complete filename of the sheet';
 	BUBBLE_INFO_AUTHOR      = 'The author of the sheet can be entered here. In "Page settings" this can be accessed in the header and footer with #a.';
 	BUBBLE_INFO_INDEX       = 'Comma separated keywords can be entered here, so that one can search for them with STELLA.';
 	BUBBLE_INFO_REM         = 'Any annotations to the sheet';
-	BUBBLE_INFO_CREATED     = 'Zeigt an, wann das Blatt erzeugt wurde';
-	BUBBLE_INFO_LATEST      = 'Zeigt an, wann das Blatt zuletzt geladen wurde';
-	BUBBLE_INFO_USED        = 'Zeigt an, wie oft das Blatt geîffnet wurde';
-	BUBBLE_INFO_PRINTED     = 'Zeigt an, wie oft das Blatt ausgedruckt wurde. Dieser Wert ist nur korrekt, wenn das Blatt nach jedem Ausdruck gespeichert wird.';
-	BUBBLE_INFO_VERSION     = 'Zeigt an, mit welcher Texel-Version die Datei gespeichert wurde';
-	BUBBLE_INFO_ENCRYPT     = 'Schaltet die automatische DateiverschlÅsselung ein. Dadurch kann man den Klartext-Dateiinhalt nicht mehr mit einem Diskmonitor ausspÑhen.';
-	BUBBLE_INFO_PASSWORD    = 'Ruft einen Dialog auf, mit dem die Datei paûwortgeschÅtzt werden kann';
-	BUBBLE_INFO_TITLE       = 'Ein optionaler Titel des Dokuments, der von einigen Export-Formaten verwendet wird. In "Seite einrichten" kann man darauf in den Kopf- und Fuûzeilen mit #n zugreifen.';
+	BUBBLE_INFO_CREATED     = 'When the sheet was first created';
+	BUBBLE_INFO_LATEST      = 'When the sheet was last opened';
+	BUBBLE_INFO_USED        = 'How many times the sheet has been opened';
+	BUBBLE_INFO_PRINTED     = 'How many times the sheet has been printed. This value is only correct if the sheet is saved after each printout.';
+	BUBBLE_INFO_VERSION     = 'Shows with which Texel version the file was saved';
+	BUBBLE_INFO_ENCRYPT     = 'Switches on automatic file encryption. One can no longer view the text in the file with a disk editor.';
+	BUBBLE_INFO_PASSWORD    = 'Calls a dialog where the file password can be entered';
+	BUBBLE_INFO_TITLE       = 'An optional title for the document, used in some export formats. In "Page settings" it can be accessed with #n.';
 
 	BUBBLE_SINFO_AUTHOR     = 'The author of the sheet can be entered here. In "Page settings" this can be accessed in the header and footer with #a.';
 	BUBBLE_SINFO_OK         = 'Generates a new sheet with the above information';
@@ -559,9 +559,9 @@
 	BUBBLE_PRNINFO_PRNTSIZE = 'Grîûe des Druckbereichs (=verfÅgbare Grîûe), hier sind hardwarebedingte RÑnder bereits abgezogen';
 	BUBBLE_PRNINFO_BEZIER   = 'Gibt an, ob das AusgabegerÑt Bezierkurven zeichnen kann';
 	
-	BUBBLE_HELP_ITEM        = 'Das Stichwort, das der ST-Guide im Texel-Hypertext suchen soll';
-	BUBBLE_HELP_SEARCH      = 'Sucht das Stichwort, ohne den Dialog zu verlassen';
-	BUBBLE_HELP_OK          = 'Sucht das Stichwort und verlÑût anschlieûend den Dialog';
+	BUBBLE_HELP_ITEM        = 'The keyword to search for in the Texel ST-Guide';
+	BUBBLE_HELP_SEARCH      = 'Searches for the keyword without exiting dialog';
+	BUBBLE_HELP_OK          = 'Searches for the keyword and then exits the dialog';
 	
 	BUBBLE_DIAGRAM_CHANGE   = 'In diesem Bereich wird die Gruppe der zu verÑndernden Werte ausgewÑhlt';
 	BUBBLE_DIAGRAM_GRPTYPE  = 'Hier kann der Diagrammtyp verÑndert werden';
@@ -639,10 +639,10 @@
 	BUBBLE_URL_OPEN         = 'ôffnet die angegebene URL als neues Texel-Rechenblatt, falls die URL auf eine gÅltige Texel-Datei verweist';
 	BUBBLE_URL_OK           = 'ôffnet die angegebene URL als neues Texel-Rechenblatt, falls die URL auf eine gÅltige Texel-Datei verweist. Anschlieûend wird der Dialog geschlossen.';
 	
-	BUBBLE_PASS_FILE        = 'Diese Datei ist paûwortgeschÅtzt';
-	BUBBLE_PASS_EDIT        = 'Hier muû das benutzergewÑhlte Paûwort eingetragen werden. Groû-/Kleinschreibung wird berÅcksichtigt!';
-	BUBBLE_PASS_CANCEL      = 'Bricht den Ladevorgang ab';
-	BUBBLE_PASS_OK          = 'BestÑtigt das Paûwort. Wenn dieses korrekt eingegeben wurde, wird das Blatt geladen.';
+	BUBBLE_PASS_FILE        = 'This file is password protected';
+	BUBBLE_PASS_EDIT        = 'The user s password should be entered here. This is case-sensitive!';
+	BUBBLE_PASS_CANCEL      = 'Cancel loading';
+	BUBBLE_PASS_OK          = 'Confirms the password. If correctly entered the sheet is loaded.';
 	
 	BUBBLE_CHGPASS_OLD      = 'The old password must be entered here, if it exists and you want to change it. Please note that this is case sensitive!';
 	BUBBLE_CHGPASS_NEW      = 'The new password should beentered here. Case sensitive!';
@@ -727,7 +727,7 @@
 	MESSAGE_STARTUP_NVDI    = 'Texel benîtigt NVDI ab Version 5.0.';
 
 	MESSAGE_WINDOW_MEMORY   = 'Texel:|Not enough memory free for a new window!';
-	MESSAGE_WINDOW_WINDOWS  = 'Kein Fenster mehr verfÅgbar.';
+	MESSAGE_WINDOW_WINDOWS  = 'No more windows.';
 	MESSAGE_WINDOW_DDMOVE   = 'Der Drag&Drop-Block paût nicht ganz auf das Blatt, es werden nicht alle Zellen verschoben!';
 	MESSAGE_WINDOW_DDCOPY   = 'Der Drag&Drop-Block paût nicht ganz auf das Blatt, es werden nicht alle Zellen kopiert!';
 	MESSAGE_WINDOW_CCPCOPY  = 'Der Cut/Copy/Paste-Block paût nicht ganz auf das Blatt, es werden nicht alle Zellen kopiert!';
@@ -755,15 +755,15 @@
 	MESSAGE_NUMFORM_DEL1    = 'Zahlenformat "';
 	MESSAGE_NUMFORM_DEL2    = '" lîschen?';
 
-	MESSAGE_CLIP_PASTE      = 'Im Klemmbrett befinden sich keine passenden Daten, die eingefÅgt werden kînnen.';
-	MESSAGE_CLIP_IMPORT     = 'Keine passende Datei im Klemmbrett vorhanden.';
+	MESSAGE_CLIP_PASTE      = 'There is no suitable file to paste in the clipboard..';
+	MESSAGE_CLIP_IMPORT     = 'No suitable file in the clipboard.';
 	
 	MESSAGE_EMBED_ARTWORX   = 'ArtWorx can not be called.';
 	MESSAGE_EMBED_OLGA1     = 'The OLGA "';
 	MESSAGE_EMBED_OLGA2     = '"server can not be called.';
 	MESSAGE_EMBED_DELETE    = 'Objekt wirklich lîschen?';
-	MESSAGE_EMBED_EXIST1    = 'Die Datei "';
-	MESSAGE_EMBED_EXIST2    = '" existiert bereits. öberschreiben?';
+	MESSAGE_EMBED_EXIST1    = 'The file "';
+	MESSAGE_EMBED_EXIST2    = '" already exists. Overwrite it?';
 	
 	MESSAGE_LAYOUT_RANGE    = 'Bitte geben Sie einen gÅltigen Druckbereich ein.';
 	MESSAGE_LAYOUT_HEADFOOT = 'Sie haben eine Kopf- bzw. Fuûzeile definiert, ohne den entsprechenden Rand festzulegen.';
@@ -835,8 +835,8 @@
 	MESSAGE_IMPORT_LDP1     = '"';
 	MESSAGE_IMPORT_LDP2     = '" is not an LDW/LDP file.';
 
-	MESSAGE_EXPORT_EXIST1   = 'Die Datei "';
-	MESSAGE_EXPORT_EXIST2   = '" existiert bereits. öberschreiben?';
+	MESSAGE_EXPORT_EXIST1   = 'The file "';
+	MESSAGE_EXPORT_EXIST2   = '" already exists. Overwrite it?';
 	
 	MESSAGE_PRINT_STOP      = 'Ausdruck abbrechen?';
 	MESSAGE_PRINT_EMPTY     = 'Der Druckbereich enthÑlt keine Daten.';
@@ -847,9 +847,9 @@
 	MESSAGE_PRINT_PRINTER   = 'Es ist kein Drucker definiert.';
 	MESSAGE_PRINT_DRIVER    = 'Es ist kein Druckertreiber installiert.';
 
-	MESSAGE_INFO_PASSWRONG  = 'Altes Paûwort falsch!';
-	MESSAGE_INFO_PASSLEN    = 'Das neue Paûwort muû entweder leer oder aber mind. 6 Zeichen lang sein.';
-	MESSAGE_INFO_PASSNEQ    = 'Das Kontrollfeld stimmt nicht mit dem neuen Paûwort Åberein.';
+	MESSAGE_INFO_PASSWRONG  = 'Old password wrong!';
+	MESSAGE_INFO_PASSLEN    = 'The new password must be either blank or at least 6 characters long.';
+	MESSAGE_INFO_PASSNEQ    = 'The entry in the verify field does not match the new password';
 	
 	MESSAGE_CONST_EMPTY     = 'Bitte geben Sie einen Konstantennamen ein.';
 	MESSAGE_CONST_NAME      = 'Bitte geben Sie einen korrekten Namen ein.';
@@ -870,29 +870,29 @@
 
 { fsel titles }
 
-	FSELTITLE_DIAGRAM       = 'DIAGRAMM-DOKUMENT FESTLEGEN';
-	FSELTITLE_TAD           = 'TAD-DATEI FESTLEGEN';
-	FSELTITLE_TADSAVEAS     = 'TAD-DATEI SPEICHERN ALS...';
-	FSELTITLE_OBJECTSAVEAS  = 'OBJEKT SICHERN ALS...';
+	FSELTITLE_DIAGRAM       = 'CHART DOCUMENT';
+	FSELTITLE_TAD           = 'TAD-FILE';
+	FSELTITLE_TADSAVEAS     = 'SAVE TAD FILE AS...';
+	FSELTITLE_OBJECTSAVEAS  = 'SAVE OBJECT AS...';
 	FSELTITLE_OBJECTINSERT  = 'OBJEKT EINFöGEN';
-	FSELTITLE_CHANGELINK    = 'VERKNöPFUNG éNDERN...';
-	FSELTITLE_LOADTEXT      = 'ASCII-TEXT LADEN';
-	FSELTITLE_LOADIMG       = 'IMG-GRAFIK LADEN';
-	FSELTITLE_OPEN          = 'TEXEL-BLATT LADEN';
-	FSELTITLE_SAVEFORMASDOC = 'VORLAGE ALS DOKUMENT SPEICHERN';
-	FSELTITLE_IMPORTLDW     = 'LDW-AUSSPULDATEI IMPORTIEREN';
-	FSELTITLE_IMPORTDIF     = 'DIF-DATEI IMPORTIEREN';
-	FSELTITLE_IMPORTCSV     = 'CSV-DATEI IMPORTIEREN';
-	FSELTITLE_IMPORTASCII   = 'ASCII-DATEI IMPORTIEREN';
-	FSELTITLE_IMPORTDBASE   = 'DBASE-DATEI IMPORTIEREN';
-	FSELTITLE_IMPORTEXCEL   = 'EXCEL-DATEI IMPORTIEREN';
-	FSELTITLE_IMPORT123     = '1-2-3-DATEI IMPORTIEREN';
-	FSELTITLE_IMPORTPSION   = 'PSION-DATEI IMPORTIEREN';
+	FSELTITLE_CHANGELINK    = 'CHANGE LINK TO...';
+	FSELTITLE_LOADTEXT      = 'LOAD ASCII TEXT';
+	FSELTITLE_LOADIMG       = 'LOAD IMG GRAPHIC';
+	FSELTITLE_OPEN          = 'LOAD TEXEL SHEET';
+	FSELTITLE_SAVEFORMASDOC = 'SAVE TEMPLATE AS DOCUMENT';
+	FSELTITLE_IMPORTLDW     = 'IMPORT LDW SPOOL OUTPUT FILE';
+	FSELTITLE_IMPORTDIF     = 'IMPORT DIF FILE';
+	FSELTITLE_IMPORTCSV     = 'IMPORT CSV FILE';
+	FSELTITLE_IMPORTASCII   = 'IMPORT ASCII FILE';
+	FSELTITLE_IMPORTDBASE   = 'IMPORT DBASE FILE';
+	FSELTITLE_IMPORTEXCEL   = 'IMPORT EXCEL FILE';
+	FSELTITLE_IMPORT123     = 'IMPORT 1-2-3 FILE';
+	FSELTITLE_IMPORTPSION   = 'IMPORT PSION FILE';
 	FSELTITLE_EXPORTFILE    = 'EXPORT-DATEI FESTLEGEN';
 	FSELTITLE_PRINTMETA     = 'AUSDRUCK IN METAFILE...';
 	FSELTITLE_PRINTIMG      = 'AUSDRUCK IN IMG-DATEI...';
-	FSELTITLE_SAVEAS        = 'TEXEL-BLATT SICHERN ALS...';
-	FSELTITLE_PATHS         = 'STANDARDPFAD AUSWéHLEN...';
+	FSELTITLE_SAVEAS        = 'SAVE TEXEL SHEET AS...';
+	FSELTITLE_PATHS         = 'SELECT STANDARD PATHS...';
 
 { window titles }
 
@@ -935,7 +935,7 @@
 	TITLE_REPLACE           = 'Ersetzen';
 	TITLE_CONST             = 'Konstanten';
 	TITLE_FINDVAL           = 'Zielwertsuche';
-	TITLE_SORT              = 'Sortieren';
+	TITLE_SORT              = 'Sort';
 	TITLE_SETUP             = 'Einstellungen';
 	TITLE_SPECIALCHARS      = 'Sonderzeichen';
 	TITLE_HELP              = 'Hilfe';
@@ -1050,31 +1050,31 @@
 
 { parse errors }
 
-	PARSERR_ERROR               = 'Fehler in Formel';
-	PARSERR_NOMEM               = 'Kein Speicher mehr frei';
-	PARSERR_INCOMPCHARS         = 'UngÅltige Zeichen am Ende der Formel';
-	PARSERR_INCOMPCHARSFUNC     = 'UngÅltige Zeichen am Ende der Formel (Funktionsname falsch?)';
-	PARSERR_COMPINCOMPLETE      = 'Vergleich unvollstÑndig (zweites Argument ist ungÅltig oder fehlt)';
-	PARSERR_SUMMANDMISSING      = 'Summe unvollstÑndig (zweiter Summand ist ungÅltig oder fehlt)';
-	PARSERR_SUBTRAHENDMISSING   = 'Differenz unvollstÑndig (Subtrahend ist ungÅltig oder fehlt)';
-	PARSERR_FAKTORMISSING       = 'Produkt unvollstÑndig (zweiter Faktor ist ungÅltig oder fehlt)';
-	PARSERR_DIVISORMISSING      = 'Quotient unvollstÑndig (Divisor ist ungÅltig oder fehlt)';
-	PARSERR_POWERMISSING        = 'Potenz unvollstÑndig (Exponent ist ungÅltig oder fehlt)';
-	PARSERR_FACTORINVALID       = 'Fehlendes oder ungÅltiges Argument (Funktion, Zelle, Zahl, Konstante oder Variable erwartet)';
-	PARSERR_ARGCELLRANGE        = 'Argument muû Bereichs- oder Zellangabe sein';
-	PARSERR_TOOFEWARGS          = 'Zu wenig Funktionsargumente (Argumente korrekt durch Semikolon getrennt?)';
-	PARSERR_ARGEMPTY            = 'Leeres Funktionsargument';
-	PARSERR_TOOMANYARGS         = 'Zu viele Funktionsargumente';
-	PARSERR_KLAMMERZUFEHLT      = 'Schlieûende Klammer fehlt';
-	PARSERR_TOKENTOOLONG        = 'Zahl oder Zeichenkette zu lang!';
-	PARSERR_STRINGNOTTERMINATED = 'Zeichenkette nicht korrekt abgeschlossen (" am Stringende fehlt)';
-	PARSERR_COLUMNWRONG         = 'Falsche Spaltenangabe bei einer Zellreferenz (mind. ein, max. zwei Buchstaben A-Z)';
-	PARSERR_ROWWRONG            = 'Falsche Zeilenangabe bei einer Zellreferenz (mind. eine, max. fÅnf Ziffern)';
-	PARSERR_RANGEINCOMPLETE     = 'Bereichsangabe nach dem Doppelpunkt unvollstÑndig oder fehlerhaft';
-	PARSERR_NUMBERSEXPECTED     = 'Ziffern nach dem Dezimaltrenner oder dem Exponenten-E einer Zahl erwartet';
-	PARSERR_KLAMMERAUFFEHLT     = 'ôffnende Klammer nach einem Funktionsnamen fehlt';
-	PARSERR_KLAMMERORSEMIKOLON  = 'Semikolon (Argumenttrenner) oder schlieûende Klammer erwartet';
-	PARSERR_ARGNORANGE          = 'Keine Bereichsangaben bei diesem Funktionsaufruf erlaubt';
+	PARSERR_ERROR               = 'Error in formula';
+	PARSERR_NOMEM               = 'Not enough free memory';
+	PARSERR_INCOMPCHARS         = 'Invalid character at the formula end';
+	PARSERR_INCOMPCHARSFUNC     = 'Invalid character at the formula end (wrong function name?)';
+	PARSERR_COMPINCOMPLETE      = 'Comparison incomplete (second argument is invalid or false)';
+	PARSERR_SUMMANDMISSING      = 'Addition incomplete (second Summand is invalid or incorrect)';
+	PARSERR_SUBTRAHENDMISSING   = 'Subtraction incomplete (Subtrahend is invalid or incorrect)';
+	PARSERR_FAKTORMISSING       = 'Product incomplete (second factor is invalid or incorrect)';
+	PARSERR_DIVISORMISSING      = 'Quotient incomplete (Divisor is invalid or incomplete)';
+	PARSERR_POWERMISSING        = 'Power incomplete (Exponent is invalid or incomplete)';
+	PARSERR_FACTORINVALID       = 'Missing or invalid argument (function, cell, number, constant or variable expected)';
+	PARSERR_ARGCELLRANGE        = 'Argument must be a range or cell reference';
+	PARSERR_TOOFEWARGS          = 'Too few arguments or incorrectly separated by semicolons?';
+	PARSERR_ARGEMPTY            = 'No function arguments';
+	PARSERR_TOOMANYARGS         = 'Too many function arguments';
+	PARSERR_KLAMMERZUFEHLT      = 'Closing bracket missing';
+	PARSERR_TOKENTOOLONG        = 'Number or char string too long!';
+	PARSERR_STRINGNOTTERMINATED = 'Character string incorrectly terminated (no " at end)';
+	PARSERR_COLUMNWRONG         = 'Error in column cell reference (1 or two letters A-Z)';
+	PARSERR_ROWWRONG            = 'Error in row cell reference (min. 1 max. 5 numbers)';
+	PARSERR_RANGEINCOMPLETE     = 'Range after the colon incomplete or faulty)';
+	PARSERR_NUMBERSEXPECTED     = 'Digits after the decimal point or the exponent-E should be a number';
+	PARSERR_KLAMMERAUFFEHLT     = 'Opening bracket missing after function name';
+	PARSERR_KLAMMERORSEMIKOLON  = 'Semicolon (argument separator) or closing bracket expected';
+	PARSERR_ARGNORANGE          = 'This function does not accept a range';
 
 { operators }
 
@@ -1150,12 +1150,12 @@
 	STRING_NODRIVER         = 'Treiber?';
 	STRING_WRONGMARGINS     = 'Rand?';
 	STRING_PAGEEMPTY        = 'Leer!';
-	STRING_NOTHING          = 'nichts';
+	STRING_NOTHING          = 'nothing';
 	STRING_DEFAULTPRINTER   = 'Standard-Drucker';
 	STRING_NODRIVER2        = 'Kein Treiber verfÅgbar!';
 	STRING_NONE             = 'keine';
-	STRING_YES              = 'ja';
-	STRING_NO               = 'nein';
+	STRING_YES              = 'yes';
+	STRING_NO               = 'no';
 
 	STRING_DB_SOURCE        = 'Quelle';
 	STRING_DB_RECORDS       = 'DatensÑtze';
@@ -1171,13 +1171,13 @@
 	STRING_INFO_SAVEDWITH   = 'gespeichert mit';
 	STRING_INFO_TIMEAT      = 'um';
 	
-	STRING_FINDVAL_INTERVAL = 'kein Startintervall';
+	STRING_FINDVAL_INTERVAL = 'No start interval';
 	STRING_FINDVAL_CANCEL   = 'Cancel';
-	STRING_FINDVAL_ITERAT   = 'Iterationen?';
-	STRING_FINDVAL_NOSOLUTN = 'keine Lîsung';
+	STRING_FINDVAL_ITERAT   = 'Iterations?';
+	STRING_FINDVAL_NOSOLUTN = 'No solution';
 	STRING_FINDVAL_STATUS   = 'Status';
 	STRING_FINDVAL_SEARCH   = ' Search... (Cancel with <Esc>';
-	STRING_FINDVAL_ERROR    = 'Fehler';
+	STRING_FINDVAL_ERROR    = 'Error';
 	STRING_FINDVAL_OK       = 'OK.';
 	
 	STRING_PRNINFO_INFOON   = 'Informationen Åber';
@@ -1201,11 +1201,11 @@
 	
 	STRING_WEB_SUPPORT      = 'mailto:support@texel-home.de';
 	STRING_WEB_HOMEPAGE     = 'http://www.texel-home.de';
-	STRING_WEB_MAILDEF1     = 'Hallo Texel-Support,';
-	STRING_WEB_MAILDEF2     = 'ich habe folgende Frage zu';
-	STRING_WEB_MAILDATEOF   = 'vom';
-	STRING_WEB_MAILDEF3     = 'Viele Gruesse,';
-	STRING_WEB_MAILSUBJECT  = 'Frage zu';
+	STRING_WEB_MAILDEF1     = 'Hello Texel Support,';
+	STRING_WEB_MAILDEF2     = 'I have this Texel question';
+	STRING_WEB_MAILDATEOF   = 'of';
+	STRING_WEB_MAILDEF3     = 'Greetings,';
+	STRING_WEB_MAILSUBJECT  = 'Texel question';
 	
 	STRING_ELM_CHECKBOX     = 'KontrollkÑstchen';
 
