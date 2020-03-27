@@ -154,12 +154,8 @@ constructor TStartupHandler.Init(AParent: PEventObject);
 				fail
 			end;
 		readConfigPalette;
-		{$IFDEF ENGLISH}
-		Application^.BubbleHelpActive:=false;
-		{$ELSE}
 		{$IFDEF FRENCH}
 		Application^.BubbleHelpActive:=false;
-		{$ENDIF}
 		{$ENDIF}
 		ArrowMouse;
 		sta:=nil;
