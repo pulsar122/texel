@@ -728,14 +728,14 @@
 
 	MESSAGE_WINDOW_MEMORY   = 'Texel:|Not enough memory free for a new window!';
 	MESSAGE_WINDOW_WINDOWS  = 'No more windows.';
-	MESSAGE_WINDOW_DDMOVE   = 'Der Drag&Drop-Block pažt nicht ganz auf das Blatt, es werden nicht alle Zellen verschoben!';
-	MESSAGE_WINDOW_DDCOPY   = 'Der Drag&Drop-Block pažt nicht ganz auf das Blatt, es werden nicht alle Zellen kopiert!';
-	MESSAGE_WINDOW_CCPCOPY  = 'Der Cut/Copy/Paste-Block pažt nicht ganz auf das Blatt, es werden nicht alle Zellen kopiert!';
-	MESSAGE_WINDOW_CLOSE1   = 'Blatt "';
-	MESSAGE_WINDOW_CLOSE2   = '" wurde ver„ndert. Wollen Sie die Žnderungen speichern?';
-	MESSAGE_WINDOW_VAR1     = 'Die Variable ';
-	MESSAGE_WINDOW_VAR2     = ' ist bereits in Zelle ';
-	MESSAGE_WINDOW_VAR3     = ' definiert.';
+	MESSAGE_WINDOW_DDMOVE   = 'The drag&drop block doesn't quite fit on the sheet, not all cells are moved!';
+	MESSAGE_WINDOW_DDCOPY   = 'The drag-and-drop block doesn't quite fit on the sheet, not all cells are copied!';
+	MESSAGE_WINDOW_CCPCOPY  = 'The Cut/Copy/Paste block doesn't quite fit on the sheet, not all cells are copied!';
+	MESSAGE_WINDOW_CLOSE1   = 'Sheet "';
+	MESSAGE_WINDOW_CLOSE2   = '" has been changed. Do you want to save the change?';
+	MESSAGE_WINDOW_VAR1     = 'The variable ';
+	MESSAGE_WINDOW_VAR2     = ' is defined in cell ';
+	MESSAGE_WINDOW_VAR3     = ' already.';
 	MESSAGE_WINDOW_CUT      = 'Objekt oder Zellen ausschneiden?';
 	MESSAGE_WINDOW_COPY     = 'Objekt oder Zellen kopieren?';
 	MESSAGE_WINDOW_DELETE   = 'Objekt oder Zellen l”schen?';
