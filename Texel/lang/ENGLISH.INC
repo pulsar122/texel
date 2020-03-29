@@ -733,9 +733,9 @@
 	MESSAGE_WINDOW_CCPCOPY  = 'The Cut/Copy/Paste block is too big for the sheet, not all cells can be copied!';
 	MESSAGE_WINDOW_CLOSE1   = 'Sheet "';
 	MESSAGE_WINDOW_CLOSE2   = '" has been changed. Do you want to save the changes?';
-	MESSAGE_WINDOW_VAR1     = 'Die Variable ';
-	MESSAGE_WINDOW_VAR2     = ' ist bereits in Zelle ';
-	MESSAGE_WINDOW_VAR3     = ' definiert.';
+	MESSAGE_WINDOW_VAR1     = 'Variable ';
+	MESSAGE_WINDOW_VAR2     = ' is already defined in cell ';
+	MESSAGE_WINDOW_VAR3     = ' .';
 	MESSAGE_WINDOW_CUT      = 'Cut object or cells?';
 	MESSAGE_WINDOW_COPY     = 'Copy object or cells?';
 	MESSAGE_WINDOW_DELETE   = 'Delete object or cells?';
@@ -744,10 +744,10 @@
 	MESSAGE_WINDOW_EMBED1   = 'Whilst embedding "';
 	MESSAGE_WINDOW_EMBED2   = '" an error has occurred.';
 	MESSAGE_WINDOW_EMAIL    = 'Error on sending email to Texel support.';
-	MESSAGE_WINDOW_SIZE     = 'Bei der Verkleinerung des Blattes gehen Formel-, Text- oder Zahlendaten verloren.';
-	MESSAGE_WINDOW_SIZEERR  = 'Blattgr”že kann nicht ver„ndert werden (Speichermangel).';
-	MESSAGE_WINDOW_ABANDON1 = 'Žnderungen in Datei "';
-	MESSAGE_WINDOW_ABANDON2 = '" verwerfen?';
+	MESSAGE_WINDOW_SIZE     = 'When the sheet is shrunk, formula, text or numeric data will be lost.';
+	MESSAGE_WINDOW_SIZEERR  = 'Sheet size cannot be changed (memory shortage).';
+	MESSAGE_WINDOW_ABANDON1 = 'Discard changes in file "';
+	MESSAGE_WINDOW_ABANDON2 = '" ?';
 
 	MESSAGE_NUMFORM_EMPTY   = 'Please enter a format.';
 	MESSAGE_NUMFORM_PARTS   = 'The number format should contain a max. 3 parts, so may have 2 semicolons at most.';
