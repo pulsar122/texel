@@ -8,10 +8,10 @@
 	GROUP_GENERAL_RANGE     = 'Bereich';
 	GROUP_GENERAL_ROWS      = 'Zeilen';
 	
-	GROUP_SETUP_START       = 'Programmstart';
-	GROUP_SETUP_END         = 'Programmende';
+	GROUP_SETUP_START       = 'Program start';
+	GROUP_SETUP_END         = 'Program end';
 
-	GROUP_TIP_TITLE         = 'Wuûten Sie schon?';
+	GROUP_TIP_TITLE         = 'Did you know?';
 
 	GROUP_EXPORT_SAVEWITH   = 'Speichern mit';
 	GROUP_EXPORT_TYPE       = 'Typ';
@@ -43,7 +43,7 @@
 	GROUP_INSERT_PASTE      = 'EinfÅgen';
 	GROUP_INSERT_OPERATION  = 'Rechenoperation';
 
-	GROUP_DIAGRAM_CHANGE    = 'éndern';
+	GROUP_DIAGRAM_CHANGE    = 'Change';
 	GROUP_DIAGRAM_AXISLEFT  = 'Achse links';
 	GROUP_DIAGRAM_AXISBOTM  = 'Achse unten';
 	GROUP_DIAGRAM_DATA      = 'Datenreihen';
@@ -317,7 +317,7 @@
 	BUBBLE_INSOBJ_INSERT    = 'Zeigt eine Dateiauswahlbox an, mit der die einzubettende Datei ausgesucht werden kann.';
 	BUBBLE_INSOBJ_OK        = 'Zeigt eine Dateiauswahlbox an, mit der die einzubettende Datei ausgesucht werden kann. Anschlieûend wird der Dialog geschlossen.';
 	
-	BUBBLE_IMPASC_FILE      = 'Der Name der zu importierenden Datei';
+	BUBBLE_IMPASC_FILE      = 'The name of the database file to import';
 	BUBBLE_IMPASC_ROWS      = 'Gibt an, ob die spÑteren Zeilen (im Blatt) in der Datei horizontal oder vertikal gespeichert sind';
 	BUBBLE_IMPASC_HOR       = 'Zeilen sind in der Datei horizontal gespeichert (zeilenweise). Dies ist der Normalfall.';
 	BUBBLE_IMPASC_VERT      = 'Zeilen sind in der Datei vertikal gespeichert, d.h. die Datei-Zeilen enthalten die Blatt-Spalten.';
@@ -329,14 +329,14 @@
 	BUBBLE_IMPASC_OK        = 'Importiert die Datei in ein neues Blatt';
 	BUBBLE_IMPASC_FILTER    = 'Legt fest, von welchem Betriebssystem der ASCII-Text stammt, um u.a. die Umlaute korrekt importieren zu kînnen. Damit mehr als der "Atari"-Filter zur VerfÅgung steht, muû KEYTAB installiert sein.';
 
-	BUBBLE_IMPDB_SOURCE     = 'Der Name der zu importierenden Datenbank';
-	BUBBLE_IMPDB_IMPORT     = 'Nimmt das markierte Feld der Liste links in die zu importierenden Felder rechts auf';
-	BUBBLE_IMPDB_IGNORE     = 'Nimmt das markierte Feld der Liste rechts in die Liste der zu ignorierenden Felder links auf';
-	BUBBLE_IMPDB_ALL        = 'Importiert alle Felder';
-	BUBBLE_IMPDB_NONE       = 'Importiert kein Feld. Dabei werden die Felder wieder so wie in der Datenbank sortiert.';
-	BUBBLE_IMPDB_IGNORELIST = 'In dieser Liste stehen die Felder der Datenbank, die beim Import Åbersprungen werden sollen';
-	BUBBLE_IMPDB_IMPORTLIST = 'In dieser Liste stehen die Felder der Datenbank, die importiert werden sollen. Die Reihenfolge der Liste wird dabei beachtet.';
-	BUBBLE_IMPDB_OK         = 'Importiert die Datenbank in ein neues Blatt';
+	BUBBLE_IMPDB_SOURCE     = 'The name of the database file to import';
+	BUBBLE_IMPDB_IMPORT     = 'The marked field on the left of the list is added to the import fields on the right';
+	BUBBLE_IMPDB_IGNORE     = 'The marked field on the right of the list is moved to the left and will not be imported';
+	BUBBLE_IMPDB_ALL        = 'Import all fields';
+	BUBBLE_IMPDB_NONE       = 'Do not import any fields. Click to re-sort fields as they were in the database.';
+	BUBBLE_IMPDB_IGNORELIST = 'This list contains the fields which you do not wish to have imported';
+	BUBBLE_IMPDB_IMPORTLIST = 'This list contains the fields which you wish to have imported. Data will be imported in the order show.';
+	BUBBLE_IMPDB_OK         = 'Imports the database into a new sheet';
 
 	BUBBLE_EXPORT_FORMULA   = 'Bei Formeln wird die Klartextformel als String gespeichert, bei Konstanten die Zahl ohne Zahlenformat';
 	BUBBLE_EXPORT_VALUE     = 'Bei Formeln und Konstanten wird die Zahl im verwendeten Zahlenformat gespeichert';
@@ -563,25 +563,25 @@
 	BUBBLE_HELP_SEARCH      = 'Searches for the keyword without exiting dialog';
 	BUBBLE_HELP_OK          = 'Searches for the keyword and then exits the dialog';
 	
-	BUBBLE_DIAGRAM_CHANGE   = 'In diesem Bereich wird die Gruppe der zu verÑndernden Werte ausgewÑhlt';
+	BUBBLE_DIAGRAM_CHANGE   = 'In this area the group of values to be changed can be selected';
 	BUBBLE_DIAGRAM_GRPTYPE  = 'Hier kann der Diagrammtyp verÑndert werden';
 	BUBBLE_DIAGRAM_GRPAXIS  = 'Hier kînnen die Achsen beschriftet werden';
 	BUBBLE_DIAGRAM_GRPDATA  = 'Hier kînnen die Datenreihen bestimmt werden';
 	BUBBLE_DIAGRAM_GRPLEG   = 'Hier kann die Diagrammlegende bearbeitet werden';
 	BUBBLE_DIAGRAM_GRPOBJ   = 'Hier kînnen Objektgrîûe und -datei festgelegt werden';
-	BUBBLE_DIAGRAM_RTYPE    = 'Hier kann der Diagrammtyp verÑndert werden';
-	BUBBLE_DIAGRAM_RAXIS    = 'Hier kînnen die Achsen beschriftet werden';
-	BUBBLE_DIAGRAM_RDATA    = 'Hier kînnen die Datenreihen bestimmt werden';
-	BUBBLE_DIAGRAM_RLEG     = 'Hier kann die Diagrammlegende bearbeitet werden';
-	BUBBLE_DIAGRAM_ROBJ     = 'Hier kînnen Objektgrîûe und -datei festgelegt werden';
-	BUBBLE_DIAGRAM_LINE     = 'Erzeugt Liniendiagramme';
-	BUBBLE_DIAGRAM_BLOCK    = 'Erzeugt Balkendiagramme';
-	BUBBLE_DIAGRAM_CIRCLE   = 'Erzeugt Kreisdiagramme';
-	BUBBLE_DIAGRAM_COLOR    = 'Wenn dieser Button markiert ist, verwenden die Diagramme Farben, sonst s/w-Muster';
-	BUBBLE_DIAGRAM_VALUE    = 'Wenn dieser Button markiert ist, wird in jedes Diagrammelement der jeweilige Absolutwert ausgegeben';
-	BUBBLE_DIAGRAM_XLINEAR  = 'Erzeugt Liniendiagramme mit festem X-Abstand von 1';
-	BUBBLE_DIAGRAM_X1DATA   = 'Die X-Positionen werden aus der ersten Datenreihe ausgelesen. Alle weiteren Reihen werden als Y-Positionen an diesen Stellen interpretiert.';
-	BUBBLE_DIAGRAM_XYALT    = 'Die Datenreihen enthalten abwechselnd die X- und Y-Positionen (1. Reihe X, 2. Reihe Y, ...)';
+	BUBBLE_DIAGRAM_RTYPE    = 'The chart type can be changed here';
+	BUBBLE_DIAGRAM_RAXIS    = 'The axes can be labelled here';
+	BUBBLE_DIAGRAM_RDATA    = 'The data array can be set here';
+	BUBBLE_DIAGRAM_RLEG     = 'The chart titles can be set here';
+	BUBBLE_DIAGRAM_ROBJ     = 'The object size and filename can be set here';
+	BUBBLE_DIAGRAM_LINE     = 'Generates a line chart';
+	BUBBLE_DIAGRAM_BLOCK    = 'Generates a bar chart';
+	BUBBLE_DIAGRAM_CIRCLE   = 'Generates a pie chart';
+	BUBBLE_DIAGRAM_COLOR    = 'If checked, use colours in the chart, otherwise b/w patterns';
+	BUBBLE_DIAGRAM_VALUE    = 'If checked, each chart element is given its absolute value in each case';
+	BUBBLE_DIAGRAM_XLINEAR  = 'Generates a line chart with fixed X-intervals of 1';
+	BUBBLE_DIAGRAM_X1DATA   = 'The X axis is in the first set of data. All further rows are interpreted as being on the Y axis.';
+	BUBBLE_DIAGRAM_XYALT    = 'The data is alternately the X and Y axes (1st row X, 2nd row Y, ...)';
 	BUBBLE_DIAGRAM_LLINES   = 'Liniendiagramme bestehen nur aus Linien zwischen den Punkten';
 	BUBBLE_DIAGRAM_LPOINTS  = 'Liniendiagramme bestehen nur aus Markierungen an den Punkten';
 	BUBBLE_DIAGRAM_LBOTH    = 'Liniendiagramme bestehen aus Markierungen an den Punkten und Linien zwischen diesen';
@@ -590,7 +590,7 @@
 	BUBBLE_DIAGRAM_SIDE     = 'Die Balken einer Reihe werden nebeneinander gezeichnet';
 	BUBBLE_DIAGRAM_LSTYLE   = 'Hiermit wird der Linienstil festgelegt';
 	BUBBLE_DIAGRAM_PSTYLE   = 'Hiermit wird der Punktstil festgelegt';
-	BUBBLE_DIAGRAM_TITLE    = 'Legt den Diagrammtitel fest';
+	BUBBLE_DIAGRAM_TITLE    = 'Sets the chart title';
 	BUBBLE_DIAGRAM_BORDER   = 'Bestimmt, ob das Diagramm mit einer schwarzen Linie umrahmt wird';
 	BUBBLE_DIAGRAM_NAMES    = 'Hier wird festgelegt, ob der Datenbereich Beschriftungen enthÑlt';
 	BUBBLE_DIAGRAM_LCOUNT   = 'Legt fest, ob neben dem Diagramm eine Legende angezeigt wird';
@@ -679,9 +679,9 @@
 	BUBBLE_FINDVAL_FIND     = 'Sucht den Zielwert';
 	BUBBLE_FINDVAL_OK       = 'Sucht den Zielwert und schlieût den Dialog';
 	
-	BUBBLE_TIP_TEXTS        = 'Hier werden nÅtzliche Tips zu Texel angezeigt';
-	BUBBLE_TIP_NEXT         = 'Zeigt den nÑchsten Tip an';
-	BUBBLE_TIP_START        = 'Hiermit wird festgelegt, ob dieser Dialog bei jedem Texel-Start erscheint. Der Dialog kann ansonsten auch Åber das globale "Hilfe"-MenÅ aufgerufen werden.';
+	BUBBLE_TIP_TEXTS        = 'Useful Texel tips are shown here';
+	BUBBLE_TIP_NEXT         = 'Shows the next tip';
+	BUBBLE_TIP_START        = 'Sets if this dialog should appear each time Texel is started. The dialog can also be called from the global "Help" menu.';
 	
 	BUBBLE_PATHS_TXL        = 'Sets where Texel documents are normally loaded from and saved to';
 	BUBBLE_PATHS_EXPORT     = 'Sets the default export folder for all export formats';
@@ -728,32 +728,32 @@
 
 	MESSAGE_WINDOW_MEMORY   = 'Texel:|Not enough memory free for a new window!';
 	MESSAGE_WINDOW_WINDOWS  = 'No more windows.';
-	MESSAGE_WINDOW_DDMOVE   = 'Der Drag&Drop-Block paût nicht ganz auf das Blatt, es werden nicht alle Zellen verschoben!';
-	MESSAGE_WINDOW_DDCOPY   = 'Der Drag&Drop-Block paût nicht ganz auf das Blatt, es werden nicht alle Zellen kopiert!';
-	MESSAGE_WINDOW_CCPCOPY  = 'Der Cut/Copy/Paste-Block paût nicht ganz auf das Blatt, es werden nicht alle Zellen kopiert!';
-	MESSAGE_WINDOW_CLOSE1   = 'Blatt "';
-	MESSAGE_WINDOW_CLOSE2   = '" wurde verÑndert. Wollen Sie die énderungen speichern?';
+	MESSAGE_WINDOW_DDMOVE   = 'The Drag&Drop block is too big for the sheet, not all cells can be moved!';
+	MESSAGE_WINDOW_DDCOPY   = 'The Drag&Drop block is too big for the sheet, not all cells can be copied!';
+	MESSAGE_WINDOW_CCPCOPY  = 'The Cut/Copy/Paste block is too big for the sheet, not all cells can be copied!';
+	MESSAGE_WINDOW_CLOSE1   = 'Sheet "';
+	MESSAGE_WINDOW_CLOSE2   = '" has been changed. Do you want to save the changes?';
 	MESSAGE_WINDOW_VAR1     = 'Die Variable ';
 	MESSAGE_WINDOW_VAR2     = ' ist bereits in Zelle ';
 	MESSAGE_WINDOW_VAR3     = ' definiert.';
-	MESSAGE_WINDOW_CUT      = 'Objekt oder Zellen ausschneiden?';
-	MESSAGE_WINDOW_COPY     = 'Objekt oder Zellen kopieren?';
-	MESSAGE_WINDOW_DELETE   = 'Objekt oder Zellen lîschen?';
-	MESSAGE_WINDOW_BLOCK1   = 'Beim Verschieben gehen Formel-, Text- oder Zahlendaten verloren.';
-	MESSAGE_WINDOW_BLOCK2   = 'Im Zielbereich werden Daten Åberschrieben!';
-	MESSAGE_WINDOW_EMBED1   = 'Beim Einbetten von "';
-	MESSAGE_WINDOW_EMBED2   = '" ist ein Fehler aufgetreten.';
-	MESSAGE_WINDOW_EMAIL    = 'Beim Versenden der EMail an den Texel-Support ist ein Fehler aufgetreten.';
+	MESSAGE_WINDOW_CUT      = 'Cut object or cells?';
+	MESSAGE_WINDOW_COPY     = 'Copy object or cells?';
+	MESSAGE_WINDOW_DELETE   = 'Delete object or cells?';
+	MESSAGE_WINDOW_BLOCK1   = 'During moving, formula, text or numeric data will be lost.';
+	MESSAGE_WINDOW_BLOCK2   = 'Destination data will be overwritten!';
+	MESSAGE_WINDOW_EMBED1   = 'Whilst embedding "';
+	MESSAGE_WINDOW_EMBED2   = '" an error has occurred.';
+	MESSAGE_WINDOW_EMAIL    = 'Error on sending email to Texel support.';
 	MESSAGE_WINDOW_SIZE     = 'Bei der Verkleinerung des Blattes gehen Formel-, Text- oder Zahlendaten verloren.';
 	MESSAGE_WINDOW_SIZEERR  = 'Blattgrîûe kann nicht verÑndert werden (Speichermangel).';
 	MESSAGE_WINDOW_ABANDON1 = 'énderungen in Datei "';
 	MESSAGE_WINDOW_ABANDON2 = '" verwerfen?';
 
-	MESSAGE_NUMFORM_EMPTY   = 'Bitte geben Sie ein Format ein.';
-	MESSAGE_NUMFORM_PARTS   = 'Ein Zahlenformat besteht aus max. 3 Teilen, darf also max. 2 Semikolons enthalten.';
-	MESSAGE_NUMFORM_BRACES  = 'Die Formatangabe enthÑlt falsche Klammerungen.';
-	MESSAGE_NUMFORM_DEL1    = 'Zahlenformat "';
-	MESSAGE_NUMFORM_DEL2    = '" lîschen?';
+	MESSAGE_NUMFORM_EMPTY   = 'Please enter a format.';
+	MESSAGE_NUMFORM_PARTS   = 'The number format should contain a max. 3 parts, so may have 2 semicolons at most.';
+	MESSAGE_NUMFORM_BRACES  = 'The format contains incorrect bracketting.';
+	MESSAGE_NUMFORM_DEL1    = 'Number format "';
+	MESSAGE_NUMFORM_DEL2    = '" delete?';
 
 	MESSAGE_CLIP_PASTE      = 'There is no suitable file to paste in the clipboard..';
 	MESSAGE_CLIP_IMPORT     = 'No suitable file in the clipboard.';
@@ -765,14 +765,14 @@
 	MESSAGE_EMBED_EXIST1    = 'The file "';
 	MESSAGE_EMBED_EXIST2    = '" already exists. Overwrite it?';
 	
-	MESSAGE_LAYOUT_RANGE    = 'Bitte geben Sie einen gÅltigen Druckbereich ein.';
-	MESSAGE_LAYOUT_HEADFOOT = 'Sie haben eine Kopf- bzw. Fuûzeile definiert, ohne den entsprechenden Rand festzulegen.';
+	MESSAGE_LAYOUT_RANGE    = 'Please input a valid printer range.';
+	MESSAGE_LAYOUT_HEADFOOT = 'You have defined a header or footer line, without allowing space for it.';
 	
-	MESSAGE_DIAGRAM_ROWS    = 'Zu wenig Zeilen markiert.';
-	MESSAGE_DIAGRAM_COLUMNS = 'Zu wenig Spalten markiert.';
-	MESSAGE_DIAGRAM_CELLS   = 'Zu wenig Zellen markiert.';
-	MESSAGE_DIAGRAM_ROWEVEN = 'Bitte markieren Sie eine gerade Anzahl Datenzeilen.';
-	MESSAGE_DIAGRAM_COLEVEN = 'Bitte markieren Sie eine gerade Anzahl Datenspalten.';
+	MESSAGE_DIAGRAM_ROWS    = 'Too few rows marked.';
+	MESSAGE_DIAGRAM_COLUMNS = 'Too few columns marked.';
+	MESSAGE_DIAGRAM_CELLS   = 'Too few cells marked.';
+	MESSAGE_DIAGRAM_ROWEVEN = 'Please mark an even row of cells containing data.';
+	MESSAGE_DIAGRAM_COLEVEN = 'Please mark an even row of columns containing data.';
 
 	MESSAGE_OPEN_MEMORY1    = 'File "';
 	MESSAGE_OPEN_MEMORY2    = '" cannot be loaded (memory shortage).';
@@ -838,12 +838,12 @@
 	MESSAGE_EXPORT_EXIST1   = 'The file "';
 	MESSAGE_EXPORT_EXIST2   = '" already exists. Overwrite it?';
 	
-	MESSAGE_PRINT_STOP      = 'Ausdruck abbrechen?';
-	MESSAGE_PRINT_EMPTY     = 'Der Druckbereich enthÑlt keine Daten.';
-	MESSAGE_PRINT_DEVICE1   = 'Konnte GerÑtetreiber ';
-	MESSAGE_PRINT_DEVICE2   = ' nicht îffnen.';
-	MESSAGE_PRINT_MARGINS   = 'Die RÑnder Åberschneiden sich oder ragen Åber den Blattrand hinaus.';
-	MESSAGE_PRINT_NEWSHEET  = 'Bitte legen Sie eine neue Seite ein.';
+	MESSAGE_PRINT_STOP      = 'Stop printing?';
+	MESSAGE_PRINT_EMPTY     = 'The print area contains no data.';
+	MESSAGE_PRINT_DEVICE1   = 'The device driver';
+	MESSAGE_PRINT_DEVICE2   = '  won'#39't open.';
+	MESSAGE_PRINT_MARGINS   = 'The margins overlap each other or extend beyond the paper edges.';
+	MESSAGE_PRINT_NEWSHEET  = 'Please insert a new sheet.';
 	MESSAGE_PRINT_PRINTER   = 'Es ist kein Drucker definiert.';
 	MESSAGE_PRINT_DRIVER    = 'Es ist kein Druckertreiber installiert.';
 
@@ -907,7 +907,7 @@
 	TITLE_ABOUT             = 'öber Texel...';
 	TITLE_LAYOUT            = 'Seite einrichten';
 	TITLE_FUNCTION          = 'Funktion einfÅgen';
-	TITLE_DIAGRAM           = 'Diagramm einfÅgen';
+	TITLE_DIAGRAM           = 'Insert chart';
 	TITLE_OBJSIZE           = 'Objektgrîûe';
 	TITLE_OBJATTR           = 'Objektattribute';
 	TITLE_IMGOBJ            = 'Grafikobjektattribute';
@@ -917,7 +917,7 @@
 	TITLE_URL               = 'URL îffnen';
 	TITLE_OPEN              = 'Lade Datei';
 	TITLE_IMPORTASCII       = 'Import';
-	TITLE_IMPORTGDBC        = 'dBase-Import';
+	TITLE_IMPORTGDBC        = 'dBase import';
 	TITLE_IMPORT            = 'Importiere Datei';
 	TITLE_EXPORT            = 'Export';
 	TITLE_FILL              = 'Reihe berechnen';
@@ -930,17 +930,17 @@
 	TITLE_SHFORM            = 'Blattformat';
 	TITLE_PREVIEW           = 'Seitenansicht';
 	TITLE_INFO              = 'Info';
-	TITLE_NEW               = 'Neu';
+	TITLE_NEW               = 'New';
 	TITLE_FIND              = 'Suchen';
 	TITLE_REPLACE           = 'Ersetzen';
 	TITLE_CONST             = 'Konstanten';
 	TITLE_FINDVAL           = 'Zielwertsuche';
 	TITLE_SORT              = 'Sort';
-	TITLE_SETUP             = 'Einstellungen';
-	TITLE_SPECIALCHARS      = 'Sonderzeichen';
+	TITLE_SETUP             = 'Settings';
+	TITLE_SPECIALCHARS      = 'Special Characters';
 	TITLE_HELP              = 'Hilfe';
 	TITLE_TIPS              = 'Tips und Tricks';
-	TITLE_PATHS             = 'Pfadeinstellungen';
+	TITLE_PATHS             = 'Paths';
 
 { icon window titles }
 
@@ -974,7 +974,7 @@
 	ICNTITLE_SHFORM         = 'BLATTFORMAT';
 	ICNTITLE_PREVIEW        = 'PREVIEW';
 	ICNTITLE_INFO           = 'INFO';
-	ICNTITLE_NEW            = 'NEU';
+	ICNTITLE_NEW            = 'NEW';
 	ICNTITLE_FIND           = 'SUCHEN';
 	ICNTITLE_REPLACE        = 'ERSETZEN';
 	ICNTITLE_CONST          = 'KONSTANTEN';
@@ -986,7 +986,7 @@
 	ICNTITLE_PRINTERINFO    = 'DRUCKER-INFO';
 	ICNTITLE_HELP           = 'HILFE';
 	ICNTITLE_TIPS           = 'TIPS';
-	ICNTITLE_PATHS          = 'PFADE';
+	ICNTITLE_PATHS          = 'PATHS';
 
 { ST-Guide nodes }
 
