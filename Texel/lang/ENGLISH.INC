@@ -712,7 +712,7 @@
 	BUTTON_FORMDOC          = '&Templte|&Document';
 	BUTTON_SAVECANCEL       = '  &Save   |&Cancel';
 
-	MESSAGE_GENERAL_RANGE   = 'Bitte geben Sie einen gÅltigen Bereich ein.';
+	MESSAGE_GENERAL_RANGE   = 'Please enter a valid area.';
 	MESSAGE_GENERAL_MEMORY  = 'TEXEL:|Not enough free memory!';
 	MESSAGE_GENERAL_OLGA    = 'OLGA is not installed.';
 
@@ -844,28 +844,28 @@
 	MESSAGE_PRINT_DEVICE2   = '  won'#39't open.';
 	MESSAGE_PRINT_MARGINS   = 'The margins overlap each other or extend beyond the paper edges.';
 	MESSAGE_PRINT_NEWSHEET  = 'Please insert a new sheet.';
-	MESSAGE_PRINT_PRINTER   = 'Es ist kein Drucker definiert.';
-	MESSAGE_PRINT_DRIVER    = 'Es ist kein Druckertreiber installiert.';
+	MESSAGE_PRINT_PRINTER   = 'No printer is defined.';
+	MESSAGE_PRINT_DRIVER    = 'There is no printer driver installed.';
 
 	MESSAGE_INFO_PASSWRONG  = 'Old password wrong!';
 	MESSAGE_INFO_PASSLEN    = 'The new password must be either blank or at least 6 characters long.';
 	MESSAGE_INFO_PASSNEQ    = 'The entry in the verify field does not match the new password';
 	
-	MESSAGE_CONST_EMPTY     = 'Bitte geben Sie einen Konstantennamen ein.';
-	MESSAGE_CONST_NAME      = 'Bitte geben Sie einen korrekten Namen ein.';
-	MESSAGE_CONST_USED1     = 'Der Konstantenname "';
-	MESSAGE_CONST_USED2     = '" ist bereits vergeben.';
-	MESSAGE_CONST_VALEMPTY  = 'Bitte geben Sie den Wert der Konstanten ein.';
-	MESSAGE_CONST_VALUE     = 'Bitte geben Sie einen korrekten Wert ein.';
-	MESSAGE_CONST_DELETE1   = 'Konstante "';
-	MESSAGE_CONST_DELETE2   = '" lîschen?';
+	MESSAGE_CONST_EMPTY     = 'Please enter a constant name.';
+	MESSAGE_CONST_NAME      = 'Please enter a correct name.';
+	MESSAGE_CONST_USED1     = 'The constant name "';
+	MESSAGE_CONST_USED2     = '" has already been assigned.';
+	MESSAGE_CONST_VALEMPTY  = 'Please enter the value of the constants.';
+	MESSAGE_CONST_VALUE     = 'Please enter a correct value.';
+	MESSAGE_CONST_DELETE1   = 'Delete constant "';
+	MESSAGE_CONST_DELETE2   = '" ?';
 	
-	MESSAGE_FINDVAL_CELLREF = 'Zielzelle und verÑnderbare Zelle mÅssen eine Zellreferenz sein.';
-	MESSAGE_FINDVAL_FORMULA = 'Die Zielzelle muû eine Formel enthalten.';
-	MESSAGE_FINDVAL_NUMBER  = 'Die verÑnderbare Zelle muû eine Zahl enthalten oder leer sein.';
-	MESSAGE_FINDVAL_ERROR   = 'Der Zielwert konnte nicht korrekt bestimmt werden.';
+	MESSAGE_FINDVAL_CELLREF = 'Target cell and modifiable cell must be a cell reference.';
+	MESSAGE_FINDVAL_FORMULA = 'The target cell must contain a formula.';
+	MESSAGE_FINDVAL_NUMBER  = 'The changeable cell must contain a number or be empty.';
+	MESSAGE_FINDVAL_ERROR   = 'The target value could not be determined correctly.';
 
-	MESSAGE_ABOUT_UPGRADE   = 'Das Upgrade auf die aktuelle Texel-Vollversion erhalten Sie preiswert bei||Application Systems Heidelberg GmbH|Postfach 102 646|D-69016 Heidelberg||Telefon: 06221/30 00 02|'
+	MESSAGE_ABOUT_UPGRADE   = 'The upgrade to the current Texel full version is available at||Application Systems Heidelberg GmbH|Postfach 102 646|D-69016 Heidelberg||Telefon: 06221/30 00 02|'
 	                          +'Telefax: 06221/30 03 89|Mailbox: 06221/30 36 71||http://members.aol.com/ashinfo';
 
 { fsel titles }
