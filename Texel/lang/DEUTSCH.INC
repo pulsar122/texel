@@ -1,4 +1,4 @@
-{ German include file for Texel 2.3 }
+1{ German include file for Texel 2.3 }
 { 1999-03-03 tm }
 
 { ############################################################################## }
@@ -248,7 +248,6 @@
 	BUBBLE_CLIP_OK          = 'L„dt eine DIF- oder CSV-Datei aus dem Klemmbrett';
 	
 	BUBBLE_ABOUT_OK         = 'Schliežt den "šber..."-Dialog';
-	BUBBLE_ABOUT_UPDATE     = '™ffnet einen Dialog, in dem Sie erfahren, wie und wo sie auf die Texel-Vollversion aufsteigen k”nnen!';
 	
 	BUBBLE_LAYOUT_TMARGIN   = 'Legt den Seitenrand oberhalb der Kopfzeile fest';
 	BUBBLE_LAYOUT_BMARGIN   = 'Legt den Seitenrand unterhalb der Fužzeile fest';
