@@ -11,7 +11,7 @@ uses
 const
 
 	TEXELVER          = $0230;
-	TEXELDATE         = '03.03.2000';
+	TEXELDATE         = '26.03.2020';
 	RELEASE           =     0;
 	BUILT             = (20 shl 25) + (3 shl 21) + (3 shl 16);
 	EXPIRE            = (21 shl 25) + (2 shl 21);
