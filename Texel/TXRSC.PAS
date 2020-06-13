@@ -3,11 +3,6 @@ unit txrsc;
 
 interface
 
-const
-
-	DEMORSCLEN1 = 63146;
-	DEMORSCLEN2 = 46634;
-
 	{$IFDEF INTERFACE_RESOURCE_FILES}
 	{$IFDEF FRENCH}
 	{$I rsc\texel_f.i}
