@@ -2387,24 +2387,24 @@ function TCalcWindow.Val2Txt(fval: TNumber; var vtxt: string; fp: byte; frm: int
 				end;
 
 			begin
-				if dummy='T' then
+				if (dummy='T') or (dummy='D') then
 					begin
 						vtxt:=vtxt+ltoa(Num2Day(fval));
 						exit
 					end;
-				if dummy='TT' then
+				if (dummy='TT') or (dummy='DD')then
 					begin
 						n:=Num2Day(fval);
 						if n<10 then vtxt:=vtxt+'0';
 						vtxt:=vtxt+ltoa(n);
 						exit
 					end;
-				if dummy='TTT' then
+				if (dummy='TTT') or (dummy='DDD') then
 					begin
 						vtxt:=vtxt+TexelApp.Tage2[Weekday(fval,3)];
 						exit
 					end;
-				if dummy='TTTT' then
+				if (dummy='TTTT') or (dummy='DDDD') then
 					begin
 						vtxt:=vtxt+TexelApp.Tage[Weekday(fval,3)];
 						exit
@@ -2431,19 +2431,19 @@ function TCalcWindow.Val2Txt(fval: TNumber; var vtxt: string; fp: byte; frm: int
 						vtxt:=vtxt+TexelApp.Monate[Num2Month(fval)];
 						exit
 					end;
-				if dummy='J' then
+				if (dummy='J') or (dummy='Y') then
 					begin
 						vtxt:=vtxt+ltoa(Num2Year(fval) mod 100);
 						exit
 					end;
-				if dummy='JJ' then
+				if (dummy='JJ') or (dummy='YY') then
 					begin
 						n:=Num2Year(fval) mod 100;
 						if n<10 then vtxt:=vtxt+'0';
 						vtxt:=vtxt+ltoa(n);
 						exit
 					end;
-				if dummy='JJJJ' then
+				if (dummy='JJJJ') or (dummy='YYYY') then
 					begin
 						vtxt:=vtxt+ltoa(Num2Year(fval));
 						exit
