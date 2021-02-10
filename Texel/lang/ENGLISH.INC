@@ -412,25 +412,25 @@
 	BUBBLE_INSVAL_INSERT    = 'Inserts cells from the clipboard without exiting the dialog';
 	BUBBLE_INSVAL_OK        = 'Inserts cells from the clipboard and closes dialog';
 	
-	BUBBLE_PRINT_FILE       = 'Der Dateiname des auszudruckenden Dokuments';
-	BUBBLE_PRINT_SHEET      = 'Wenn dieses KÑstchen NICHT angekreuzt ist, wird der Benutzer zum Einlegen neuer Seiten aufgefordert';
-	BUBBLE_PRINT_FEED       = 'Ist dieses KÑstchen angekreuzt, wird bei Druckern und Metafiles nach dem Ausdruck ein Seitenvorschub durchgefÅhrt';
-	BUBBLE_PRINT_COPIES     = 'Bestimmt, wie oft das Dokument ausgedruckt wird';
-	BUBBLE_PRINT_SCALE      = 'Stellt den Vergrîûerungs- bzw. Verkleinerungsfaktor ein';
-	BUBBLE_PRINT_DRIVER     = 'Bestimmt einen Treiber fÅr das AusgabegerÑt';
-	BUBBLE_PRINT_PRINT      = 'Druckt das Dokument aus';
-	BUBBLE_PRINT_DEVICE     = 'Legt das AusgabegerÑt fest';
-	BUBBLE_PRINT_BW         = 'Wenn diese Option eingeschaltet ist, werden alle Textfarben (auûer weiû) schwarz gedruckt und alle Hintergrundfarben (auûer schwarz) weiû';
-	BUBBLE_PRINT_RANGE      = 'Wird aus "Seite einrichten" Åbernommen. Ist dort kein Bereich eingetragen, ist dieser Punkt identisch mit "Alles".';
-	BUBBLE_PRINT_ALL        = 'Druckt das Blatt bis zur am weitesten rechts unten liegenden verwendeten Zellen aus';
-	BUBBLE_PRINT_SELECTION  = 'Druckt den aktuell markierten Block aus';
-	BUBBLE_PRINT_PAPER      = 'Stellt fÅr Drucker und Images die verwendete Papiergrîûe ein'{$IFNDEF NVDI5}+' (ab NVDI3)'{$ENDIF};
-	BUBBLE_PRINT_PAGEFROM   = 'Legt fest, ab welcher Seite der gesplitteten Tabelle gedruckt werden soll. Die Numerierung wird in "Seite einrichten" festgelegt.';
-	BUBBLE_PRINT_PAGETO     = 'Bestimmt, bis zu welcher Seite der gesplitteten Tabelle gedruckt werden soll. Bei zu groûen Werten hîrt der Druck nach der letzten Seite auf. Ist hier nichts eingetragen, wird nur eine Seite gedruckt.';
-	BUBBLE_PRINT_LAYOUT     = 'Ruft den "Seite einrichten"-Dialog auf';
-	BUBBLE_PRINT_PREVIEW    = 'Ruft die Seitenansicht auf';
-	BUBBLE_PRINT_OK         = 'öbernimmt die Einstellungen (ohne zu drucken)';
-	BUBBLE_PRINT_INFO       = 'Zeigt Informationen Åber den GerÑtetreiber an';
+	BUBBLE_PRINT_FILE       = 'The filename of the document to be printed';
+	BUBBLE_PRINT_SHEET      = 'If this box is NOT checked, the user will be prompted to insert new pages';
+	BUBBLE_PRINT_FEED       = 'If this box is checked, a page feed is sent after printing to printers and metafiles';
+	BUBBLE_PRINT_COPIES     = 'Determines the number of copies of the document that are printed';
+	BUBBLE_PRINT_SCALE      = 'Sets the scale factor to enlarge or shrink the output';
+	BUBBLE_PRINT_DRIVER     = 'Specify a driver for the output device';
+	BUBBLE_PRINT_PRINT      = 'Print the document';
+	BUBBLE_PRINT_DEVICE     = 'Specify the output device';
+	BUBBLE_PRINT_BW         = 'With this option, all text colors (except white) are printed in black and all background colors (except black) are printed in white';
+	BUBBLE_PRINT_RANGE      = 'Print area is taken from "Page Setup". If no range is specified there, then this setting defaults to "All".';
+	BUBBLE_PRINT_ALL        = 'Prints the document up to the bottom rightmost cells used';
+	BUBBLE_PRINT_SELECTION  = 'Prints the currently selected block';
+	BUBBLE_PRINT_PAPER      = 'Sets the paper size used for printers and images'{$IFNDEF NVDI5}+' (as of NVDI3)'{$ENDIF};
+	BUBBLE_PRINT_PAGEFROM   = 'Specifies which side of a split table should be printed. The numbering is set in "Page Setup".';
+	BUBBLE_PRINT_PAGETO     = 'Determines up to which side of a split table should be printed. If the values are too high, printing stops after the last page.  If nothing is entered here, only one page will be printed.';
+	BUBBLE_PRINT_LAYOUT     = 'Calls the "Page Setup" dialog';
+	BUBBLE_PRINT_PREVIEW    = 'Preview the printed output';
+	BUBBLE_PRINT_OK         = 'Applies the settings (without printing)';
+	BUBBLE_PRINT_INFO       = 'Show information about the device driver';
 
 	BUBBLE_SHFORM_SIZE      = 'Here it is possible to alter the sheet size';
 	BUBBLE_SHFORM_ROWS      = 'Sets the number of rows (max. 16384)';
@@ -545,18 +545,18 @@
 	BUBBLE_SORT_SORT        = 'Sorts the marked area without exiting the dialog';
 	BUBBLE_SORT_OK          = 'Sorts the marked area and then quits the dialog';
 	
-	BUBBLE_PRNINFO_DEVICE   = 'Das AusgabegerÑt';
-	BUBBLE_PRNINFO_FILE     = 'Der Dateiname des Treibers aus ASSIGN.SYS';
-	BUBBLE_PRNINFO_NUMBER   = 'Die GDOS-Nummer des Treibers aus ASSIGN.SYS';
-	BUBBLE_PRNINFO_DESCR    = 'Zusatzinformationen zum GerÑtetreiber';
-	BUBBLE_PRNINFO_IO       = 'Drucker sollten reine AusgabegerÑte sein';
-	BUBBLE_PRNINFO_COLORS   = 'Anzahl der auf dem AusgabegerÑt darstellbaren Farben';
-	BUBBLE_PRNINFO_MAXCOLOR = 'Anzahl der vordefinierten (=verfÅgbaren) Farben';
-	BUBBLE_PRNINFO_FONTS    = 'Anzahl der auf dem AusgabegerÑt verfÅgbaren ZeichensÑtze';
-	BUBBLE_PRNINFO_DPI      = 'Auflîsung des AusgabegerÑts (in Punkten pro Zoll)';
-	BUBBLE_PRNINFO_PAPRSIZE = 'Blattgrîûe (entspricht z.B. DIN A4 etc.)';
-	BUBBLE_PRNINFO_PRNTSIZE = 'Grîûe des Druckbereichs (=verfÅgbare Grîûe), hier sind hardwarebedingte RÑnder bereits abgezogen';
-	BUBBLE_PRNINFO_BEZIER   = 'Gibt an, ob das AusgabegerÑt Bezierkurven zeichnen kann';
+	BUBBLE_PRNINFO_DEVICE   = 'The output device';
+	BUBBLE_PRNINFO_FILE     = 'The filename of the driver from ASSIGN.SYS';
+	BUBBLE_PRNINFO_NUMBER   = 'The GDOS number of the driver from ASIGN.SYS';
+	BUBBLE_PRNINFO_DESCR    = 'Additional information about the device driver';
+	BUBBLE_PRNINFO_IO       = 'Printer should be regarded as a pure output device';
+	BUBBLE_PRNINFO_COLORS   = 'Number of colors supported by the output device';
+	BUBBLE_PRNINFO_MAXCOLOR = 'Number of predefined (=available) colors';
+	BUBBLE_PRNINFO_FONTS    = 'Number of character sets available on the output device';
+	BUBBLE_PRNINFO_DPI      = 'Resolution of the output device (in dots per inch)';
+	BUBBLE_PRNINFO_PAPRSIZE = 'Sheet size (correspondong to DIN A4 etc.)';
+	BUBBLE_PRNINFO_PRNTSIZE = 'Size of the print area (=available size) with regards to hardware-related borders';
+	BUBBLE_PRNINFO_BEZIER   = 'Specifies whether the output device can draw bezier curves';
 	
 	BUBBLE_HELP_ITEM        = 'The keyword to search for in the Texel ST-Guide';
 	BUBBLE_HELP_SEARCH      = 'Searches for the keyword without exiting dialog';
@@ -760,7 +760,7 @@
 	MESSAGE_EMBED_ARTWORX   = 'ArtWorx can not be called.';
 	MESSAGE_EMBED_OLGA1     = 'The OLGA "';
 	MESSAGE_EMBED_OLGA2     = '"server can not be called.';
-	MESSAGE_EMBED_DELETE    = 'Objekt wirklich lîschen?';
+	MESSAGE_EMBED_DELETE    = 'Really delete object?';
 	MESSAGE_EMBED_EXIST1    = 'The file "';
 	MESSAGE_EMBED_EXIST2    = '" already exists. Overwrite it?';
 	
@@ -843,8 +843,8 @@
 	MESSAGE_PRINT_DEVICE2   = '  won'#39't open.';
 	MESSAGE_PRINT_MARGINS   = 'The margins overlap each other or extend beyond the paper edges.';
 	MESSAGE_PRINT_NEWSHEET  = 'Please insert a new sheet.';
-	MESSAGE_PRINT_PRINTER   = 'Es ist kein Drucker definiert.';
-	MESSAGE_PRINT_DRIVER    = 'Es ist kein Druckertreiber installiert.';
+	MESSAGE_PRINT_PRINTER   = 'No printer is defined.';
+	MESSAGE_PRINT_DRIVER    = 'There is no printer driver installed.';
 
 	MESSAGE_INFO_PASSWRONG  = 'Old password wrong!';
 	MESSAGE_INFO_PASSLEN    = 'The new password must be either blank or at least 6 characters long.';
@@ -888,8 +888,8 @@
 	FSELTITLE_IMPORT123     = 'IMPORT 1-2-3 FILE';
 	FSELTITLE_IMPORTPSION   = 'IMPORT PSION FILE';
 	FSELTITLE_EXPORTFILE    = 'SET EXPORT FILE';
-	FSELTITLE_PRINTMETA     = 'PRINT IN METAFILE...';
-	FSELTITLE_PRINTIMG      = 'PRINT IN IMG-FILE...';
+	FSELTITLE_PRINTMETA     = 'PRINTOUT IN METAFILE...';
+	FSELTITLE_PRINTIMG      = 'PRINTOUT IN IMG-FILE...';
 	FSELTITLE_SAVEAS        = 'SAVE TEXEL SHEET AS...';
 	FSELTITLE_PATHS         = 'SELECT STANDARD PATHS...';
 
