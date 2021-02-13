@@ -92,7 +92,7 @@
 	BUBBLE_GENERAL_OK2      = 'Accept the settings';
 	BUBBLE_GENERAL_OBJSET   = 'Setzt die aktuellen Werte dieses Dialogs beim zugeh”rigen Objekt, ohne den Dialog zu verlassen';
 	BUBBLE_GENERAL_OBJSETOK = 'Accepts the current values and closes the dialog';
-	BUBBLE_GENERAL_CLOSE    = 'Schliežt den Dialog';
+	BUBBLE_GENERAL_CLOSE    = 'Close the dialog';
 	
 	BUBBLE_SETUP_DEFDOC     = 'Sets the default values which will be used when creating a new worksheet';
 	BUBBLE_SETUP_WINDOW     = 'Defines window options for all worksheets';
