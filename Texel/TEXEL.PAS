@@ -11,9 +11,14 @@
  *   letztes Update am:   03.03.2000   *
  ***************************************}
 
+{ If you pulish a new version please change TEXELDATE in txtypes.pas }
+
+
 {       | deutsch   | englisch          | franz”sisch      
 	------|-----------|-------------------|------------------
   Final |           | ENGLISH           | FRENCH          }
+
+{$DEFINE ENGLISH}
 
 {$B+,D-,G-,I-,L-,N-,P-,Q-,R-,S-,T-,V-,X+,Z-}
 
