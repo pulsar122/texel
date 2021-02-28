@@ -1,4 +1,4 @@
-1{ German include file for Texel 2.3 }
+{ German include file for Texel 2.3 }
 { 1999-03-03 tm }
 
 { ############################################################################## }

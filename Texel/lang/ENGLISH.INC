@@ -85,12 +85,12 @@
 	BUBBLE_GENERAL_RANGE    = 'Shows the current block on which the actions of this dialog operate. You can define a new block with the mouse or with Control+B.';
 	BUBBLE_GENERAL_HELP     = 'Calls the ST-Guide online help. If ST-Guide is not installed this button will be disabled';
 	BUBBLE_GENERAL_CANCEL   = 'Closes the dialog without carrying out the action';
-	BUBBLE_GENERAL_SET      = 'Setzt die aktuellen Werte dieses Dialogs im markierten Block, ohne den Dialog zu verlassen';
-	BUBBLE_GENERAL_SET2     = 'Setzt die aktuellen Werte, ohne den Dialog zu verlassen';
-	BUBBLE_GENERAL_SETOK    = 'Setzt die aktuellen Werte im markierten Bereich und verl„žt den Dialog';
+	BUBBLE_GENERAL_SET      = 'Sets the current values in the selected block without leaving the dialog';
+	BUBBLE_GENERAL_SET2     = 'Sets the current values and closes the dialog';
+	BUBBLE_GENERAL_SETOK    = 'Sets the current values in the selected block and closes the dialog';
 	BUBBLE_GENERAL_OK       = 'Accepts the current values and closes the dialog';
 	BUBBLE_GENERAL_OK2      = 'Accept the settings';
-	BUBBLE_GENERAL_OBJSET   = 'Setzt die aktuellen Werte dieses Dialogs beim zugeh”rigen Objekt, ohne den Dialog zu verlassen';
+	BUBBLE_GENERAL_OBJSET   = 'Sets the current values of the dialog for the associated object without leaving the dialog';
 	BUBBLE_GENERAL_OBJSETOK = 'Accepts the current values and closes the dialog';
 	BUBBLE_GENERAL_CLOSE    = 'Close the dialog';
 	
